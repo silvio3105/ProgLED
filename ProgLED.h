@@ -58,6 +58,12 @@ This License shall be included in all functional textual files.
  */
 #define PROG_LED_CONTINUE		2
 
+/**
+ * @brief Use FPU for RGB2HSV and HSV2RGB conversion.
+ * 
+ */
+#define USE_FPU					1
+
 
 #define PROG_LED_STATUS_BIT		0
 #define PROG_LED_STATUS_MASK	0b00000001
@@ -125,26 +131,6 @@ class ProgLED : protected Led {
 	uint8_t init(uint8_t ledsNum, ProgLED_type_t lineType);
 
 	/**
-	 * @brief Sets new LED color.
-	 * 
-	 * @param r New 8-bit red color value.
-	 * @param g New 8-bit green color value.
-	 * @param b New 8-bit blue color value.
-	 * @param on New LED status. Set to \c 0 if to turn off LED. This parameter is optional.
-	 * @return No return value.
-	 */
-	void set(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1);
-
-	/**
-	 * @brief Sets new LED color.
-	 * 
-	 * @param color New 24-bit color in RGB format.
-	 * @param on New LED status. Set to \c 0 if to turn off LED. This parameter is optional.
-	 * @return No return value.
-	 */
-	void set(uint32_t color, uint8_t on = 1);
-
-	/**
 	 * @brief Resets LED to default color and config.
 	 * 
 	 * @return No return value.
@@ -201,16 +187,11 @@ class ProgLED : protected Led {
 	 * @param ledIdx LED index, starting from 0.
 	 * @param value Brightness value between 0 and 100%.
 	 * @return No return value.
+	 * @{
 	 */
 	void brightness(uint8_t ledIdx, uint8_t value);
-
-	/**
-	 * @brief Sets brightness for whole LED line.
-	 * 
-	 * @param value Brightness value between 0 and 100%.
-	 * @return No return value.
-	 */
 	void brightness(uint8_t value);
+	/**@}*/
 
 
 	// Private stuff
@@ -259,6 +240,53 @@ class ProgLED : protected Led {
 	 * @return No return value.
 	 */
 	inline void led(uint8_t value, uint8_t idx);
+
+	#if USE_FPU == 0
+	/**
+	 * @brief Converts RGB color format to HSV color format using fixed point math.
+	 * 
+	 * @param in Reference to input array in RGB format.
+	 * @param out Reference to HSV output array.
+	 * @return No return value. 
+	 * 
+	 * @warning Function does not work without FPU.
+	 */
+	void rgb2HSV(uint8_t (&in)[3], int32_t (&out)[3]);
+
+	/**
+	 * @brief Converts HSV color format to RGB color format using fixed point math.
+	 * 
+	 * @param in Reference to input array in HSV format.
+	 * @param out Reference to RGB output array.
+	 * @return No return value.
+	 * 
+	 * @warning Function does not work without FPU.
+	 */
+	void hsv2RGB(int32_t (&in)[3], uint8_t (&out)[3]);	
+	#else
+	/**
+	 * @brief Converts RGB color format to HSV color format using fixed point math.
+	 * 
+	 * @param in Reference to input array in RGB format.
+	 * @param out Reference to HSV output array.
+	 * @return No return value. 
+	 * 
+	 * @note Function requires FPU for best performance during calculations.
+	 */
+	void rgb2HSV(uint8_t (&in)[3], float (&out)[3]);	
+
+	/**
+	 * @brief Converts HSV color format to RGB color using float point math.
+	 * 
+	 * @param in Reference to input array in HSV format.
+	 * @param out Reference to RGB output array.
+	 * @return No return value.
+	 * 
+	 * @note Function requires FPU for best performance during calculations.
+	 * @warning Function does not convert right HSV(0 0 100)/RGB(255 255 255) back to RGB values.
+	 */
+	void hsv2RGB(float (&in)[3], uint8_t (&out)[3]);
+	#endif // USE_FPU
 };
 
 /**
@@ -269,7 +297,7 @@ class Led {
 	// Protected stuff
 	protected:
 	/**
-	 * @brief 24-bit color data.
+	 * @brief 24-bit color data in RGB format.
 	 * 
 	 */
 	uint8_t color[3] = { 0x00, 0x00, 0x00 };
@@ -280,6 +308,23 @@ class Led {
 	 * First seven bits are reserved for LED brightness. Last bit(MSB) is reserved for toggling LED.
 	 */
 	uint8_t status = 0xFF;
+
+
+
+	/**
+	 * @brief Sets new LED color.
+	 * 
+	 * @param r New 8-bit red color value.
+	 * @param g New 8-bit green color value.
+	 * @param b New 8-bit blue color value.
+	 * @param color New 24-bit color in RGB format.
+	 * @param on New LED status. Set to \c 0 if to turn off LED. This parameter is optional.
+	 * @return No return value.
+	 * @{
+	 */
+	void rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1);
+	void rgb(uint32_t color, uint8_t on = 1);
+	/**@}*/	
 };
 
 /** @}*/
