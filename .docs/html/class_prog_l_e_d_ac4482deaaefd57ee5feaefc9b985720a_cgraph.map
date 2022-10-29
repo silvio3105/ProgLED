@@ -1,0 +1,6 @@
+<map id="ProgLED::update" name="ProgLED::update">
+<area shape="rect" id="node1" title="Calls external handler to start clocking out colors from led memory in format." alt="" coords="5,31,127,56"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a076276daeae8304c887d5ab46c54a165" title="Fetches bit from LED color." alt="" coords="175,31,301,56"/>
+<area shape="rect" id="node3" href="$class_led.html#ae32e373c361ebe37874ed8816fde5a85" title="Fetch output color." alt="" coords="353,5,452,31"/>
+<area shape="rect" id="node4" href="$class_led.html#a98a747c4c2ab2fe3434ec01fc78430fb" title="Get LED config." alt="" coords="349,55,456,80"/>
+</map>

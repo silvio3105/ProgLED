@@ -1,0 +1,4 @@
+<map id="ProgLED" name="ProgLED">
+<area shape="rect" id="node1" title="Class representing single LED line." alt="" coords="5,79,80,104"/>
+<area shape="rect" id="node2" href="$class_led.html" title="Struct representing single LED chip." alt="" coords="21,5,64,31"/>
+</map>

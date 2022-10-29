@@ -8,6 +8,7 @@
 
 
 // ----- MACRO FUNCTIONS
+// SOON: Export those macros to sStd lib(soon)
 #define ProgLED_MAP(_in, _inMin, _inMax, _outMin, _outMax) \
 	(_in - _inMin) * (_outMax - _outMin) / (_inMax - _inMin) + _outMin
 
@@ -15,7 +16,7 @@
 	(_in1 < _in2) ? (_in1 < _in3 ? _in1 : _in3) : (_in2 < _in3 ? _in2 : _in3)
 
 #define ProgLED_MAX(_in1, _in2, _in3) \
-	(_in1 > _in2)? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
+	(_in1 > _in2) ? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
 
 
 // ----- ProgLED FUNCTION DEFINITIONS
@@ -24,6 +25,9 @@ ProgLED::ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_fo
 	// Set external handlers
 	startHandler = start;
 	stopHandler = stop;
+
+	// Set line status
+	lineStatus = LINE_IDLE;
 
 	// Allocate memory for ledsNum LEDs if ledsNum > 0. Memory allocation is checked in init() method
 	if (ledsNum)
@@ -65,7 +69,7 @@ ProgLED::~ProgLED(void)
 
 uint8_t ProgLED::init(void)
 {
-	// Return NOK status if handlers are nullptr ot memory for leds is not allocated
+	// Return NOK status if handlers are nullptr or memory for LEDs is not allocated
 	if (!startHandler || !stopHandler || !led) return PROG_LED_NOK;
 
 	// Set all LEDs to default values
@@ -78,11 +82,9 @@ void ProgLED::reset(void)
 {
 	for (uint16_t i = 0; i < ledCount; i++)
 	{
-		// Set LED color and status
-		led[i].rgb(0, 0, 0);
 
-		// Set brightness
-		led[i].brightness(100);
+
+
 	}
 }
 
@@ -103,6 +105,9 @@ void ProgLED::off(void)
 
 void ProgLED::update(void)
 {
+	// Stop if line is already clocking
+	if (lineStatus == LINE_CLOCK) return;
+
 	uint8_t bit = 0;
 	ledIdx = ledCount - 1;
 	ledByte = ledBit = 0;
@@ -110,19 +115,28 @@ void ProgLED::update(void)
 	// Fetch first bit in LED data
 	fetchBit(bit);
 
+	// Set new LED line status
+	lineStatus = LINE_CLOCKING;
+
 	// Call external handler
 	startHandler(bit);	
 }
 
-inline void ProgLED::stop(void)
+void ProgLED::stop(void)
 {
+	// Stop if line is at idle state
+	if (lineStatus == LINE_IDLE) return;
+
+	// Set new LED line status
+	lineStatus = LINE_IDLE;
+
 	// Just pass zero
 	stopHandler(0);
 }
 
 uint8_t ProgLED::fetchBit(uint8_t& bit)
 {
-	uint8_t status = led[ledIdx].getStatus() & PROG_LED_STATUS_MASK;
+	uint8_t status = led[ledIdx].getConfig() & PROG_LED_STATUS_MASK;
 	bit = led[ledIdx].getColor(ledByte) & (1 << ledBit);
 
 	if (bit) bit = 1;
@@ -135,7 +149,11 @@ uint8_t ProgLED::fetchBit(uint8_t& bit)
 
 		if (ledByte == 3)
 		{
-			if (!ledIdx) return PROG_LED_OK;
+			if (!ledIdx)
+			{
+				lineStatus = LINE_IDLE;
+				return PROG_LED_OK;
+			}
 			else
 			{
 				ledIdx--;
@@ -314,7 +332,7 @@ void Led::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 	adjustColor();
 }
 
-inline void Led::rgb(uint32_t color, uint8_t on = 1)
+void Led::rgb(uint32_t color, uint8_t on = 1)
 {
 	// Extract RGB bytes from 32-bit color value
 	rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, on);
@@ -335,15 +353,56 @@ void Led::brightness(uint8_t value)
 	adjustColor();
 }
 
+inline void Led::on(void)
+{
+	config |= PROG_LED_STATUS_MASK;
+}
+
+inline void Led::off(void)
+{
+	config &= PROG_LED_BRGHT_MASK;
+}
+
+inline void Led::toggle(void)
+{
+	config ^= 1 << PROG_LED_STATUS_BIT;
+}
+
+inline uint8_t Led::getColor(uint8_t idx)
+{
+	return outputColor[idx];
+}
+
+inline uint8_t Led::getConfig(void)
+{
+	return config;
+}
+
 void Led::adjustColor(void)
 {
 	// Extract brightness bits
 	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
 
 	// Scale RGB values using brightness
-	outputColor[0] = color[0] * (brightness / 100);
-	outputColor[1] = color[1] * (brightness / 100);
-	outputColor[2] = color[2] * (brightness / 100);
+	outputColor[0] = color[0] * (brightness * 10 / 100) / 10;
+	outputColor[1] = color[1] * (brightness * 10 / 100) / 10;
+	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
+}
+
+void Led::reset(void)
+{
+	// Reset color values to black
+	color[0] = 0x00;
+	color[1] = 0x00;
+	color[2] = 0x00;
+
+	// Reset output color values to black
+	outputColor[0] = 0x00;
+	outputColor[1] = 0x00;
+	outputColor[2] = 0x00;
+
+	// Set default config value
+	config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
 }
 
 

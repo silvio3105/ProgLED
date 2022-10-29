@@ -1,0 +1,5 @@
+<map id="ProgLED::fetchBit" name="ProgLED::fetchBit">
+<area shape="rect" id="node1" title="Fetches bit from LED color." alt="" coords="5,31,132,56"/>
+<area shape="rect" id="node2" href="$class_led.html#ae32e373c361ebe37874ed8816fde5a85" title="Fetch output color." alt="" coords="184,5,283,31"/>
+<area shape="rect" id="node3" href="$class_led.html#a98a747c4c2ab2fe3434ec01fc78430fb" title="Get LED config." alt="" coords="180,55,287,80"/>
+</map>

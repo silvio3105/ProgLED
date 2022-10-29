@@ -59,30 +59,62 @@ This License shall be included in all functional textual files.
 #define PROG_LED_CONTINUE		2
 
 /**
- * @brief Use FPU for RGB2HSV and HSV2RGB conversion.
+ * @brief Use FPU for color format conversions.
+ * 
+ * \c 0 FPU will not be used for color conversions.
+ * \c 1 FPU will be used for color conversions.
+ */
+#define USE_FPU					0
+
+/**
+ * @brief Status bit in LED's config variable.
  * 
  */
-#define USE_FPU					1
-
-
 #define PROG_LED_STATUS_BIT		7
+
+/**
+ * @brief Status mask in LED's config variable.
+ * 
+ */
 #define PROG_LED_STATUS_MASK	0b10000000
 
+/**
+ * @brief Number of first bit for LED brightness in config variable. 
+ * 
+ */
 #define PROG_LED_BRGHT_BIT		0
+
+/**
+ * @brief Brightness mask in LED's config variable.
+ * 
+ */
 #define PROG_LED_BRGHT_MASK		0b01111111
 
 
 // ----- ENUMS
+/**
+ * @brief Enum for 24-bit color format.
+ * 
+ */
 typedef enum: uint8_t {
-	PROG_LED_RGB, /**< RGB 24-bit format*/
-	PROG_LED_GRB /**< GRB 24-bit format*/
+	PROG_LED_RGB, /**< RGB 24-bit format. */
+	PROG_LED_GRB /**< GRB 24-bit format. */
 } ProgLED_format_t;
 
+/**
+ * @brief Enum for LED line status.
+ * 
+ */
 typedef enum: uint8_t {
-	LED_IDLE,
-	LED_UPDATING
+	LINE_IDLE,
+	LINE_CLOCKING
 } ProgLED_status_t;
 
+/**
+ * @brief Enum for LED line type.
+ * 
+ * @note Not used for now.
+ */
 typedef enum: uint8_t {
 	LED_16MC, /**< 24-bit color format, 8-bit for each color. */
 	LED_8C, /**< 1-bit color format, 8 colors in total. */
@@ -186,7 +218,7 @@ class ProgLED : public Led {
 	 * 
 	 * @return No return value.
 	 */
-	inline void stop(void);
+	void stop(void);
 
 	/**
 	 * @brief Fetches bit from LED color.
@@ -243,7 +275,13 @@ class ProgLED : public Led {
 	 * @brief Pointer to external handler called to stop clocking out.
 	 * 
 	 */
-	extHandler stopHandler = nullptr;	
+	extHandler stopHandler = nullptr;
+
+	/**
+	 * @brief LED line status.
+	 * 
+	 */
+	ProgLED_status_t lineStatus = LINE_IDLE;
 
 
 	// Functions
@@ -323,7 +361,7 @@ class Led {
 	 * @{
 	 */
 	void rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1);
-	inline void rgb(uint32_t color, uint8_t on = 1);
+	void rgb(uint32_t color, uint8_t on = 1);
 	/**@}*/	
 
 	/**
@@ -341,21 +379,21 @@ class Led {
 	 * 
 	 * @return No return value.
 	 */
-	void on(void);
+	inline void on(void);
 
 	/**
 	 * @brief Turns off LED.
 	 * 
 	 * @return No return value.
 	 */
-	void off(void);
+	inline void off(void);
 
 	/**
 	 * @brief Toggles LED.
 	 * 
 	 * @return No return value.
 	 */
-	void toggle(void);
+	inline void toggle(void);
 
 	/**
 	 * @brief Fetch output color.
@@ -366,12 +404,12 @@ class Led {
 	inline uint8_t getColor(uint8_t idx); 
 
 	/**
-	 * @brief Get LED status.
+	 * @brief Get LED config.
 	 * 
 	 * @return \c 0 if LED is off.
 	 * @return \c 1 if LED is on.
 	 */
-	inline uint8_t getStatus(void);
+	inline uint8_t getConfig(void);
 
 	/**
 	 * @brief Calculates new RGB values using brightness.
@@ -379,6 +417,13 @@ class Led {
 	 * @return No return value.
 	 */
 	void adjustColor(void);
+
+	/**
+	 * @brief Reset LED to default values.
+	 * 
+	 * @return No return value.
+	 */
+	void reset(void);
 
 
 	// Protected stuff

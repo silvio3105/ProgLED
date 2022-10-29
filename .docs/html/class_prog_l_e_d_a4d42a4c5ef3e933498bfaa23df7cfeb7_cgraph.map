@@ -1,0 +1,4 @@
+<map id="ProgLED::ProgLED" name="ProgLED::ProgLED">
+<area shape="rect" id="node1" title="Object constructor for ProgLED." alt="" coords="5,5,140,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#af1bbe5fe25a5d09119176ed5d8279daf" title="Calls external hanlder to stop clocking out colors." alt="" coords="188,5,295,31"/>
+</map>
