@@ -1,3 +1,31 @@
+/**
+ * @file ProgLED.cpp
+ * @author silvio3105 (www.github.com/silvio3105)
+ * @brief Source file ProgLED library.
+ * @version v1.0
+ * @date 2022-10-29
+ * 
+ * @copyright Copyright (c) 2022, silvio3105
+ * 
+ */
+
+
+/*
+License
+
+Copyright (c) 2022, silvio3105 (www.github.com/silvio3105)
+
+Access and use of this Project and its contents are granted free of charge to any Person.
+The Person is allowed to copy, modify and use The Project and its contents only for non-commercial use.
+Commercial use of this Project and its contents is prohibited.
+Modifying this License and/or sublicensing is prohibited.
+
+THE PROJECT AND ITS CONTENT ARE PROVIDED "AS IS" WITH ALL FAULTS AND WITHOUT EXPRESSED OR IMPLIED WARRANTY.
+THE AUTHOR KEEPS ALL RIGHTS TO CHANGE OR REMOVE THE CONTENTS OF THIS PROJECT WITHOUT PREVIOUS NOTICE.
+THE AUTHOR IS NOT RESPONSIBLE FOR DAMAGE OF ANY KIND OR LIABILITY CAUSED BY USING THE CONTENTS OF THIS PROJECT.
+
+This License shall be included in all functional textual files.
+*/
 
 // ----- INCLUDE FILES
 #include			"ProgLED.h"
@@ -17,6 +45,9 @@
 
 #define ProgLED_MAX(_in1, _in2, _in3) \
 	(_in1 > _in2) ? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
+
+#define ProgLED_LOOP \
+	for (uint16_t i = 0; i < ledCount; i++)
 
 
 // ----- ProgLED FUNCTION DEFINITIONS
@@ -80,33 +111,28 @@ uint8_t ProgLED::init(void)
 
 void ProgLED::reset(void)
 {
-	for (uint16_t i = 0; i < ledCount; i++)
-	{
-
-
-
-	}
+	ProgLED_LOOP led[i].reset();
 }
 
 void ProgLED::toggle(void)
 {
-	for (uint16_t i = 0; i < ledCount; i++) led[i].toggle();
+	ProgLED_LOOP led[i].toggle();
 }
 
 void ProgLED::on(void)
 {
-	for (uint16_t i = 0; i < ledCount; i++) led[i].on();
+	ProgLED_LOOP led[i].on();
 }
 
 void ProgLED::off(void)
 {
-	for (uint16_t i = 0; i < ledCount; i++) led[i].off();
+	ProgLED_LOOP led[i].off();
 }
 
 void ProgLED::update(void)
 {
 	// Stop if line is already clocking
-	if (lineStatus == LINE_CLOCK) return;
+	if (lineStatus == LINE_CLOCKING) return;
 
 	uint8_t bit = 0;
 	ledIdx = ledCount - 1;
@@ -167,7 +193,7 @@ uint8_t ProgLED::fetchBit(uint8_t& bit)
 
 void ProgLED::brightness(uint8_t value)
 {
-	for (uint16_t i = 0; i < ledCount; i++) led[i].brightness(value);
+	ProgLED_LOOP led[i].brightness(value);
 }
 
 
@@ -404,6 +430,5 @@ void Led::reset(void)
 	// Set default config value
 	config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
 }
-
 
 // END WITH NEW LINE
