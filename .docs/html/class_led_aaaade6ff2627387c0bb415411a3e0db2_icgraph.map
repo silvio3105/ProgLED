@@ -1,0 +1,4 @@
+<map id="Led::off" name="Led::off">
+<area shape="rect" id="node1" title="Turns off LED." alt="" coords="151,5,217,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a319ae6675d2f245f851da31bad3a82c4" title="Turn off LED line." alt="" coords="5,5,103,31"/>
+</map>

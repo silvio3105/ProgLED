@@ -46,6 +46,10 @@ This License shall be included in all functional textual files.
 #define ProgLED_MAX(_in1, _in2, _in3) \
 	(_in1 > _in2) ? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
 
+/**
+ * @brief Code snippter for looping through LEDs
+ * 
+ */
 #define ProgLED_LOOP \
 	for (uint16_t i = 0; i < ledCount; i++)
 

@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "ProgLED", "index.html", [
-    [ "RGB LED Driver", "md__r_e_a_d_m_e.html", [
+    [ "RGB LED Library", "md__r_e_a_d_m_e.html", [
       [ "License", "md__r_e_a_d_m_e.html#autotoc_md1", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
@@ -53,7 +53,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_prog_l_e_d_8cpp_source.html"
+"_prog_l_e_d_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
