@@ -65,8 +65,11 @@ This License shall be included in all functional textual files.
 #define USE_FPU					1
 
 
-#define PROG_LED_STATUS_BIT		0
-#define PROG_LED_STATUS_MASK	0b00000001
+#define PROG_LED_STATUS_BIT		7
+#define PROG_LED_STATUS_MASK	0b10000000
+
+#define PROG_LED_BRGHT_BIT		0
+#define PROG_LED_BRGHT_MASK		0b01111111
 
 
 // ----- ENUMS
@@ -100,18 +103,20 @@ typedef void (*extHandler)(uint8_t bit);
  * @brief Class representing single LED line.
  * 
  */
-class ProgLED : protected Led {
+class ProgLED : public Led {
 	// Public stuff
 	public:
+	// Constructor and deconstructor
 	/**
 	 * @brief Object constructor for ProgLED.
 	 * 
 	 * @param start Pointer to external handler used for starting LEDs update.
 	 * @param stop Pointer to external handler used for stoping LEDs update.
-	 * @param format LED color format. See \ref ProgLED_format_t
+	 * @param ledsNum Number of LEDs at line.
+	 * @param ledFormat LED color format. See \ref ProgLED_format_t
 	 * @return No return value.
 	 */
-	ProgLED(extHandler start, extHandler stop, ProgLED_format_t config = PROG_LED_GRB);
+	ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_format_t ledFormat = PROG_LED_GRB);
 
 	/**
 	 * @brief Object deconstructor.
@@ -120,46 +125,57 @@ class ProgLED : protected Led {
 	 */
 	~ProgLED(void);
 
+
+	// Variables
+	/**
+	 * @brief Pointer to LEDs data in memory(heap).
+	 * 
+	 */
+	Led* led = nullptr;	
+
+
+	// Functions
 	/**
 	 * @brief ProgLED init function.
 	 * 
-	 * @param ledsNum Number of LEDs to control.
-	 * @param lineType Line color type. See \ref ProgLED_type_t
+	 * Checks external handlers and memory pointers.
+	 * Sets LEDs to default values.
+	 * 
 	 * @return \ref PROG_LED_OK if everything is OK.
-	 * @return \ref PROG_LED_NOK if memory for \c ledsNum LEDs could not be allocated.
+	 * @return \ref PROG_LED_NOK if memory for LEDs is not allocated.
 	 */
-	uint8_t init(uint8_t ledsNum, ProgLED_type_t lineType);
+	uint8_t init(void);
 
 	/**
-	 * @brief Resets LED to default color and config.
+	 * @brief Reset LEDs to default color and config.
 	 * 
 	 * @return No return value.
 	 */
 	void reset(void);
 
 	/**
-	 * @brief Toggles LED status between on and off.
+	 * @brief Toggle LEDs status between on and off for whole LED line.
 	 * 
 	 * @return No return value.
 	 */
-	inline void toggle(void);
+	void toggle(void);
 
 	/**
-	 * @brief Turns off LED.
+	 * @brief Turn off LED line.
 	 * 
 	 * @return No return value.
 	 */
-	inline void off(void);
+	void off(void);
 
 	/**
-	 * @brief Turns on LED.
+	 * @brief Turn on LED line.
 	 * 
 	 * @return No return value.
 	 */
-	inline void on(void);
+	void on(void);
 
 	/**
-	 * @brief Calls external handler to start clocking out colors from @ref leds memory in \ref format
+	 * @brief Calls external handler to start clocking out colors from @ref led memory in \ref format
 	 * 
 	 * @return No return value. 
 	 */
@@ -170,7 +186,7 @@ class ProgLED : protected Led {
 	 * 
 	 * @return No return value.
 	 */
-	void stop(void);
+	inline void stop(void);
 
 	/**
 	 * @brief Fetches bit from LED color.
@@ -182,43 +198,22 @@ class ProgLED : protected Led {
 	uint8_t fetchBit(uint8_t& bit);
 
 	/**
-	 * @brief Sets brightness for signle LED.
+	 * @brief Sets brightness for LED line.
 	 * 
-	 * @param ledIdx LED index, starting from 0.
 	 * @param value Brightness value between 0 and 100%.
 	 * @return No return value.
-	 * @{
 	 */
-	void brightness(uint8_t ledIdx, uint8_t value);
 	void brightness(uint8_t value);
-	/**@}*/
 
 
 	// Private stuff
 	private:
+	// Variables
 	/**
 	 * @brief Number of LEDs to control.
 	 * 
 	 */
-	uint8_t ledCount = 0;
-
-	/**
-	 * @brief Pointer to LEDs data in memory(heap).
-	 * 
-	 */
-	Led* leds = nullptr;
-
-	/**
-	 * @brief Index for RGB colors in \ref Led::color struct.
-	 * 
-	 */
-	uint8_t rIdx = 0, gIdx = 1, bIdx = 2;
-	
-	/**
-	 * @brief LED line color format. See \ref ProgLED_format_t
-	 * 
-	 */
-	ProgLED_format_t format = PROG_LED_GRB;
+	uint16_t ledCount = 0;
 
 	/**
 	 * @brief LED index during clocking out.
@@ -227,20 +222,31 @@ class ProgLED : protected Led {
 	uint8_t ledIdx = 0;
 
 	/**
-	 * @brief Bit index at \ref ledIdx during clocking out.
+	 * @brief LED data byte at @ref ledIdx during clocking out.
+	 * 
+	 */
+	uint8_t ledByte = 0;
+
+	/**
+	 * @brief Bit index at \ref ledByte during clocking out.
 	 * 
 	 */
 	uint8_t ledBit = 0;
 
 	/**
-	 * @brief Updates color in memory.
+	 * @brief Pointer to external handler called to start clocking out.
 	 * 
-	 * @param value 8-bit color value. 
-	 * @param idx Color index. \ref rIdx \ref gIdx \ref bIdx
-	 * @return No return value.
 	 */
-	inline void led(uint8_t value, uint8_t idx);
+	extHandler startHandler = nullptr;
 
+	/**
+	 * @brief Pointer to external handler called to stop clocking out.
+	 * 
+	 */
+	extHandler stopHandler = nullptr;	
+
+
+	// Functions
 	#if USE_FPU == 0
 	/**
 	 * @brief Converts RGB color format to HSV color format using fixed point math.
@@ -287,6 +293,14 @@ class ProgLED : protected Led {
 	 */
 	void hsv2RGB(float (&in)[3], uint8_t (&out)[3]);
 	#endif // USE_FPU
+
+
+	protected:
+	/**
+	 * @brief Index for RGB colors in \ref Led::color struct.
+	 * 
+	 */
+	uint8_t rIdx = 0, gIdx = 1, bIdx = 2;		
 };
 
 /**
@@ -294,23 +308,9 @@ class ProgLED : protected Led {
  * 
  */
 class Led {
-	// Protected stuff
-	protected:
-	/**
-	 * @brief 24-bit color data in RGB format.
-	 * 
-	 */
-	uint8_t color[3] = { 0x00, 0x00, 0x00 };
-
-	/**
-	 * @brief LED status variable.
-	 * 
-	 * First seven bits are reserved for LED brightness. Last bit(MSB) is reserved for toggling LED.
-	 */
-	uint8_t status = 0xFF;
-
-
-
+	// Public stuff
+	public:
+	// Functions
 	/**
 	 * @brief Sets new LED color.
 	 * 
@@ -323,8 +323,86 @@ class Led {
 	 * @{
 	 */
 	void rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1);
-	void rgb(uint32_t color, uint8_t on = 1);
+	inline void rgb(uint32_t color, uint8_t on = 1);
 	/**@}*/	
+
+	/**
+	 * @brief Sets new LED's brightness value.
+	 * 
+	 * @param value New brightness value, ranging from \c 0 to \c 100 
+	 * @return No return value.
+	 * 
+	 * @note \c value over 100 will be stored as 100.
+	 */
+	void brightness(uint8_t value);
+
+	/**
+	 * @brief Turns on LED.
+	 * 
+	 * @return No return value.
+	 */
+	void on(void);
+
+	/**
+	 * @brief Turns off LED.
+	 * 
+	 * @return No return value.
+	 */
+	void off(void);
+
+	/**
+	 * @brief Toggles LED.
+	 * 
+	 * @return No return value.
+	 */
+	void toggle(void);
+
+	/**
+	 * @brief Fetch output color.
+	 * 
+	 * @param idx Color index.
+	 * @return 8-bit color value from desired index. 
+	 */
+	inline uint8_t getColor(uint8_t idx); 
+
+	/**
+	 * @brief Get LED status.
+	 * 
+	 * @return \c 0 if LED is off.
+	 * @return \c 1 if LED is on.
+	 */
+	inline uint8_t getStatus(void);
+
+	/**
+	 * @brief Calculates new RGB values using brightness.
+	 * 
+	 * @return No return value.
+	 */
+	void adjustColor(void);
+
+
+	// Protected stuff
+	protected:
+	// Variables
+	/**
+	 * @brief 24-bit color data in RGB format.
+	 * 
+	 */
+	uint8_t color[3] = { 0x00, 0x00, 0x00 };
+
+	/**
+	 * @brief LED config variable.
+	 * 
+	 * First seven bits are reserved for LED brightness. Last bit(MSB) is reserved for toggling LED.
+	 * It is possible to turn off or on LED without changing LED's color.
+	 */
+	uint8_t config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
+
+	/**
+	 * @brief 24-bit color data calculated using brightness value.
+	 * 
+	 */
+	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 };
 };
 
 /** @}*/

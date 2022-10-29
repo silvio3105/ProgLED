@@ -18,7 +18,140 @@
 	(_in1 > _in2)? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
 
 
-// FUNCTION DEFINITIONS
+// ----- ProgLED FUNCTION DEFINITIONS
+ProgLED::ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_format_t ledFormat = PROG_LED_GRB)
+{
+	// Set external handlers
+	startHandler = start;
+	stopHandler = stop;
+
+	// Allocate memory for ledsNum LEDs if ledsNum > 0. Memory allocation is checked in init() method
+	if (ledsNum)
+	{
+		led = new Led[ledsNum];
+		ledCount = ledsNum;
+	}
+	else
+	{
+		ledCount = 0;
+		led = nullptr;
+	}
+
+	// Set LED line color format
+	if (ledFormat == PROG_LED_GRB)
+	{
+		rIdx = 1;
+		gIdx = 0;
+		bIdx = 2;
+	}
+	else if (ledFormat == PROG_LED_RGB)
+	{
+		rIdx = 0;
+		gIdx = 1;
+		bIdx = 2;
+	}
+}
+
+ProgLED::~ProgLED(void)
+{
+	// Set external handlers to nullptr
+	startHandler = stopHandler = nullptr;
+
+	// Remove LEDs from heap
+	delete [] led;
+	led = nullptr;
+}
+
+
+uint8_t ProgLED::init(void)
+{
+	// Return NOK status if handlers are nullptr ot memory for leds is not allocated
+	if (!startHandler || !stopHandler || !led) return PROG_LED_NOK;
+
+	// Set all LEDs to default values
+	reset();
+
+	return PROG_LED_OK;
+}
+
+void ProgLED::reset(void)
+{
+	for (uint16_t i = 0; i < ledCount; i++)
+	{
+		// Set LED color and status
+		led[i].rgb(0, 0, 0);
+
+		// Set brightness
+		led[i].brightness(100);
+	}
+}
+
+void ProgLED::toggle(void)
+{
+	for (uint16_t i = 0; i < ledCount; i++) led[i].toggle();
+}
+
+void ProgLED::on(void)
+{
+	for (uint16_t i = 0; i < ledCount; i++) led[i].on();
+}
+
+void ProgLED::off(void)
+{
+	for (uint16_t i = 0; i < ledCount; i++) led[i].off();
+}
+
+void ProgLED::update(void)
+{
+	uint8_t bit = 0;
+	ledIdx = ledCount - 1;
+	ledByte = ledBit = 0;
+
+	// Fetch first bit in LED data
+	fetchBit(bit);
+
+	// Call external handler
+	startHandler(bit);	
+}
+
+inline void ProgLED::stop(void)
+{
+	// Just pass zero
+	stopHandler(0);
+}
+
+uint8_t ProgLED::fetchBit(uint8_t& bit)
+{
+	uint8_t status = led[ledIdx].getStatus() & PROG_LED_STATUS_MASK;
+	bit = led[ledIdx].getColor(ledByte) & (1 << ledBit);
+
+	if (bit) bit = 1;
+
+	ledBit++;
+	if (ledBit == 8)
+	{
+		ledBit = 0;
+		ledByte++;
+
+		if (ledByte == 3)
+		{
+			if (!ledIdx) return PROG_LED_OK;
+			else
+			{
+				ledIdx--;
+				return PROG_LED_CONTINUE;
+			}
+		}
+	}
+
+	return PROG_LED_CONTINUE;
+}
+
+void ProgLED::brightness(uint8_t value)
+{
+	for (uint16_t i = 0; i < ledCount; i++) led[i].brightness(value);
+}
+
 
 #if USE_FPU == 0
 #warning "Functions rgb2HSV and hsv2RGB do not work without FPU!"
@@ -161,5 +294,57 @@ void ProgLED::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 	}
 }
 #endif // USE_FPU
+
+
+// ----- Led FUNCTION DEFINITIONS
+void Led::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
+{
+	// Write new RGB color values
+	color[ProgLED::rIdx] = r;
+	color[ProgLED::gIdx] = g;
+	color[ProgLED::bIdx] = b;
+
+	// Make sure maximum value of on param is 1
+	if (on) on = 1;
+
+	// Write new status bit keeping old brightness bits
+	config |= (on << PROG_LED_STATUS_BIT);
+
+	// Calculate new RGB values
+	adjustColor();
+}
+
+inline void Led::rgb(uint32_t color, uint8_t on = 1)
+{
+	// Extract RGB bytes from 32-bit color value
+	rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, on);
+}
+
+void Led::brightness(uint8_t value)
+{
+	// Make sure 100 is maximum value
+	if (value > 100) value = 100;
+
+	// If value is not changed, abort
+	if (value == (config & PROG_LED_STATUS_MASK)) return;
+
+	// Write new brightness value keeping old status bit
+	config |= value;
+
+	// Calculate new RGB values
+	adjustColor();
+}
+
+void Led::adjustColor(void)
+{
+	// Extract brightness bits
+	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
+
+	// Scale RGB values using brightness
+	outputColor[0] = color[0] * (brightness / 100);
+	outputColor[1] = color[1] * (brightness / 100);
+	outputColor[2] = color[2] * (brightness / 100);
+}
+
 
 // END WITH NEW LINE
