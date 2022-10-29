@@ -3,7 +3,7 @@
 
 This is frameworkless library for controlling programmable RGB LEDs. Library does not depend on framework (eg., Arduino or STM HAL). External handlers for controlling LEDs have to be provided during object construction. Library is written in C++ and it supports multiple LED lines. One LED line can control up to 2^16 LEDs(**not HW tested**).
 
-Library documentation is available at .docs/html/index.html Example applications are available at `examples` folder. All examples are made with STM HAL framework.
+Library documentation is available at `.docs/html/index.html` Example applications are available at `examples` folder. All examples are made with STM HAL framework.
 
 
 # License
