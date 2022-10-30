@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['progled_5fformat_5ft_0',['ProgLED_format_t',['../group___prog_l_e_d.html#ga9f84998d724f9e7b9bc6ce07fe740f9e',1,'ProgLED.h']]]
+  ['ledidx_5ft_0',['ledIdx_t',['../group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea',1,'ProgLED.h']]]
 ];

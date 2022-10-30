@@ -24,7 +24,7 @@ THE PROJECT AND ITS CONTENT ARE PROVIDED "AS IS" WITH ALL FAULTS AND WITHOUT EXP
 THE AUTHOR KEEPS ALL RIGHTS TO CHANGE OR REMOVE THE CONTENTS OF THIS PROJECT WITHOUT PREVIOUS NOTICE.
 THE AUTHOR IS NOT RESPONSIBLE FOR DAMAGE OF ANY KIND OR LIABILITY CAUSED BY USING THE CONTENTS OF THIS PROJECT.
 
-This License shall be included in all functional textual files.
+This License shall be included in all methodal textual files.
 */
 
 #ifndef _PROGLED_H_
@@ -35,11 +35,12 @@ This License shall be included in all functional textual files.
 
 /** \addtogroup ProgLED
  * 
- * Frameworkelss driver for programmable RGB LEDs. 
+ * Frameworkelss library for programmable RGB LEDs. 
  * @{
 */
 
 // ----- DEFINES
+// RETURN CODES
 /**
  * @brief Return code for not OK status.
  * 
@@ -58,6 +59,7 @@ This License shall be included in all functional textual files.
  */
 #define PROG_LED_CONTINUE		2
 
+// CONFIGURATIONS
 /**
  * @brief Use FPU for color format conversions.
  * 
@@ -66,6 +68,7 @@ This License shall be included in all functional textual files.
  */
 #define USE_FPU					0
 
+// BITFIELDS
 /**
  * @brief Status bit in LED's config variable.
  * 
@@ -90,35 +93,32 @@ This License shall be included in all functional textual files.
  */
 #define PROG_LED_BRGHT_MASK		0b01111111
 
+// COLORS
+#define COL_WHITE				0xFF, 0xFF, 0xFF /**< @brief Snippet for white color. */
+#define COL_BLACK				0x00, 0x00, 0x00 /**< @brief Snippet for black. */
+#define COL_RED					0xFF, 0x00, 0x00 /**< @brief Snippet for red color. */
+#define COL_GREEN				0x00, 0xFF, 0x00 /**< @brief Snippet for green color. */
+#define COL_BLUE				0x00, 0x00, 0xFF /**< @brief Snippet for blue color. */
+
 
 // ----- ENUMS
 /**
  * @brief Enum for 24-bit color format.
  * 
  */
-typedef enum: uint8_t {
-	PROG_LED_RGB, /**< RGB 24-bit format. */
-	PROG_LED_GRB /**< GRB 24-bit format. */
-} ProgLED_format_t;
+typedef enum ProgLED_format_t: uint8_t {
+	PROG_LED_RGB,  // RGB 24-bit format
+	PROG_LED_GRB // GRB 24-bit format
+};
 
 /**
  * @brief Enum for LED line status.
  * 
  */
-typedef enum: uint8_t {
+typedef enum ProgLED_status_t: uint8_t {
 	LINE_IDLE,
 	LINE_CLOCKING
-} ProgLED_status_t;
-
-/**
- * @brief Enum for LED line type.
- * 
- * @note Not used for now.
- */
-typedef enum: uint8_t {
-	LED_16MC, /**< 24-bit color format, 8-bit for each color. */
-	LED_8C, /**< 1-bit color format, 8 colors in total. */
-} ProgLED_type_t;
+};
 
 
 // ----- TYPEDEFS
@@ -130,25 +130,32 @@ typedef enum: uint8_t {
  */
 typedef void (*extHandler)(uint8_t bit);
 
+/**
+ * @brief Type definition for LED index.
+ * 
+ */
+typedef uint16_t ledIdx_t;
+
+
 // ----- CLASSES
+template <uint16_t ledNum>
 /**
  * @brief Class representing single LED line.
  * 
  */
 class ProgLED : public Led {
-	// Public stuff
+	// PUBLIC STUFF
 	public:
-	// Constructor and deconstructor
+	// CONSTUCTORS AND DECONSTRUCTORS DECLARATIONS
 	/**
 	 * @brief Object constructor for ProgLED.
 	 * 
 	 * @param start Pointer to external handler used for starting LEDs update.
 	 * @param stop Pointer to external handler used for stoping LEDs update.
-	 * @param ledsNum Number of LEDs at line.
 	 * @param ledFormat LED color format. See \ref ProgLED_format_t
 	 * @return No return value.
 	 */
-	ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_format_t ledFormat = PROG_LED_GRB);
+	ProgLED(extHandler start, extHandler stop, ProgLED_format_t ledFormat = PROG_LED_GRB);
 
 	/**
 	 * @brief Object deconstructor.
@@ -158,63 +165,88 @@ class ProgLED : public Led {
 	~ProgLED(void);
 
 
-	// Variables
+	// VARIABLES
 	/**
-	 * @brief Pointer to LEDs data in memory(heap).
+	 * @brief LED array.
 	 * 
 	 */
-	Led* led = nullptr;	
+	Led led[ledNum];	
 
 
-	// Functions
+	// METHOD DECLARATIONS
 	/**
-	 * @brief ProgLED init function.
+	 * @brief ProgLED init method.
 	 * 
-	 * Checks external handlers and memory pointers.
+	 * Checks external handlers pointers.
 	 * Sets LEDs to default values.
 	 * 
 	 * @return \ref PROG_LED_OK if everything is OK.
-	 * @return \ref PROG_LED_NOK if memory for LEDs is not allocated.
+	 * @return \ref PROG_LED_NOK if external handlers are \c nullptr.
 	 */
 	uint8_t init(void);
 
 	/**
-	 * @brief Reset LEDs to default color and config.
+	 * @brief Sets color for whole LED line.
+	 * 
+	 * @param r New 8-bit red color value.
+	 * @param g New 8-bit green color value.
+	 * @param b New 8-bit blue color value.
+	 * @param color New 24-bit color in RGB format.
+	 * @param on New LED status. Set to \c 0 if to turn off LED. This parameter is optional.
+	 * @return No return value.
+	 * @{
+	 */
+	void rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1);
+	void rgb(uint32_t color, uint8_t on = 1);
+	/** @}*/
+
+	/**
+	 * @brief Sets new brightness for whole LED line.
+	 * 
+	 * @param value New brightness value, ranging from \c 0 to \c 100 
+	 * @return No return value.
+	 * 
+	 * @note \c value over 100 will be stored as 100.
+	 */
+	void brightness(uint8_t value);
+
+	/**
+	 * @brief Resets LED line to default color and config.
 	 * 
 	 * @return No return value.
 	 */
 	void reset(void);
 
 	/**
-	 * @brief Toggle LEDs status between on and off for whole LED line.
+	 * @brief Toggles LEDs status between on and off for whole LED line.
 	 * 
 	 * @return No return value.
 	 */
 	void toggle(void);
 
 	/**
-	 * @brief Turn off LED line.
-	 * 
-	 * @return No return value.
-	 */
-	void off(void);
-
-	/**
-	 * @brief Turn on LED line.
+	 * @brief Turns on LED line.
 	 * 
 	 * @return No return value.
 	 */
 	void on(void);
 
 	/**
-	 * @brief Calls external handler to start clocking out colors from @ref led memory in \ref format
+	 * @brief Turns off LED line.
+	 * 
+	 * @return No return value.
+	 */
+	void off(void);
+
+	/**
+	 * @brief Calls external handler to start clocking out LED data.
 	 * 
 	 * @return No return value. 
 	 */
 	void update(void);
 
 	/**
-	 * @brief Calls external hanlder to stop clocking out colors.
+	 * @brief Calls external hanlder to stop clocking out LED data.
 	 * 
 	 * @return No return value.
 	 */
@@ -224,43 +256,56 @@ class ProgLED : public Led {
 	 * @brief Fetches bit from LED color.
 	 * 
 	 * @param bit Reference where next bit will be stored. 
-	 * @return PROG_LED_CONTINUE if more bits exists.
-	 * @return PROG_LED_OK if last bit is fetched.
+	 * @return \ref PROG_LED_CONTINUE if more bits exists.
+	 * @return \ref PROG_LED_OK if last bit is fetched.
 	 */
 	uint8_t fetchBit(uint8_t& bit);
 
 	/**
-	 * @brief Sets brightness for LED line.
+	 * @brief Method for fetching index for red color.
 	 * 
-	 * @param value Brightness value between 0 and 100%.
-	 * @return No return value.
+	 * @return Index for red color at \ref Led::color
 	 */
-	void brightness(uint8_t value);
+	inline uint8_t getRIdx(void) const;
+
+	/**
+	 * @brief Method for fetching index for green color.
+	 * 
+	 * @return Index for green color at \ref Led::color
+	 */
+	inline uint8_t getGIdx(void) const;
+
+	/**
+	 * @brief Method for fetching index for blue color.
+	 * 
+	 * @return Index for blue color at \ref Led::color
+	 */
+	inline uint8_t getBIdx(void) const;		
 
 
-	// Private stuff
+	// PRIVATE STUFF
 	private:
-	// Variables
+	// VARIABLES
 	/**
 	 * @brief Number of LEDs to control.
 	 * 
 	 */
-	uint16_t ledCount = 0;
+	ledIdx_t ledCount = ledNum;
 
 	/**
-	 * @brief LED index during clocking out.
+	 * @brief LED selector during clocking out.
 	 * 
 	 */
 	uint8_t ledIdx = 0;
 
 	/**
-	 * @brief LED data byte at @ref ledIdx during clocking out.
+	 * @brief LED data byte selector at @ref ledIdx during clocking out.
 	 * 
 	 */
 	uint8_t ledByte = 0;
 
 	/**
-	 * @brief Bit index at \ref ledByte during clocking out.
+	 * @brief Bit selector at \ref ledByte during clocking out.
 	 * 
 	 */
 	uint8_t ledBit = 0;
@@ -283,8 +328,14 @@ class ProgLED : public Led {
 	 */
 	ProgLED_status_t lineStatus = LINE_IDLE;
 
+	/**
+	 * @brief Index for RGB colors in \ref Led::color struct.
+	 * 
+	 */
+	uint8_t rIdx = 0, gIdx = 1, bIdx = 2;		
 
-	// Functions
+
+	// METHOD DECLARATIONS
 	#if USE_FPU == 0
 	/**
 	 * @brief Converts RGB color format to HSV color format using fixed point math.
@@ -293,7 +344,7 @@ class ProgLED : public Led {
 	 * @param out Reference to HSV output array.
 	 * @return No return value. 
 	 * 
-	 * @warning Function does not work without FPU.
+	 * @warning Method does not work without FPU.
 	 */
 	void rgb2HSV(uint8_t (&in)[3], int32_t (&out)[3]);
 
@@ -304,7 +355,7 @@ class ProgLED : public Led {
 	 * @param out Reference to RGB output array.
 	 * @return No return value.
 	 * 
-	 * @warning Function does not work without FPU.
+	 * @warning Method does not work without FPU.
 	 */
 	void hsv2RGB(int32_t (&in)[3], uint8_t (&out)[3]);	
 	#else
@@ -315,7 +366,7 @@ class ProgLED : public Led {
 	 * @param out Reference to HSV output array.
 	 * @return No return value. 
 	 * 
-	 * @note Function requires FPU for best performance during calculations.
+	 * @note Method requires FPU for best performance during calculations.
 	 */
 	void rgb2HSV(uint8_t (&in)[3], float (&out)[3]);	
 
@@ -326,29 +377,22 @@ class ProgLED : public Led {
 	 * @param out Reference to RGB output array.
 	 * @return No return value.
 	 * 
-	 * @note Function requires FPU for best performance during calculations.
-	 * @warning Function does not convert right HSV(0 0 100)/RGB(255 255 255) back to RGB values.
+	 * @note Method requires FPU for best performance during calculations.
+	 * @warning Method does not convert right HSV(0 0 100)/RGB(255 255 255) back to RGB values.
 	 */
 	void hsv2RGB(float (&in)[3], uint8_t (&out)[3]);
-	#endif // USE_FPU
-
-
-	protected:
-	/**
-	 * @brief Index for RGB colors in \ref Led::color struct.
-	 * 
-	 */
-	uint8_t rIdx = 0, gIdx = 1, bIdx = 2;		
+	#endif // USE_FPU	
 };
 
+template <typename T>
 /**
- * @brief Struct representing single LED chip.
+ * @brief Class representing single LED chip.
  * 
  */
 class Led {
-	// Public stuff
+	// PUBLIC STUFF
 	public:
-	// Functions
+	// METHOD DECLARATIONS
 	/**
 	 * @brief Sets new LED color.
 	 * 
@@ -365,14 +409,34 @@ class Led {
 	/**@}*/	
 
 	/**
-	 * @brief Sets new LED's brightness value.
+	 * @brief Fetch output color.
 	 * 
-	 * @param value New brightness value, ranging from \c 0 to \c 100 
-	 * @return No return value.
-	 * 
-	 * @note \c value over 100 will be stored as 100.
+	 * @param idx Color index.
+	 * @return 8-bit color value from desired index. 
 	 */
-	void brightness(uint8_t value);
+	inline uint8_t getColor(uint8_t idx) const; 
+
+	/**
+	 * @brief Get LED config.
+	 * 
+	 * @return \c 0 if LED is off.
+	 * @return \c 1 if LED is on.
+	 */
+	inline uint8_t getConfig(void) const;
+
+	/**
+	 * @brief Reset LED to default values.
+	 * 
+	 * @return No return value.
+	 */
+	void reset(void);
+
+	/**
+	 * @brief Toggles LED.
+	 * 
+	 * @return No return value.
+	 */
+	inline void toggle(void);
 
 	/**
 	 * @brief Turns on LED.
@@ -386,49 +450,22 @@ class Led {
 	 * 
 	 * @return No return value.
 	 */
-	inline void off(void);
+	inline void off(void);	
 
 	/**
-	 * @brief Toggles LED.
+	 * @brief Sets new LED's brightness value.
 	 * 
+	 * @param value New brightness value, ranging from \c 0 to \c 100 
 	 * @return No return value.
-	 */
-	inline void toggle(void);
-
-	/**
-	 * @brief Fetch output color.
 	 * 
-	 * @param idx Color index.
-	 * @return 8-bit color value from desired index. 
+	 * @note \c value over 100 will be stored as 100.
 	 */
-	inline uint8_t getColor(uint8_t idx); 
-
-	/**
-	 * @brief Get LED config.
-	 * 
-	 * @return \c 0 if LED is off.
-	 * @return \c 1 if LED is on.
-	 */
-	inline uint8_t getConfig(void);
-
-	/**
-	 * @brief Calculates new RGB values using brightness.
-	 * 
-	 * @return No return value.
-	 */
-	void adjustColor(void);
-
-	/**
-	 * @brief Reset LED to default values.
-	 * 
-	 * @return No return value.
-	 */
-	void reset(void);
+	void brightness(uint8_t value);
 
 
-	// Protected stuff
-	protected:
-	// Variables
+	// PRIVATE STUFF
+	private:
+	// VARIABLES
 	/**
 	 * @brief 24-bit color data in RGB format.
 	 * 
@@ -448,6 +485,15 @@ class Led {
 	 * 
 	 */
 	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 };
+
+
+	// METHOD DECLARATIONS
+	/**
+	 * @brief Calculates new RGB values using brightness.
+	 * 
+	 * @return No return value.
+	 */
+	void adjustColor(void);	
 };
 
 /** @}*/

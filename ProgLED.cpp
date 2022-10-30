@@ -47,15 +47,16 @@ This License shall be included in all functional textual files.
 	(_in1 > _in2) ? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
 
 /**
- * @brief Code snippter for looping through LEDs
+ * @brief Code snippet for looping through LEDs
  * 
  */
 #define ProgLED_LOOP \
-	for (uint16_t i = 0; i < ledCount; i++)
+	for (ledIdx_t i = 0; i < ledCount; i++)
 
 
-// ----- ProgLED FUNCTION DEFINITIONS
-ProgLED::ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_format_t ledFormat = PROG_LED_GRB)
+// ----- ProgLED METHODS DEFINITIONS
+template<ledIdx_t ledNum>
+ProgLED<ledNum>::ProgLED(extHandler start, extHandler stop, ProgLED_format_t ledFormat = PROG_LED_GRB)
 {
 	// Set external handlers
 	startHandler = start;
@@ -64,48 +65,40 @@ ProgLED::ProgLED(extHandler start, extHandler stop, uint16_t ledsNum, ProgLED_fo
 	// Set line status
 	lineStatus = LINE_IDLE;
 
-	// Allocate memory for ledsNum LEDs if ledsNum > 0. Memory allocation is checked in init() method
-	if (ledsNum)
-	{
-		led = new Led[ledsNum];
-		ledCount = ledsNum;
-	}
-	else
-	{
-		ledCount = 0;
-		led = nullptr;
-	}
-
 	// Set LED line color format
-	if (ledFormat == PROG_LED_GRB)
+	switch(ledFormat)
 	{
-		rIdx = 1;
-		gIdx = 0;
-		bIdx = 2;
-	}
-	else if (ledFormat == PROG_LED_RGB)
-	{
-		rIdx = 0;
-		gIdx = 1;
-		bIdx = 2;
+		case PROG_LED_GRB:
+		{
+			rIdx = 1;
+			gIdx = 0;
+			bIdx = 2;
+			break;
+		}
+
+		case PROG_LED_RGB:
+		default:
+		{
+			rIdx = 0;
+			gIdx = 1;
+			bIdx = 2;		
+			break;
+		}
 	}
 }
 
-ProgLED::~ProgLED(void)
+template<ledIdx_t ledNum>
+ProgLED<ledNum>::~ProgLED(void)
 {
 	// Set external handlers to nullptr
 	startHandler = stopHandler = nullptr;
-
-	// Remove LEDs from heap
-	delete [] led;
-	led = nullptr;
 }
 
-
-uint8_t ProgLED::init(void)
+template<ledIdx_t ledNum>
+uint8_t ProgLED<ledNum>::init(void)
 {
-	// Return NOK status if handlers are nullptr or memory for LEDs is not allocated
-	if (!startHandler || !stopHandler || !led) return PROG_LED_NOK;
+	// Return NOK status if handlers are nullptr
+	if (!startHandler || !stopHandler) return PROG_LED_NOK;
 
 	// Set all LEDs to default values
 	reset();
@@ -113,29 +106,58 @@ uint8_t ProgLED::init(void)
 	return PROG_LED_OK;
 }
 
-void ProgLED::reset(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
+{
+	ProgLED_LOOP led[i].rgb(r, g, b, on);
+}
+
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::rgb(uint32_t color, uint8_t on = 1)
+{
+	rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, on);
+}
+
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::brightness(uint8_t value)
+{
+	ProgLED_LOOP led[i].brightness(value);
+}
+
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::reset(void)
 {
 	ProgLED_LOOP led[i].reset();
 }
 
-void ProgLED::toggle(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::toggle(void)
 {
 	ProgLED_LOOP led[i].toggle();
 }
 
-void ProgLED::on(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::on(void)
 {
 	ProgLED_LOOP led[i].on();
 }
 
-void ProgLED::off(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::off(void)
 {
 	ProgLED_LOOP led[i].off();
 }
 
-void ProgLED::update(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::brightness(uint8_t value)
 {
-	// Stop if line is already clocking
+	ProgLED_LOOP led[i].brightness(value);
+}
+
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::update(void)
+{
+	// Exit if line is already clocking
 	if (lineStatus == LINE_CLOCKING) return;
 
 	uint8_t bit = 0;
@@ -152,58 +174,83 @@ void ProgLED::update(void)
 	startHandler(bit);	
 }
 
-void ProgLED::stop(void)
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::stop(void)
 {
-	// Stop if line is at idle state
+	// Exit if line is at idle state
 	if (lineStatus == LINE_IDLE) return;
 
 	// Set new LED line status
 	lineStatus = LINE_IDLE;
 
-	// Just pass zero
+	// Call external handler, parameter is unused
 	stopHandler(0);
 }
 
-uint8_t ProgLED::fetchBit(uint8_t& bit)
+template<ledIdx_t ledNum>
+uint8_t ProgLED<ledNum>::fetchBit(uint8_t& bit)
 {
+	// If end is reached
+	if (!ledIdx && ledByte == 3)
+	{
+		lineStatus = LINE_IDLE;
+		return PROG_LED_OK;
+	}
+
 	uint8_t status = led[ledIdx].getConfig() & PROG_LED_STATUS_MASK;
 	bit = led[ledIdx].getColor(ledByte) & (1 << ledBit);
 
+	// If bit is not 0, set it to 1
 	if (bit) bit = 1;
 
+	// Move bit selector
 	ledBit++;
+
+	// If end of byte is reached
 	if (ledBit == 8)
 	{
+		// Reset bit selector to 0
 		ledBit = 0;
+
+		// Move selector to new byte
 		ledByte++;
 
+		// If end of LED is reached
 		if (ledByte == 3)
 		{
-			if (!ledIdx)
-			{
-				lineStatus = LINE_IDLE;
-				return PROG_LED_OK;
-			}
-			else
-			{
-				ledIdx--;
-				return PROG_LED_CONTINUE;
-			}
+			// Move selector to next LED
+			ledByte = 0;
+			ledIdx--;
 		}
 	}
 
 	return PROG_LED_CONTINUE;
 }
 
-void ProgLED::brightness(uint8_t value)
+template<ledIdx_t ledNum>
+inline uint8_t ProgLED<ledNum>::getRIdx(void) const
 {
-	ProgLED_LOOP led[i].brightness(value);
+	return rIdx;
+}
+
+template<ledIdx_t ledNum>
+inline uint8_t ProgLED<ledNum>::getGIdx(void) const
+{
+	return gIdx;
+}
+
+template<ledIdx_t ledNum>
+inline uint8_t ProgLED<ledNum>::getBIdx(void) const
+{
+	return bIdx;
 }
 
 
+// ----- PRIVATE ProgLED METHODS DEFINITIONS
 #if USE_FPU == 0
-#warning "Functions rgb2HSV and hsv2RGB do not work without FPU!"
-void ProgLED::rgb2HSV(uint8_t (&in)[3], int32_t (&out)[3])
+#warning "Methods rgb2HSV and hsv2RGB do not work without FPU!"
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::rgb2HSV(uint8_t (&in)[3], int32_t (&out)[3])
 {
 /*	uint32_t min = 0, max = 0, delta = 0;
 	uint16_t rgb[3];
@@ -232,12 +279,14 @@ void ProgLED::rgb2HSV(uint8_t (&in)[3], int32_t (&out)[3])
 	out[2] = max / 100;	*/
 }
 
-void ProgLED::hsv2RGB(int32_t (&in)[3], uint8_t (&out)[3])
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::hsv2RGB(int32_t (&in)[3], uint8_t (&out)[3])
 {
 
 }
 #else
-void ProgLED::rgb2HSV(uint8_t (&in)[3], float (&out)[3])
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::rgb2HSV(uint8_t (&in)[3], float (&out)[3])
 {
  	float rgb[3];
 	float min, max, delta;
@@ -261,7 +310,8 @@ void ProgLED::rgb2HSV(uint8_t (&in)[3], float (&out)[3])
 	out[2] = max * 100.00;
 }
 
-void ProgLED::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
+template<ledIdx_t ledNum>
+void ProgLED<ledNum>::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 {
  	float temp[3];  
 	temp[0] = in[0];
@@ -344,13 +394,14 @@ void ProgLED::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 #endif // USE_FPU
 
 
-// ----- Led FUNCTION DEFINITIONS
-void Led::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
+// ----- Led METHODS DEFINITIONS
+template <typename T>
+void Led<T>::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 {
 	// Write new RGB color values
-	color[ProgLED::rIdx] = r;
-	color[ProgLED::gIdx] = g;
-	color[ProgLED::bIdx] = b;
+	color[this->getRIdx()] = r;
+	color[this->getGIdx()] = g;
+	color[this->getBIdx()] = b;
 
 	// Make sure maximum value of on param is 1
 	if (on) on = 1;
@@ -362,16 +413,18 @@ void Led::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 	adjustColor();
 }
 
-void Led::rgb(uint32_t color, uint8_t on = 1)
+template <typename T>
+void Led<T>::rgb(uint32_t color, uint8_t on = 1)
 {
-	// Extract RGB bytes from 32-bit color value
+	// Extract RGB bytes from 32-bit color value and pass params to main RGB method
 	rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, on);
 }
 
-void Led::brightness(uint8_t value)
+template <typename T>
+void Led<T>::brightness(uint8_t value)
 {
 	// Make sure 100 is maximum value
-	if (value > 100) value = 100;
+	value &= 0b01111111;
 
 	// If value is not changed, abort
 	if (value == (config & PROG_LED_STATUS_MASK)) return;
@@ -383,32 +436,38 @@ void Led::brightness(uint8_t value)
 	adjustColor();
 }
 
-inline void Led::on(void)
+template <typename T>
+inline void Led<T>::on(void)
 {
 	config |= PROG_LED_STATUS_MASK;
 }
 
-inline void Led::off(void)
+template <typename T>
+inline void Led<T>::off(void)
 {
 	config &= PROG_LED_BRGHT_MASK;
 }
 
-inline void Led::toggle(void)
+template <typename T>
+inline void Led<T>::toggle(void)
 {
 	config ^= 1 << PROG_LED_STATUS_BIT;
 }
 
-inline uint8_t Led::getColor(uint8_t idx)
+template <typename T>
+inline uint8_t Led<T>::getColor(uint8_t idx) const
 {
 	return outputColor[idx];
 }
 
-inline uint8_t Led::getConfig(void)
+template <typename T>
+inline uint8_t Led<T>::getConfig(void) const
 {
 	return config;
 }
 
-void Led::adjustColor(void)
+template <typename T>
+void Led<T>::adjustColor(void)
 {
 	// Extract brightness bits
 	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
@@ -419,7 +478,8 @@ void Led::adjustColor(void)
 	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
 }
 
-void Led::reset(void)
+template <typename T>
+void Led<T>::reset(void)
 {
 	// Reset color values to black
 	color[0] = 0x00;

@@ -95,18 +95,18 @@ $(document).ready(function(){initNavTree('group___prog_l_e_d.html',''); initResi
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">ProgLED</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html">ProgLED</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html">ProgLED&lt; ledNum &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing single LED line.  <a href="class_prog_l_e_d.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_led.html">Led</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing single LED chip.  <a href="class_led.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_led.html">Led&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing single LED chip.  <a href="class_led.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -135,30 +135,137 @@ Macros</h2></td></tr>
 <tr class="memitem:gacf3b8b28a5895781b3cec4901d58530c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#gacf3b8b28a5895781b3cec4901d58530c">PROG_LED_BRGHT_MASK</a>&#160;&#160;&#160;0b01111111</td></tr>
 <tr class="memdesc:gacf3b8b28a5895781b3cec4901d58530c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brightness mask in LED's config variable.  <a href="group___prog_l_e_d.html#gacf3b8b28a5895781b3cec4901d58530c">More...</a><br /></td></tr>
 <tr class="separator:gacf3b8b28a5895781b3cec4901d58530c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17784369af03afc179ecf59c670490c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga17784369af03afc179ecf59c670490c7">COL_WHITE</a>&#160;&#160;&#160;0xFF, 0xFF, 0xFF</td></tr>
+<tr class="memdesc:ga17784369af03afc179ecf59c670490c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for white color.  <a href="group___prog_l_e_d.html#ga17784369af03afc179ecf59c670490c7">More...</a><br /></td></tr>
+<tr class="separator:ga17784369af03afc179ecf59c670490c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4f2ca33b957169e3d57bf57b4b886a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#gac4f2ca33b957169e3d57bf57b4b886a7">COL_BLACK</a>&#160;&#160;&#160;0x00, 0x00, 0x00</td></tr>
+<tr class="memdesc:gac4f2ca33b957169e3d57bf57b4b886a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for black.  <a href="group___prog_l_e_d.html#gac4f2ca33b957169e3d57bf57b4b886a7">More...</a><br /></td></tr>
+<tr class="separator:gac4f2ca33b957169e3d57bf57b4b886a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87d30d2657caae38d671f052cb9cc0e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga87d30d2657caae38d671f052cb9cc0e7">COL_RED</a>&#160;&#160;&#160;0xFF, 0x00, 0x00</td></tr>
+<tr class="memdesc:ga87d30d2657caae38d671f052cb9cc0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for red color.  <a href="group___prog_l_e_d.html#ga87d30d2657caae38d671f052cb9cc0e7">More...</a><br /></td></tr>
+<tr class="separator:ga87d30d2657caae38d671f052cb9cc0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a7147d201533f7eb71cba311f5d4881"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga6a7147d201533f7eb71cba311f5d4881">COL_GREEN</a>&#160;&#160;&#160;0x00, 0xFF, 0x00</td></tr>
+<tr class="memdesc:ga6a7147d201533f7eb71cba311f5d4881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for green color.  <a href="group___prog_l_e_d.html#ga6a7147d201533f7eb71cba311f5d4881">More...</a><br /></td></tr>
+<tr class="separator:ga6a7147d201533f7eb71cba311f5d4881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab43d256cd2afa78a9fc11d169155c967"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#gab43d256cd2afa78a9fc11d169155c967">COL_BLUE</a>&#160;&#160;&#160;0x00, 0x00, 0xFF</td></tr>
+<tr class="memdesc:gab43d256cd2afa78a9fc11d169155c967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snippet for blue color.  <a href="group___prog_l_e_d.html#gab43d256cd2afa78a9fc11d169155c967">More...</a><br /></td></tr>
+<tr class="separator:gab43d256cd2afa78a9fc11d169155c967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga9f84998d724f9e7b9bc6ce07fe740f9e"><td class="memItemLeft" align="right" valign="top">typedef PROG_LED_GRB&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga9f84998d724f9e7b9bc6ce07fe740f9e">ProgLED_format_t</a></td></tr>
-<tr class="separator:ga9f84998d724f9e7b9bc6ce07fe740f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga043fcec33c09fcaf426b911995741382"><td class="memItemLeft" align="right" valign="top">typedef LINE_CLOCKING&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga043fcec33c09fcaf426b911995741382">ProgLED_status_t</a></td></tr>
-<tr class="separator:ga043fcec33c09fcaf426b911995741382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7ed7841dadea5506552c47935b28adf"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a>) (uint8_t bit)</td></tr>
 <tr class="memdesc:gaf7ed7841dadea5506552c47935b28adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">External hanlder typedef for handling data clocking.  <a href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">More...</a><br /></td></tr>
 <tr class="separator:gaf7ed7841dadea5506552c47935b28adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga811cc06bc0e3e55a4c154c596c0306ea"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a></td></tr>
+<tr class="memdesc:ga811cc06bc0e3e55a4c154c596c0306ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for LED index.  <a href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">More...</a><br /></td></tr>
+<tr class="separator:ga811cc06bc0e3e55a4c154c596c0306ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga33e07dd7db25f3cc7f69b2828a735eb3"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga33e07dd7db25f3cc7f69b2828a735eb3">enum</a></td></tr>
-<tr class="memdesc:ga33e07dd7db25f3cc7f69b2828a735eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for 24-bit color format.  <a href="group___prog_l_e_d.html#ga33e07dd7db25f3cc7f69b2828a735eb3">More...</a><br /></td></tr>
-<tr class="separator:ga33e07dd7db25f3cc7f69b2828a735eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaacda4a73831fe658ce82f18baa2e331e"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#gaacda4a73831fe658ce82f18baa2e331e">LED_8C</a></td></tr>
-<tr class="separator:gaacda4a73831fe658ce82f18baa2e331e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f8c28be46a2af000521a634fbcb00d9"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga6f8c28be46a2af000521a634fbcb00d9">ProgLED_type_t</a></td></tr>
-<tr class="separator:ga6f8c28be46a2af000521a634fbcb00d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga254cd8110ab085da480893fad19f13f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> : uint8_t { <b>PROG_LED_RGB</b>
+, <b>PROG_LED_GRB</b>
+ }</td></tr>
+<tr class="memdesc:ga254cd8110ab085da480893fad19f13f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for 24-bit color format.  <a href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">More...</a><br /></td></tr>
+<tr class="separator:ga254cd8110ab085da480893fad19f13f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga59b949ff5bfcdbb11d2b58bbc423c732"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> : uint8_t { <b>LINE_IDLE</b>
+, <b>LINE_CLOCKING</b>
+ }</td></tr>
+<tr class="memdesc:ga59b949ff5bfcdbb11d2b58bbc423c732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum for LED line status.  <a href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">More...</a><br /></td></tr>
+<tr class="separator:ga59b949ff5bfcdbb11d2b58bbc423c732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p >Frameworkelss driver for programmable RGB LEDs. </p>
+<p >Frameworkelss library for programmable RGB LEDs. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gac4f2ca33b957169e3d57bf57b4b886a7" name="gac4f2ca33b957169e3d57bf57b4b886a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4f2ca33b957169e3d57bf57b4b886a7">&#9670;&#160;</a></span>COL_BLACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COL_BLACK&#160;&#160;&#160;0x00, 0x00, 0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Snippet for black. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00098">98</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<a id="gab43d256cd2afa78a9fc11d169155c967" name="gab43d256cd2afa78a9fc11d169155c967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab43d256cd2afa78a9fc11d169155c967">&#9670;&#160;</a></span>COL_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COL_BLUE&#160;&#160;&#160;0x00, 0x00, 0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Snippet for blue color. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00101">101</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<a id="ga6a7147d201533f7eb71cba311f5d4881" name="ga6a7147d201533f7eb71cba311f5d4881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a7147d201533f7eb71cba311f5d4881">&#9670;&#160;</a></span>COL_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COL_GREEN&#160;&#160;&#160;0x00, 0xFF, 0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Snippet for green color. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00100">100</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<a id="ga87d30d2657caae38d671f052cb9cc0e7" name="ga87d30d2657caae38d671f052cb9cc0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87d30d2657caae38d671f052cb9cc0e7">&#9670;&#160;</a></span>COL_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COL_RED&#160;&#160;&#160;0xFF, 0x00, 0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Snippet for red color. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00099">99</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<a id="ga17784369af03afc179ecf59c670490c7" name="ga17784369af03afc179ecf59c670490c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17784369af03afc179ecf59c670490c7">&#9670;&#160;</a></span>COL_WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COL_WHITE&#160;&#160;&#160;0xFF, 0xFF, 0xFF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Snippet for white color. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00097">97</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
 <a id="gab475133a1cc7420a40d5e32215efe983" name="gab475133a1cc7420a40d5e32215efe983"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab475133a1cc7420a40d5e32215efe983">&#9670;&#160;</a></span>PROG_LED_BRGHT_BIT</h2>
 
@@ -173,7 +280,7 @@ Variables</h2></td></tr>
 
 <p>Number of first bit for LED brightness in config variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00085">85</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00088">88</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -191,7 +298,7 @@ Variables</h2></td></tr>
 
 <p>Brightness mask in LED's config variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00091">91</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00094">94</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +316,7 @@ Variables</h2></td></tr>
 
 <p>Return code for continue status during clocking. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00059">59</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00060">60</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +334,7 @@ Variables</h2></td></tr>
 
 <p>Return code for not OK status. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00047">47</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00048">48</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +352,7 @@ Variables</h2></td></tr>
 
 <p>Return code for OK status. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00053">53</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00054">54</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +370,7 @@ Variables</h2></td></tr>
 
 <p>Status bit in LED's config variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00073">73</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00076">76</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +388,7 @@ Variables</h2></td></tr>
 
 <p>Status mask in LED's config variable. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00079">79</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00082">82</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -300,7 +407,7 @@ Variables</h2></td></tr>
 <p>Use FPU for color format conversions. </p>
 <p ><code>0</code> FPU will not be used for color conversions. <code>1</code> FPU will be used for color conversions. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00067">67</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00069">69</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -330,92 +437,58 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ga9f84998d724f9e7b9bc6ce07fe740f9e" name="ga9f84998d724f9e7b9bc6ce07fe740f9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9f84998d724f9e7b9bc6ce07fe740f9e">&#9670;&#160;</a></span>ProgLED_format_t</h2>
+<a id="ga811cc06bc0e3e55a4c154c596c0306ea" name="ga811cc06bc0e3e55a4c154c596c0306ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga811cc06bc0e3e55a4c154c596c0306ea">&#9670;&#160;</a></span>ledIdx_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef PROG_LED_GRB <a class="el" href="group___prog_l_e_d.html#ga9f84998d724f9e7b9bc6ce07fe740f9e">ProgLED_format_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >&lt; GRB 24-bit format. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00102">102</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ga043fcec33c09fcaf426b911995741382" name="ga043fcec33c09fcaf426b911995741382"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga043fcec33c09fcaf426b911995741382">&#9670;&#160;</a></span>ProgLED_status_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef LINE_CLOCKING ProgLED_status_t</td>
+          <td class="memname">typedef uint16_t <a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00111">111</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p>Type definition for LED index. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00137">137</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga33e07dd7db25f3cc7f69b2828a735eb3" name="ga33e07dd7db25f3cc7f69b2828a735eb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33e07dd7db25f3cc7f69b2828a735eb3">&#9670;&#160;</a></span>enum</h2>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga254cd8110ab085da480893fad19f13f9" name="ga254cd8110ab085da480893fad19f13f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga254cd8110ab085da480893fad19f13f9">&#9670;&#160;</a></span>ProgLED_format_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum</td>
+          <td class="memname">enum <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> : uint8_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Enum for 24-bit color format. </p>
-<p >Enum for LED line type.</p>
-<p >Enum for LED line status.</p>
-<p >RGB 24-bit format.</p>
-<dl class="section note"><dt>Note</dt><dd>Not used for now. 24-bit color format, 8-bit for each color. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00099">99</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00109">109</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
-<a id="gaacda4a73831fe658ce82f18baa2e331e" name="gaacda4a73831fe658ce82f18baa2e331e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaacda4a73831fe658ce82f18baa2e331e">&#9670;&#160;</a></span>LED_8C</h2>
+<a id="ga59b949ff5bfcdbb11d2b58bbc423c732" name="ga59b949ff5bfcdbb11d2b58bbc423c732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga59b949ff5bfcdbb11d2b58bbc423c732">&#9670;&#160;</a></span>ProgLED_status_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LED_8C</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p >1-bit color format, 8 colors in total. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00120">120</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ga6f8c28be46a2af000521a634fbcb00d9" name="ga6f8c28be46a2af000521a634fbcb00d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f8c28be46a2af000521a634fbcb00d9">&#9670;&#160;</a></span>ProgLED_type_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef ProgLED_type_t</td>
+          <td class="memname">enum <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> : uint8_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00121">121</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p>Enum for LED line status. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00118">118</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -424,7 +497,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Oct 29 2022 18:50:54 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Sun Oct 30 2022 23:33:44 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>

@@ -1,15 +1,11 @@
 var class_led =
 [
-    [ "adjustColor", "class_led.html#af5764286a9514e8d5f96178a77315b1a", null ],
-    [ "brightness", "class_led.html#a8c569f548db931a41db2ec1685e44eaa", null ],
-    [ "getColor", "class_led.html#ae32e373c361ebe37874ed8816fde5a85", null ],
-    [ "getConfig", "class_led.html#a98a747c4c2ab2fe3434ec01fc78430fb", null ],
-    [ "off", "class_led.html#aaaade6ff2627387c0bb415411a3e0db2", null ],
-    [ "on", "class_led.html#a69f6ade746b23726453b74d7dc767463", null ],
-    [ "reset", "class_led.html#a3db7a66bc5982f715f05c62c746a061d", null ],
-    [ "rgb", "class_led.html#abadca44a5e9f44ba279a410fc6c3f95c", null ],
-    [ "toggle", "class_led.html#abbb05b6274fbea2a2fc94eea3cb6dd3d", null ],
-    [ "color", "class_led.html#aaa93bb54c5d29a9bed32fdb869676c1e", null ],
-    [ "config", "class_led.html#a47ae957e96046bf95064d14a52dcb77c", null ],
-    [ "outputColor", "class_led.html#aad2f4d155bfba2e8b7fc07e6b763ff8f", null ]
+    [ "brightness", "class_led.html#ad7a9d6e889da8f5bc7ce827e85a08201", null ],
+    [ "getColor", "class_led.html#aca308aadcb16ddccc9ba8e2504eda578", null ],
+    [ "getConfig", "class_led.html#a6c81713a5dba37d06aaacb916c073fce", null ],
+    [ "off", "class_led.html#a74fd1397eba421c1c6fc3a4961fbc8a5", null ],
+    [ "on", "class_led.html#af45a852cb1c93e0ea25021b90fd4c882", null ],
+    [ "reset", "class_led.html#a8a96c3d552a071e2c1fcf5828af5f7ba", null ],
+    [ "rgb", "class_led.html#a5221b961a253448f611ed39408ccb7c0", null ],
+    [ "toggle", "class_led.html#a2dd276bcf3cc8e204b5ed2c40dd6c272", null ]
 ];
