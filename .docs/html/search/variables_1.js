@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['led_0',['led',['../class_prog_l_e_d.html#a8fa61d01608f895293f7f7665118d830',1,'ProgLED']]]
+  ['color_0',['color',['../class_led.html#a1f5c528aa5b0afe8a1a88f64a076da30',1,'Led']]],
+  ['config_1',['config',['../class_led.html#ae830c70aee71d32b78a1bda7d6e822d0',1,'Led']]]
 ];

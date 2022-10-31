@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['col_5fblack_0',['COL_BLACK',['../group___prog_l_e_d.html#gac4f2ca33b957169e3d57bf57b4b886a7',1,'ProgLED.h']]],
-  ['col_5fblue_1',['COL_BLUE',['../group___prog_l_e_d.html#gab43d256cd2afa78a9fc11d169155c967',1,'ProgLED.h']]],
-  ['col_5fgreen_2',['COL_GREEN',['../group___prog_l_e_d.html#ga6a7147d201533f7eb71cba311f5d4881',1,'ProgLED.h']]],
-  ['col_5fred_3',['COL_RED',['../group___prog_l_e_d.html#ga87d30d2657caae38d671f052cb9cc0e7',1,'ProgLED.h']]],
-  ['col_5fwhite_4',['COL_WHITE',['../group___prog_l_e_d.html#ga17784369af03afc179ecf59c670490c7',1,'ProgLED.h']]]
+  ['bidx_0',['bIdx',['../class_prog_l_e_d.html#ab3a5427e3109321568dae00dfd6fd5e2',1,'ProgLED']]],
+  ['brightness_1',['brightness',['../class_prog_l_e_d.html#ad88e9d4e2525920e9a9dfd008822c90e',1,'ProgLED::brightness()'],['../class_led.html#ad7a9d6e889da8f5bc7ce827e85a08201',1,'Led::brightness()']]]
 ];

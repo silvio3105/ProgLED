@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['toggle_0',['toggle',['../class_prog_l_e_d.html#a613d34f7abbaf038ab271e61040ab7f6',1,'ProgLED::toggle()'],['../class_led.html#a2dd276bcf3cc8e204b5ed2c40dd6c272',1,'Led::toggle()']]]
+  ['reset_0',['reset',['../class_prog_l_e_d.html#aa8780d1ca703266bf56a548a2b1a8f80',1,'ProgLED::reset()'],['../class_led.html#a8a96c3d552a071e2c1fcf5828af5f7ba',1,'Led::reset()']]],
+  ['rgb_1',['rgb',['../class_prog_l_e_d.html#a42594978d843056adcbc8a5882780fed',1,'ProgLED::rgb()'],['../class_led.html#a5221b961a253448f611ed39408ccb7c0',1,'Led::rgb()']]],
+  ['rgb2hsv_2',['rgb2HSV',['../class_prog_l_e_d.html#a89fad9a73e9c5ed2aa1e7b8e44d4d469',1,'ProgLED']]]
 ];

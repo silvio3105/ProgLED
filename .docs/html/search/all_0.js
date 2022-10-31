@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['brightness_0',['brightness',['../class_prog_l_e_d.html#ad88e9d4e2525920e9a9dfd008822c90e',1,'ProgLED::brightness()'],['../class_led.html#ad7a9d6e889da8f5bc7ce827e85a08201',1,'Led::brightness()']]]
+  ['adjustcolor_0',['adjustColor',['../class_led.html#a3bea463b031aa60598c2e49b05604b60',1,'Led']]]
 ];

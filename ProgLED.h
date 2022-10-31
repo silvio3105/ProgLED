@@ -286,53 +286,16 @@ class ProgLED : public Led {
 	// PRIVATE STUFF
 	private:
 	// VARIABLES
-	/**
-	 * @brief Number of LEDs to control.
-	 * 
-	 */
-	ledIdx_t ledCount = ledNum;
-
-	/**
-	 * @brief LED selector during clocking out.
-	 * 
-	 */
-	uint8_t ledIdx = 0;
-
-	/**
-	 * @brief LED data byte selector at @ref ledIdx during clocking out.
-	 * 
-	 */
-	uint8_t ledByte = 0;
-
-	/**
-	 * @brief Bit selector at \ref ledByte during clocking out.
-	 * 
-	 */
-	uint8_t ledBit = 0;
-
-	/**
-	 * @brief Pointer to external handler called to start clocking out.
-	 * 
-	 */
-	extHandler startHandler = nullptr;
-
-	/**
-	 * @brief Pointer to external handler called to stop clocking out.
-	 * 
-	 */
-	extHandler stopHandler = nullptr;
-
-	/**
-	 * @brief LED line status.
-	 * 
-	 */
-	ProgLED_status_t lineStatus = LINE_IDLE;
-
-	/**
-	 * @brief Index for RGB colors in \ref Led::color struct.
-	 * 
-	 */
-	uint8_t rIdx = 0, gIdx = 1, bIdx = 2;		
+	ledIdx_t ledCount = ledNum; /**< @brief Number of LEDs to control. */
+	uint8_t ledIdx = 0; /**< @brief LED selector during clocking out. */
+	uint8_t ledByte = 0; /**< @brief LED data byte selector at @ref ledIdx during clocking out. */
+	uint8_t ledBit = 0; /**< @brief Bit selector at \ref ledByte during clocking out. */
+	extHandler startHandler = nullptr; /**< @brief Pointer to external handler called to start clocking out. */
+	extHandler stopHandler = nullptr; /**< @brief Pointer to external handler called to stop clocking out. */
+	ProgLED_status_t lineStatus = LINE_IDLE; /**< @brief LED line status. */
+	uint8_t rIdx = 0; /**< @brief Index for red color in \ref Led::color class. */	
+	uint8_t gIdx = 1; /**< @brief Index for green color in \ref Led::color class. */	
+	uint8_t bIdx = 2; /**< @brief Index for blue color in \ref Led::color class. */	
 
 
 	// METHOD DECLARATIONS
@@ -466,11 +429,7 @@ class Led {
 	// PRIVATE STUFF
 	private:
 	// VARIABLES
-	/**
-	 * @brief 24-bit color data in RGB format.
-	 * 
-	 */
-	uint8_t color[3] = { 0x00, 0x00, 0x00 };
+	uint8_t color[3] = { 0x00, 0x00, 0x00 }; /**< @brief 24-bit color data in RGB format. */
 
 	/**
 	 * @brief LED config variable.
@@ -479,12 +438,7 @@ class Led {
 	 * It is possible to turn off or on LED without changing LED's color.
 	 */
 	uint8_t config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
-
-	/**
-	 * @brief 24-bit color data calculated using brightness value.
-	 * 
-	 */
-	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 };
+	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 }; /**< @brief 24-bit color data calculated using brightness value. */
 
 
 	// METHOD DECLARATIONS

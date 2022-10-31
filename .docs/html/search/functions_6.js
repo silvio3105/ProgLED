@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reset_0',['reset',['../class_prog_l_e_d.html#aa8780d1ca703266bf56a548a2b1a8f80',1,'ProgLED::reset()'],['../class_led.html#a8a96c3d552a071e2c1fcf5828af5f7ba',1,'Led::reset()']]],
-  ['rgb_1',['rgb',['../class_prog_l_e_d.html#a42594978d843056adcbc8a5882780fed',1,'ProgLED::rgb()'],['../class_led.html#a5221b961a253448f611ed39408ccb7c0',1,'Led::rgb()']]]
+  ['off_0',['off',['../class_prog_l_e_d.html#a9a91b3de2caa4963bc2631c9369f871f',1,'ProgLED::off()'],['../class_led.html#a74fd1397eba421c1c6fc3a4961fbc8a5',1,'Led::off()']]],
+  ['on_1',['on',['../class_prog_l_e_d.html#a52e48fd65bb9ee7c5054c1f622021943',1,'ProgLED::on()'],['../class_led.html#af45a852cb1c93e0ea25021b90fd4c882',1,'Led::on()']]]
 ];
