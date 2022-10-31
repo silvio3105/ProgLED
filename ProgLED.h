@@ -101,7 +101,7 @@ This License shall be included in all methodal textual files.
 #define COL_BLUE				0x00, 0x00, 0xFF /**< @brief Snippet for blue color. */
 
 
-// ----- ENUMS
+// ----- ENUMATORS
 /**
  * @brief Enum for 24-bit color format.
  * 
