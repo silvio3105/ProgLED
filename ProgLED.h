@@ -138,12 +138,12 @@ typedef uint16_t ledIdx_t;
 
 
 // ----- CLASSES
-template <uint16_t ledNum>
+template <ledIdx_t ledNum>
 /**
  * @brief Class representing single LED line.
  * 
  */
-class ProgLED : public Led {
+class ProgLED {
 	// PUBLIC STUFF
 	public:
 	// CONSTUCTORS AND DECONSTRUCTORS DECLARATIONS
@@ -170,7 +170,7 @@ class ProgLED : public Led {
 	 * @brief LED array.
 	 * 
 	 */
-	Led led[ledNum];	
+	LED led[ledNum];	
 
 
 	// METHOD DECLARATIONS
@@ -347,12 +347,12 @@ class ProgLED : public Led {
 	#endif // USE_FPU	
 };
 
-template <typename T>
+template <ledIdx_t ledNum>
 /**
  * @brief Class representing single LED chip.
  * 
  */
-class Led {
+class LED : public ProgLED<ledNum> {
 	// PUBLIC STUFF
 	public:
 	// METHOD DECLARATIONS

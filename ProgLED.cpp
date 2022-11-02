@@ -29,6 +29,7 @@ This License shall be included in all functional textual files.
 
 // ----- INCLUDE FILES
 #include			"ProgLED.h"
+#include			"sStd.h"
 
 #if USE_FPU == 1
 #include			<math.h>
@@ -196,12 +197,12 @@ uint8_t ProgLED<ledNum>::fetchBit(uint8_t& bit)
 		lineStatus = LINE_IDLE;
 		return PROG_LED_OK;
 	}
+	
+	// Get bit from output color
+	bit = _sSTD_BBIT(led[ledIdx].getColor(ledByte), ledBit);
 
-	uint8_t status = led[ledIdx].getConfig() & PROG_LED_STATUS_MASK;
-	bit = led[ledIdx].getColor(ledByte) & (1 << ledBit);
-
-	// If bit is not 0, set it to 1
-	if (bit) bit = 1;
+	// Set bit to 0 if LED status is 0(OFF)
+	if (!(_sSTD_BBIT(led[ledIdx].getConfig(), PROG_LED_STATUS_BIT))) bit = 0;
 
 	// Move bit selector
 	ledBit++;
@@ -395,13 +396,12 @@ void ProgLED<ledNum>::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 
 
 // ----- Led METHODS DEFINITIONS
-template <typename T>
-void Led<T>::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
+void LED::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 {
 	// Write new RGB color values
-	color[this->getRIdx()] = r;
-	color[this->getGIdx()] = g;
-	color[this->getBIdx()] = b;
+	color[getRIdx()] = r;
+	color[getGIdx()] = g;
+	color[getBIdx()] = b;
 
 	// Make sure maximum value of on param is 1
 	if (on) on = 1;
@@ -413,15 +413,13 @@ void Led<T>::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 	adjustColor();
 }
 
-template <typename T>
-void Led<T>::rgb(uint32_t color, uint8_t on = 1)
+void LED::rgb(uint32_t color, uint8_t on = 1)
 {
 	// Extract RGB bytes from 32-bit color value and pass params to main RGB method
 	rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, on);
 }
 
-template <typename T>
-void Led<T>::brightness(uint8_t value)
+void LED::brightness(uint8_t value)
 {
 	// Make sure 100 is maximum value
 	value &= 0b01111111;
@@ -436,38 +434,32 @@ void Led<T>::brightness(uint8_t value)
 	adjustColor();
 }
 
-template <typename T>
-inline void Led<T>::on(void)
+inline void LED::on(void)
 {
 	config |= PROG_LED_STATUS_MASK;
 }
 
-template <typename T>
-inline void Led<T>::off(void)
+inline void LED::off(void)
 {
 	config &= PROG_LED_BRGHT_MASK;
 }
 
-template <typename T>
-inline void Led<T>::toggle(void)
+inline void LED::toggle(void)
 {
 	config ^= 1 << PROG_LED_STATUS_BIT;
 }
 
-template <typename T>
-inline uint8_t Led<T>::getColor(uint8_t idx) const
+inline uint8_t LED::getColor(uint8_t idx) const
 {
 	return outputColor[idx];
 }
 
-template <typename T>
-inline uint8_t Led<T>::getConfig(void) const
+inline uint8_t LED::getConfig(void) const
 {
 	return config;
 }
 
-template <typename T>
-void Led<T>::adjustColor(void)
+void LED::adjustColor(void)
 {
 	// Extract brightness bits
 	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
@@ -478,8 +470,7 @@ void Led<T>::adjustColor(void)
 	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
 }
 
-template <typename T>
-void Led<T>::reset(void)
+void LED::reset(void)
 {
 	// Reset color values to black
 	color[0] = 0x00;
