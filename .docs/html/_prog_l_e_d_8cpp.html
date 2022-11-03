@@ -97,9 +97,10 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
-<p>Source file <a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> library.  
+<p>Source file <a class="el" href="class_prog_l_e_d.html">ProgLED</a> library.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>&quot;</code><br />
+<code>#include &quot;sStd.h&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ProgLED.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -107,9 +108,10 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp.html',''); initResiza
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="_prog_l_e_d_8cpp__incl.png" border="0" usemap="#a_prog_l_e_d_8cpp" alt=""/></div>
 <map name="a_prog_l_e_d_8cpp" id="a_prog_l_e_d_8cpp">
-<area shape="rect" title="Source file ProgLED library." alt="" coords="5,5,104,31"/>
-<area shape="rect" href="_prog_l_e_d_8h.html" title="Header file for ProgLED library." alt="" coords="12,79,97,104"/>
-<area shape="rect" title=" " alt="" coords="22,152,87,177"/>
+<area shape="rect" title="Source file ProgLED library." alt="" coords="47,5,145,31"/>
+<area shape="rect" href="_prog_l_e_d_8h.html" title="Header file for ProgLED library." alt="" coords="5,79,91,104"/>
+<area shape="rect" title=" " alt="" coords="115,79,175,104"/>
+<area shape="rect" title=" " alt="" coords="15,152,81,177"/>
 </map>
 </div>
 </div>
@@ -117,18 +119,18 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa2b8bc5d6c58e39453ae237a893b4fca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#aa2b8bc5d6c58e39453ae237a893b4fca">ProgLED_MAP</a>(_in,  _inMin,  _inMax,  _outMin,  _outMax)&#160;&#160;&#160;	(_in - _inMin) * (_outMax - _outMin) / (_inMax - _inMin) + _outMin</td></tr>
-<tr class="separator:aa2b8bc5d6c58e39453ae237a893b4fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab200dd4f0d9e168c098e95d27e7350a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#ab200dd4f0d9e168c098e95d27e7350a7">ProgLED_MIN</a>(_in1,  _in2,  _in3)&#160;&#160;&#160;	(_in1 &lt; _in2) ? (_in1 &lt; _in3 ? _in1 : _in3) : (_in2 &lt; _in3 ? _in2 : _in3)</td></tr>
-<tr class="separator:ab200dd4f0d9e168c098e95d27e7350a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0f92aeb833de0de737f73bf2d5b9bb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#ac0f92aeb833de0de737f73bf2d5b9bb9">ProgLED_MAX</a>(_in1,  _in2,  _in3)&#160;&#160;&#160;	(_in1 &gt; _in2) ? (_in1 &gt; _in3 ? _in1 : _in3) : (_in2 &gt; _in3 ? _in2 : _in3)</td></tr>
-<tr class="separator:ac0f92aeb833de0de737f73bf2d5b9bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092999a315fecd979264103ed4a451cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#a092999a315fecd979264103ed4a451cc">RED_IDX</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a092999a315fecd979264103ed4a451cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2741414ce68bee2f32ccc417171b730"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#ac2741414ce68bee2f32ccc417171b730">GREEN_IDX</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ac2741414ce68bee2f32ccc417171b730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a921158be740fe56705e0a163c631b44b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#a921158be740fe56705e0a163c631b44b">BLUE_IDX</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a921158be740fe56705e0a163c631b44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6438b0b2809567b730ba4c038decd203"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_prog_l_e_d_8cpp.html#a6438b0b2809567b730ba4c038decd203">ProgLED_LOOP</a>&#160;&#160;&#160;	for (<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> i = 0; i &lt; ledCount; i++)</td></tr>
 <tr class="memdesc:a6438b0b2809567b730ba4c038decd203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code snippet for looping through LEDs.  <a href="_prog_l_e_d_8cpp.html#a6438b0b2809567b730ba4c038decd203">More...</a><br /></td></tr>
 <tr class="separator:a6438b0b2809567b730ba4c038decd203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Source file <a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> library. </p>
+<div class="textblock"><p >Source file <a class="el" href="class_prog_l_e_d.html">ProgLED</a> library. </p>
 <dl class="section author"><dt>Author</dt><dd>silvio3105 (www.github.com/silvio3105) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>v1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-10-29</dd></dl>
@@ -136,6 +138,40 @@ Macros</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a921158be740fe56705e0a163c631b44b" name="a921158be740fe56705e0a163c631b44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921158be740fe56705e0a163c631b44b">&#9670;&#160;</a></span>BLUE_IDX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLUE_IDX&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Index for blue channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00042">42</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac2741414ce68bee2f32ccc417171b730" name="ac2741414ce68bee2f32ccc417171b730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2741414ce68bee2f32ccc417171b730">&#9670;&#160;</a></span>GREEN_IDX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GREEN_IDX&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Index for green channel. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00041">41</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a6438b0b2809567b730ba4c038decd203" name="a6438b0b2809567b730ba4c038decd203"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6438b0b2809567b730ba4c038decd203">&#9670;&#160;</a></span>ProgLED_LOOP</h2>
 
@@ -150,127 +186,24 @@ Macros</h2></td></tr>
 
 <p>Code snippet for looping through LEDs. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00053">53</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00050">50</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa2b8bc5d6c58e39453ae237a893b4fca" name="aa2b8bc5d6c58e39453ae237a893b4fca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2b8bc5d6c58e39453ae237a893b4fca">&#9670;&#160;</a></span>ProgLED_MAP</h2>
+<a id="a092999a315fecd979264103ed4a451cc" name="a092999a315fecd979264103ed4a451cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092999a315fecd979264103ed4a451cc">&#9670;&#160;</a></span>RED_IDX</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ProgLED_MAP</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_inMin, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_inMax, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_outMin, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_outMax&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;	(_in - _inMin) * (_outMax - _outMin) / (_inMax - _inMin) + _outMin</td>
+          <td class="memname">#define RED_IDX&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Index for red channel. </p>
 
 <p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00040">40</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac0f92aeb833de0de737f73bf2d5b9bb9" name="ac0f92aeb833de0de737f73bf2d5b9bb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0f92aeb833de0de737f73bf2d5b9bb9">&#9670;&#160;</a></span>ProgLED_MAX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ProgLED_MAX</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in1, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in2, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in3&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;	(_in1 &gt; _in2) ? (_in1 &gt; _in3 ? _in1 : _in3) : (_in2 &gt; _in3 ? _in2 : _in3)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00046">46</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ab200dd4f0d9e168c098e95d27e7350a7" name="ab200dd4f0d9e168c098e95d27e7350a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab200dd4f0d9e168c098e95d27e7350a7">&#9670;&#160;</a></span>ProgLED_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ProgLED_MIN</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in1, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in2, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">_in3&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;	(_in1 &lt; _in2) ? (_in1 &lt; _in3 ? _in1 : _in3) : (_in2 &lt; _in3 ? _in2 : _in3)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00043">43</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -280,7 +213,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_prog_l_e_d_8cpp.html">ProgLED.cpp</a></li>
-    <li class="footer">Generated on Mon Oct 31 2022 18:49:13 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Thu Nov 3 2022 20:20:10 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>

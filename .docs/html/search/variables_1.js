@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['color_0',['color',['../class_led.html#a1f5c528aa5b0afe8a1a88f64a076da30',1,'Led']]],
-  ['config_1',['config',['../class_led.html#ae830c70aee71d32b78a1bda7d6e822d0',1,'Led']]]
+  ['format_0',['format',['../class_l_e_d.html#af788bb76a920af2e6e71e5688d6276f6',1,'LED']]]
 ];

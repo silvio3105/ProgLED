@@ -1,0 +1,4 @@
+<map id="LED::on" name="LED::on">
+<area shape="rect" id="node1" title="Turns on LED." alt="" coords="127,5,196,31"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68" title="Class representing single LED chip." alt="" coords="5,5,79,31"/>
+</map>

@@ -1,5 +1,5 @@
 var annotated_dup =
 [
-    [ "Led", "class_led.html", "class_led" ],
+    [ "LED", "class_l_e_d.html", "class_l_e_d" ],
     [ "ProgLED", "class_prog_l_e_d.html", "class_prog_l_e_d" ]
 ];

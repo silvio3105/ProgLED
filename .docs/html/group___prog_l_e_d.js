@@ -5,9 +5,6 @@ var group___prog_l_e_d =
       [ "~ProgLED", "class_prog_l_e_d.html#ab32258a25f144b9cf43a2b3fb13a2ffb", null ],
       [ "brightness", "class_prog_l_e_d.html#ad88e9d4e2525920e9a9dfd008822c90e", null ],
       [ "fetchBit", "class_prog_l_e_d.html#a1ca477a42bcde6e4a049634ebb2c550d", null ],
-      [ "getBIdx", "class_prog_l_e_d.html#aa9a4acafb672b833aea4a8cdae908413", null ],
-      [ "getGIdx", "class_prog_l_e_d.html#ade8d690d4fc886eb091698e628064bf4", null ],
-      [ "getRIdx", "class_prog_l_e_d.html#a76be806a716d6db3d6eb79a2950fc0a5", null ],
       [ "hsv2RGB", "class_prog_l_e_d.html#ac3eff5aadc7f1d6d615911c1ec08a85d", null ],
       [ "init", "class_prog_l_e_d.html#acd44063521a1fa8bf8f72406606858eb", null ],
       [ "off", "class_prog_l_e_d.html#a9a91b3de2caa4963bc2631c9369f871f", null ],
@@ -18,31 +15,30 @@ var group___prog_l_e_d =
       [ "stop", "class_prog_l_e_d.html#a2fdeffdc75755dbe0fae8c77fec41c75", null ],
       [ "toggle", "class_prog_l_e_d.html#a613d34f7abbaf038ab271e61040ab7f6", null ],
       [ "update", "class_prog_l_e_d.html#a5d3b16f54e46043d1fbfe00364a7a542", null ],
-      [ "bIdx", "class_prog_l_e_d.html#ab3a5427e3109321568dae00dfd6fd5e2", null ],
-      [ "gIdx", "class_prog_l_e_d.html#a5df5d963d24dba2daae1ce78e20e8406", null ],
-      [ "led", "class_prog_l_e_d.html#a8fa61d01608f895293f7f7665118d830", null ],
+      [ "led", "class_prog_l_e_d.html#ae3b59339c2593bcb5f9d7240e71419c0", null ],
       [ "ledBit", "class_prog_l_e_d.html#ab3813d3d0c1c88c88e95758042ef850c", null ],
       [ "ledByte", "class_prog_l_e_d.html#a18fd10706d14cc0795bbbc84bcaff613", null ],
       [ "ledCount", "class_prog_l_e_d.html#a4afc6ca2a7cc2b5e265ff9feb96841a1", null ],
       [ "ledIdx", "class_prog_l_e_d.html#a302435180c1183104a3510ee42df83e3", null ],
       [ "lineStatus", "class_prog_l_e_d.html#ad9d1b82a165f09f86a79c810df3bd05b", null ],
-      [ "rIdx", "class_prog_l_e_d.html#a228af569bd05e8d22e890ef9df03467d", null ],
       [ "startHandler", "class_prog_l_e_d.html#ab4a6dc9c93ee1aa609e8a5a5aee760bb", null ],
       [ "stopHandler", "class_prog_l_e_d.html#ac650ff20fde4ae1255f414b524d2121c", null ]
     ] ],
-    [ "Led< T >", "class_led.html", [
-      [ "adjustColor", "class_led.html#a3bea463b031aa60598c2e49b05604b60", null ],
-      [ "brightness", "class_led.html#ad7a9d6e889da8f5bc7ce827e85a08201", null ],
-      [ "getColor", "class_led.html#aca308aadcb16ddccc9ba8e2504eda578", null ],
-      [ "getConfig", "class_led.html#a6c81713a5dba37d06aaacb916c073fce", null ],
-      [ "off", "class_led.html#a74fd1397eba421c1c6fc3a4961fbc8a5", null ],
-      [ "on", "class_led.html#af45a852cb1c93e0ea25021b90fd4c882", null ],
-      [ "reset", "class_led.html#a8a96c3d552a071e2c1fcf5828af5f7ba", null ],
-      [ "rgb", "class_led.html#a5221b961a253448f611ed39408ccb7c0", null ],
-      [ "toggle", "class_led.html#a2dd276bcf3cc8e204b5ed2c40dd6c272", null ],
-      [ "color", "class_led.html#a1f5c528aa5b0afe8a1a88f64a076da30", null ],
-      [ "config", "class_led.html#ae830c70aee71d32b78a1bda7d6e822d0", null ],
-      [ "outputColor", "class_led.html#a66406970c361a51923a1cb6023947559", null ]
+    [ "LED", "class_l_e_d.html", [
+      [ "adjustColor", "class_l_e_d.html#a05046338ca2341065e0bdfab68eba911", null ],
+      [ "brightness", "class_l_e_d.html#a249057569237c26a906a90a3c8481db8", null ],
+      [ "getChannelIdx", "class_l_e_d.html#a71725c5dd16390ba5f30759b7fb0226d", null ],
+      [ "getColor", "class_l_e_d.html#a23ac16c0dbf129de6cdacca27fac637a", null ],
+      [ "getConfig", "class_l_e_d.html#a4d50abac57f2cecb02ea276d6ff2636c", null ],
+      [ "off", "class_l_e_d.html#a3a62c5de23259cd092165585c45bac22", null ],
+      [ "on", "class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b", null ],
+      [ "reset", "class_l_e_d.html#aa6a8761377bda372aaab6ea608407b81", null ],
+      [ "rgb", "class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68", null ],
+      [ "toggle", "class_l_e_d.html#a5d6c45cdaaf5264a08929fe10438f1cd", null ],
+      [ "color", "class_l_e_d.html#a6c5ba2feb426589106f62f846ba881ac", null ],
+      [ "config", "class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851", null ],
+      [ "format", "class_l_e_d.html#af788bb76a920af2e6e71e5688d6276f6", null ],
+      [ "outputColor", "class_l_e_d.html#a22bdb6f128e122e795e06348979bc399", null ]
     ] ],
     [ "COL_BLACK", "group___prog_l_e_d.html#gac4f2ca33b957169e3d57bf57b4b886a7", null ],
     [ "COL_BLUE", "group___prog_l_e_d.html#gab43d256cd2afa78a9fc11d169155c967", null ],
@@ -59,6 +55,12 @@ var group___prog_l_e_d =
     [ "USE_FPU", "group___prog_l_e_d.html#ga113160f0797f83c8da70553250921ac5", null ],
     [ "extHandler", "group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf", null ],
     [ "ledIdx_t", "group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea", null ],
-    [ "ProgLED_format_t", "group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9", null ],
-    [ "ProgLED_status_t", "group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732", null ]
+    [ "ProgLED_format_t", "group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9", [
+      [ "PROG_LED_RGB", "group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9afad859a3d96c2b74e8831072ae4bb439", null ],
+      [ "PROG_LED_GRB", "group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c", null ]
+    ] ],
+    [ "ProgLED_status_t", "group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732", [
+      [ "LINE_IDLE", "group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732abbd03fd4758dd3a6c19ed8a376d56c5e", null ],
+      [ "LINE_CLOCKING", "group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732aa38be45012aa7aae308afce3fc40ec45", null ]
+    ] ]
 ];

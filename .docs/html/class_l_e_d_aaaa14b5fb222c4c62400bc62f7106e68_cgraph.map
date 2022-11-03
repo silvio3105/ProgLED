@@ -1,0 +1,7 @@
+<map id="LED::rgb" name="LED::rgb">
+<area shape="rect" id="node1" title="Class representing single LED chip." alt="" coords="5,55,79,80"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#a05046338ca2341065e0bdfab68eba911" title="Calculates new RGB values using brightness." alt="" coords="136,5,256,31"/>
+<area shape="rect" id="node4" href="$class_l_e_d.html#a71725c5dd16390ba5f30759b7fb0226d" title="Gets channel index for desired color." alt="" coords="127,55,265,80"/>
+<area shape="rect" id="node5" href="$class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b" title="Turns on LED." alt="" coords="161,104,231,129"/>
+<area shape="rect" id="node3" href="$class_l_e_d.html#a249057569237c26a906a90a3c8481db8" title="Sets new LED&#39;s brightness value." alt="" coords="313,5,428,31"/>
+</map>

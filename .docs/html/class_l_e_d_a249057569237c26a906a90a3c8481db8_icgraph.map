@@ -1,0 +1,5 @@
+<map id="LED::brightness" name="LED::brightness">
+<area shape="rect" id="node1" title="Sets new LED&#39;s brightness value." alt="" coords="295,5,409,31"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#a05046338ca2341065e0bdfab68eba911" title="Calculates new RGB values using brightness." alt="" coords="127,5,247,31"/>
+<area shape="rect" id="node3" href="$class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68" title="Class representing single LED chip." alt="" coords="5,5,79,31"/>
+</map>
