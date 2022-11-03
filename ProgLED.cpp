@@ -36,17 +36,13 @@ This License shall be included in all functional textual files.
 #endif // USE_FPU
 
 
+// ----- MACRO DEFINITIONS
+#define RED_IDX			0 /**< Index for red channel. */
+#define GREEN_IDX		1 /**< Index for green channel. */
+#define BLUE_IDX		2 /**< Index for blue channel. */
+
+
 // ----- MACRO FUNCTIONS
-// SOON: Export those macros to sStd lib(soon)
-#define ProgLED_MAP(_in, _inMin, _inMax, _outMin, _outMax) \
-	(_in - _inMin) * (_outMax - _outMin) / (_inMax - _inMin) + _outMin
-
-#define ProgLED_MIN(_in1, _in2, _in3) \
-	(_in1 < _in2) ? (_in1 < _in3 ? _in1 : _in3) : (_in2 < _in3 ? _in2 : _in3)
-
-#define ProgLED_MAX(_in1, _in2, _in3) \
-	(_in1 > _in2) ? (_in1 > _in3 ? _in1 : _in3) : (_in2 > _in3 ? _in2 : _in3)
-
 /**
  * @brief Code snippet for looping through LEDs
  * 
@@ -63,29 +59,11 @@ ProgLED<ledNum>::ProgLED(extHandler start, extHandler stop, ProgLED_format_t led
 	startHandler = start;
 	stopHandler = stop;
 
+	// Set all LEDs to same color format
+	ProgLED_LOOP led[i].format = ledFormat;	
+
 	// Set line status
 	lineStatus = LINE_IDLE;
-
-	// Set LED line color format
-	switch(ledFormat)
-	{
-		case PROG_LED_GRB:
-		{
-			rIdx = 1;
-			gIdx = 0;
-			bIdx = 2;
-			break;
-		}
-
-		case PROG_LED_RGB:
-		default:
-		{
-			rIdx = 0;
-			gIdx = 1;
-			bIdx = 2;		
-			break;
-		}
-	}
 }
 
 template<ledIdx_t ledNum>
@@ -226,24 +204,6 @@ uint8_t ProgLED<ledNum>::fetchBit(uint8_t& bit)
 	}
 
 	return PROG_LED_CONTINUE;
-}
-
-template<ledIdx_t ledNum>
-inline uint8_t ProgLED<ledNum>::getRIdx(void) const
-{
-	return rIdx;
-}
-
-template<ledIdx_t ledNum>
-inline uint8_t ProgLED<ledNum>::getGIdx(void) const
-{
-	return gIdx;
-}
-
-template<ledIdx_t ledNum>
-inline uint8_t ProgLED<ledNum>::getBIdx(void) const
-{
-	return bIdx;
 }
 
 
@@ -399,9 +359,9 @@ void ProgLED<ledNum>::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 void LED::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 {
 	// Write new RGB color values
-	color[getRIdx()] = r;
-	color[getGIdx()] = g;
-	color[getBIdx()] = b;
+	color[getChannelIdx(RED_IDX)] = r;
+	color[getChannelIdx(GREEN_IDX)] = g;
+	color[getChannelIdx(BLUE_IDX)] = b;
 
 	// Make sure maximum value of on param is 1
 	if (on) on = 1;
@@ -436,17 +396,17 @@ void LED::brightness(uint8_t value)
 
 inline void LED::on(void)
 {
-	config |= PROG_LED_STATUS_MASK;
+	_sSTD_BIT_SET(config, PROG_LED_STATUS_BIT);
 }
 
 inline void LED::off(void)
 {
-	config &= PROG_LED_BRGHT_MASK;
+	_sSTD_BIT_CLEAR(config, PROG_LED_STATUS_BIT);
 }
 
 inline void LED::toggle(void)
 {
-	config ^= 1 << PROG_LED_STATUS_BIT;
+	_sSTD_BIT_TOGGLE(config, PROG_LED_STATUS_BIT);
 }
 
 inline uint8_t LED::getColor(uint8_t idx) const
@@ -457,17 +417,6 @@ inline uint8_t LED::getColor(uint8_t idx) const
 inline uint8_t LED::getConfig(void) const
 {
 	return config;
-}
-
-void LED::adjustColor(void)
-{
-	// Extract brightness bits
-	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
-
-	// Scale RGB values using brightness
-	outputColor[0] = color[0] * (brightness * 10 / 100) / 10;
-	outputColor[1] = color[1] * (brightness * 10 / 100) / 10;
-	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
 }
 
 void LED::reset(void)
@@ -484,6 +433,40 @@ void LED::reset(void)
 
 	// Set default config value
 	config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
+}
+
+
+void LED::adjustColor(void)
+{
+	// Extract brightness bits
+	uint8_t brightness = config & PROG_LED_BRGHT_MASK;
+
+	// Scale RGB values using brightness
+	outputColor[0] = color[0] * (brightness * 10 / 100) / 10;
+	outputColor[1] = color[1] * (brightness * 10 / 100) / 10;
+	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
+}
+
+uint8_t LED::getChannelIdx(uint8_t color)
+{
+	switch (format)
+	{
+		case PROG_LED_RGB:
+		{
+			if (color == RED_IDX) return 0;
+			else if (color == GREEN_IDX) return 1;
+			else return 2;
+		}
+
+		case PROG_LED_GRB:
+		{
+			if (color == RED_IDX) return 1;
+			else if (color == GREEN_IDX) return 0;
+			else return 2;			
+		}
+
+		default: break;
+	}
 }
 
 // END WITH NEW LINE

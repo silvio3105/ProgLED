@@ -41,23 +41,9 @@ This License shall be included in all methodal textual files.
 
 // ----- DEFINES
 // RETURN CODES
-/**
- * @brief Return code for not OK status.
- * 
- */
-#define PROG_LED_NOK			0
-
-/**
- * @brief Return code for OK status.
- * 
- */
-#define PROG_LED_OK				1
-
-/**
- * @brief Return code for continue status during clocking.
- * 
- */
-#define PROG_LED_CONTINUE		2
+#define PROG_LED_NOK			0 /**< @brief Return code for not OK status. */
+#define PROG_LED_OK				1 /**< @brief Return code for OK status. */
+#define PROG_LED_CONTINUE		2 /**< @brief Return code for continue status during clocking. */
 
 // CONFIGURATIONS
 /**
@@ -69,29 +55,11 @@ This License shall be included in all methodal textual files.
 #define USE_FPU					0
 
 // BITFIELDS
-/**
- * @brief Status bit in LED's config variable.
- * 
- */
-#define PROG_LED_STATUS_BIT		7
+#define PROG_LED_STATUS_BIT		7 /**< @brief Status bit in LED's config variable. */
+#define PROG_LED_STATUS_MASK	0b10000000 /**< @brief Status mask in LED's config variable. */
 
-/**
- * @brief Status mask in LED's config variable.
- * 
- */
-#define PROG_LED_STATUS_MASK	0b10000000
-
-/**
- * @brief Number of first bit for LED brightness in config variable. 
- * 
- */
-#define PROG_LED_BRGHT_BIT		0
-
-/**
- * @brief Brightness mask in LED's config variable.
- * 
- */
-#define PROG_LED_BRGHT_MASK		0b01111111
+#define PROG_LED_BRGHT_BIT		0 /**< @brief Number of first bit for LED brightness in config variable. */
+#define PROG_LED_BRGHT_MASK		0b01111111 /**< @brief Brightness mask in LED's config variable. */
 
 // COLORS
 #define COL_WHITE				0xFF, 0xFF, 0xFF /**< @brief Snippet for white color. */
@@ -102,22 +70,14 @@ This License shall be included in all methodal textual files.
 
 
 // ----- ENUMATORS
-/**
- * @brief Enum for 24-bit color format.
- * 
- */
-typedef enum ProgLED_format_t: uint8_t {
-	PROG_LED_RGB,  // RGB 24-bit format
-	PROG_LED_GRB // GRB 24-bit format
+typedef enum ProgLED_format_t: uint8_t { /**< @brief Enum for 24-bit color format. */
+	PROG_LED_RGB,  /**< RGB 24-bit color format. */
+	PROG_LED_GRB /**< GRB 24-bit color format. */
 };
 
-/**
- * @brief Enum for LED line status.
- * 
- */
-typedef enum ProgLED_status_t: uint8_t {
-	LINE_IDLE,
-	LINE_CLOCKING
+typedef enum ProgLED_status_t: uint8_t { /**< @brief Enum for LED line status. */
+	LINE_IDLE, /**< LED line is in idle state. */
+	LINE_CLOCKING /**< LED line is in clocking state. */
 };
 
 
@@ -129,21 +89,12 @@ typedef enum ProgLED_status_t: uint8_t {
  * @return No return value.
  */
 typedef void (*extHandler)(uint8_t bit);
-
-/**
- * @brief Type definition for LED index.
- * 
- */
-typedef uint16_t ledIdx_t;
+typedef uint16_t ledIdx_t; /**< @brief Type definition for LED index. */
 
 
 // ----- CLASSES
 template <ledIdx_t ledNum>
-/**
- * @brief Class representing single LED line.
- * 
- */
-class ProgLED {
+class ProgLED { /**< @brief Class representing single LED line. */
 	// PUBLIC STUFF
 	public:
 	// CONSTUCTORS AND DECONSTRUCTORS DECLARATIONS
@@ -166,11 +117,7 @@ class ProgLED {
 
 
 	// VARIABLES
-	/**
-	 * @brief LED array.
-	 * 
-	 */
-	LED led[ledNum];	
+	LED led[ledNum]; /**< @brief LED array. */	
 
 
 	// METHOD DECLARATIONS
@@ -261,27 +208,6 @@ class ProgLED {
 	 */
 	uint8_t fetchBit(uint8_t& bit);
 
-	/**
-	 * @brief Method for fetching index for red color.
-	 * 
-	 * @return Index for red color at \ref Led::color
-	 */
-	inline uint8_t getRIdx(void) const;
-
-	/**
-	 * @brief Method for fetching index for green color.
-	 * 
-	 * @return Index for green color at \ref Led::color
-	 */
-	inline uint8_t getGIdx(void) const;
-
-	/**
-	 * @brief Method for fetching index for blue color.
-	 * 
-	 * @return Index for blue color at \ref Led::color
-	 */
-	inline uint8_t getBIdx(void) const;		
-
 
 	// PRIVATE STUFF
 	private:
@@ -293,10 +219,6 @@ class ProgLED {
 	extHandler startHandler = nullptr; /**< @brief Pointer to external handler called to start clocking out. */
 	extHandler stopHandler = nullptr; /**< @brief Pointer to external handler called to stop clocking out. */
 	ProgLED_status_t lineStatus = LINE_IDLE; /**< @brief LED line status. */
-	uint8_t rIdx = 0; /**< @brief Index for red color in \ref Led::color class. */	
-	uint8_t gIdx = 1; /**< @brief Index for green color in \ref Led::color class. */	
-	uint8_t bIdx = 2; /**< @brief Index for blue color in \ref Led::color class. */	
-
 
 	// METHOD DECLARATIONS
 	#if USE_FPU == 0
@@ -347,12 +269,7 @@ class ProgLED {
 	#endif // USE_FPU	
 };
 
-template <ledIdx_t ledNum>
-/**
- * @brief Class representing single LED chip.
- * 
- */
-class LED : public ProgLED<ledNum> {
+class LED { /**< @brief Class representing single LED chip. */
 	// PUBLIC STUFF
 	public:
 	// METHOD DECLARATIONS
@@ -439,6 +356,7 @@ class LED : public ProgLED<ledNum> {
 	 */
 	uint8_t config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
 	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 }; /**< @brief 24-bit color data calculated using brightness value. */
+	ProgLED_format_t format = PROG_LED_GRB; /**< @brief LED color format. */
 
 
 	// METHOD DECLARATIONS
@@ -447,7 +365,15 @@ class LED : public ProgLED<ledNum> {
 	 * 
 	 * @return No return value.
 	 */
-	void adjustColor(void);	
+	void adjustColor(void);
+
+	/**
+	 * @brief Gets channel index for desired color.
+	 * 
+	 * @param color Desired color.
+	 * @return Channel index.
+	 */
+	uint8_t getChannelIdx(uint8_t color);
 };
 
 /** @}*/
