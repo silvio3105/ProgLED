@@ -12,7 +12,8 @@ var searchData=
   ['progled_9',['ProgLED',['../class_prog_l_e_d.html',1,'ProgLED&lt; ledNum &gt;'],['../class_prog_l_e_d.html#a8e4c4257b793b2c9e93711b5d0eac5d8',1,'ProgLED::ProgLED()'],['../group___prog_l_e_d.html',1,'(Global Namespace)']]],
   ['progled_2ecpp_10',['ProgLED.cpp',['../_prog_l_e_d_8cpp.html',1,'']]],
   ['progled_2eh_11',['ProgLED.h',['../_prog_l_e_d_8h.html',1,'']]],
-  ['progled_5fformat_5ft_12',['ProgLED_format_t',['../group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9',1,'ProgLED.h']]],
-  ['progled_5floop_13',['ProgLED_LOOP',['../_prog_l_e_d_8cpp.html#a6438b0b2809567b730ba4c038decd203',1,'ProgLED.cpp']]],
-  ['progled_5fstatus_5ft_14',['ProgLED_status_t',['../group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732',1,'ProgLED.h']]]
+  ['progled_5fchidx_5ft_12',['ProgLED_chIdx_t',['../group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064',1,'ProgLED.h']]],
+  ['progled_5fformat_5ft_13',['ProgLED_format_t',['../group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9',1,'ProgLED.h']]],
+  ['progled_5floop_14',['ProgLED_LOOP',['../_prog_l_e_d_8cpp.html#a6438b0b2809567b730ba4c038decd203',1,'ProgLED.cpp']]],
+  ['progled_5fstatus_5ft_15',['ProgLED_status_t',['../group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732',1,'ProgLED.h']]]
 ];

@@ -70,14 +70,21 @@ This License shall be included in all methodal textual files.
 
 
 // ----- ENUMATORS
+// SOON: Edti method LED::rgb if new color format is added
 typedef enum ProgLED_format_t: uint8_t { /**< @brief Enum for 24-bit color format. */
-	PROG_LED_RGB,  /**< RGB 24-bit color format. */
-	PROG_LED_GRB /**< GRB 24-bit color format. */
+	PROG_LED_RGB = 0b00100100,  /**< RGB 24-bit color format. */
+	PROG_LED_GRB = 0b00100001 /**< GRB 24-bit color format. */
 };
 
 typedef enum ProgLED_status_t: uint8_t { /**< @brief Enum for LED line status. */
 	LINE_IDLE, /**< LED line is in idle state. */
 	LINE_CLOCKING /**< LED line is in clocking state. */
+};
+
+typedef enum ProgLED_chIdx_t : uint8_t { /**< Color channels bit positions. */
+	RED_IDX = 0,
+	GREEN_IDX = 2,
+	BLUE_IDX = 4
 };
 
 
@@ -342,6 +349,14 @@ class LED { /**< @brief Class representing single LED chip. */
 	 */
 	void brightness(uint8_t value);
 
+	/**
+	 * @brief Sets LED color format.
+	 * 
+	 * @param bitmap LED color format.
+	 * @return No return value.
+	 */
+	inline void setChannelBitmap(uint8_t bitmap);
+
 
 	// PRIVATE STUFF
 	private:
@@ -356,7 +371,15 @@ class LED { /**< @brief Class representing single LED chip. */
 	 */
 	uint8_t config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
 	uint8_t outputColor[3] = { 0x00, 0x00, 0x00 }; /**< @brief 24-bit color data calculated using brightness value. */
-	ProgLED_format_t format = PROG_LED_GRB; /**< @brief LED color format. */
+
+	/**
+	 * @brief Color channel bitmap variable.
+	 * 
+	 * Variable format is \c 0b00BBGGRR where \c RR bits represent channel index for red color, \c GG bits represent channel index for green color and \c BB bits represent channel index for blue color.
+	 * Variable is set via \ref setChannelBitmap method and color channel index is fetched via \ref getChannelIdx method.
+	 * 
+	 */
+	uint8_t chBitmap = 0;
 
 
 	// METHOD DECLARATIONS
@@ -370,11 +393,12 @@ class LED { /**< @brief Class representing single LED chip. */
 	/**
 	 * @brief Gets channel index for desired color.
 	 * 
-	 * @param color Desired color.
+	 * @param idx Desired color channel. See \ref ProgLED_chIdx_t
 	 * @return Channel index.
 	 */
-	uint8_t getChannelIdx(uint8_t color);
+	uint8_t getChannelIdx(ProgLED_chIdx_t idx);
 };
+
 
 /** @}*/
 

@@ -36,12 +36,6 @@ This License shall be included in all functional textual files.
 #endif // USE_FPU
 
 
-// ----- MACRO DEFINITIONS
-#define RED_IDX			0 /**< Index for red channel. */
-#define GREEN_IDX		1 /**< Index for green channel. */
-#define BLUE_IDX		2 /**< Index for blue channel. */
-
-
 // ----- MACRO FUNCTIONS
 /**
  * @brief Code snippet for looping through LEDs
@@ -60,7 +54,7 @@ ProgLED<ledNum>::ProgLED(extHandler start, extHandler stop, ProgLED_format_t led
 	stopHandler = stop;
 
 	// Set all LEDs to same color format
-	ProgLED_LOOP led[i].format = ledFormat;	
+	ProgLED_LOOP led[i]->setChannelBitmap(ledFormat);	
 
 	// Set line status
 	lineStatus = LINE_IDLE;
@@ -88,7 +82,7 @@ uint8_t ProgLED<ledNum>::init(void)
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 {
-	ProgLED_LOOP led[i].rgb(r, g, b, on);
+	ProgLED_LOOP led[i]->rgb(r, g, b, on);
 }
 
 template<ledIdx_t ledNum>
@@ -100,37 +94,31 @@ void ProgLED<ledNum>::rgb(uint32_t color, uint8_t on = 1)
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::brightness(uint8_t value)
 {
-	ProgLED_LOOP led[i].brightness(value);
+	ProgLED_LOOP led[i]->brightness(value);
 }
 
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::reset(void)
 {
-	ProgLED_LOOP led[i].reset();
+	ProgLED_LOOP led[i]->reset();
 }
 
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::toggle(void)
 {
-	ProgLED_LOOP led[i].toggle();
+	ProgLED_LOOP led[i]->toggle();
 }
 
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::on(void)
 {
-	ProgLED_LOOP led[i].on();
+	ProgLED_LOOP led[i]->on();
 }
 
 template<ledIdx_t ledNum>
 void ProgLED<ledNum>::off(void)
 {
-	ProgLED_LOOP led[i].off();
-}
-
-template<ledIdx_t ledNum>
-void ProgLED<ledNum>::brightness(uint8_t value)
-{
-	ProgLED_LOOP led[i].brightness(value);
+	ProgLED_LOOP led[i]->off();
 }
 
 template<ledIdx_t ledNum>
@@ -177,10 +165,10 @@ uint8_t ProgLED<ledNum>::fetchBit(uint8_t& bit)
 	}
 	
 	// Get bit from output color
-	bit = _sSTD_BBIT(led[ledIdx].getColor(ledByte), ledBit);
+	bit = _sSTD_BBIT(led[ledIdx]->getColor(ledByte), ledBit);
 
 	// Set bit to 0 if LED status is 0(OFF)
-	if (!(_sSTD_BBIT(led[ledIdx].getConfig(), PROG_LED_STATUS_BIT))) bit = 0;
+	if (!(_sSTD_BBIT(led[ledIdx]->getConfig(), PROG_LED_STATUS_BIT))) bit = 0;
 
 	// Move bit selector
 	ledBit++;
@@ -355,13 +343,13 @@ void ProgLED<ledNum>::hsv2RGB(float (&in)[3], uint8_t (&out)[3])
 #endif // USE_FPU
 
 
-// ----- Led METHODS DEFINITIONS
+// ----- LED METHODS DEFINITIONS
 void LED::rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t on = 1)
 {
 	// Write new RGB color values
 	color[getChannelIdx(RED_IDX)] = r;
 	color[getChannelIdx(GREEN_IDX)] = g;
-	color[getChannelIdx(BLUE_IDX)] = b;
+	color[2] = b; // SOON: Since blue is always 2(for current supported color formats)
 
 	// Make sure maximum value of on param is 1
 	if (on) on = 1;
@@ -435,6 +423,11 @@ void LED::reset(void)
 	config = (1 << PROG_LED_STATUS_BIT) | (100 << PROG_LED_BRGHT_BIT);
 }
 
+inline void LED::setChannelBitmap(uint8_t bitmap)
+{
+	chBitmap = bitmap;
+}
+
 
 void LED::adjustColor(void)
 {
@@ -447,26 +440,10 @@ void LED::adjustColor(void)
 	outputColor[2] = color[2] * (brightness * 10 / 100) / 10;
 }
 
-uint8_t LED::getChannelIdx(uint8_t color)
+uint8_t LED::getChannelIdx(ProgLED_chIdx_t idx)
 {
-	switch (format)
-	{
-		case PROG_LED_RGB:
-		{
-			if (color == RED_IDX) return 0;
-			else if (color == GREEN_IDX) return 1;
-			else return 2;
-		}
-
-		case PROG_LED_GRB:
-		{
-			if (color == RED_IDX) return 1;
-			else if (color == GREEN_IDX) return 0;
-			else return 2;			
-		}
-
-		default: break;
-	}
+	return (chBitmap & (3 << idx)) >> idx;
 }
+
 
 // END WITH NEW LINE

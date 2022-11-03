@@ -160,14 +160,19 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga254cd8110ab085da480893fad19f13f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> : uint8_t { <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9afad859a3d96c2b74e8831072ae4bb439">PROG_LED_RGB</a>
-, <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a>
+<tr class="memitem:ga254cd8110ab085da480893fad19f13f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> : uint8_t { <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9afad859a3d96c2b74e8831072ae4bb439">PROG_LED_RGB</a> = 0b00100100
+, <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a> = 0b00100001
  }</td></tr>
 <tr class="separator:ga254cd8110ab085da480893fad19f13f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga59b949ff5bfcdbb11d2b58bbc423c732"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> : uint8_t { <a class="el" href="group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732abbd03fd4758dd3a6c19ed8a376d56c5e">LINE_IDLE</a>
 , <a class="el" href="group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732aa38be45012aa7aae308afce3fc40ec45">LINE_CLOCKING</a>
  }</td></tr>
 <tr class="separator:ga59b949ff5bfcdbb11d2b58bbc423c732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d5d7fea2fc6c6679e4ce1ce88570064"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064">ProgLED_chIdx_t</a> : uint8_t { <a class="el" href="group___prog_l_e_d.html#gga3d5d7fea2fc6c6679e4ce1ce88570064ad78cdbfce67da8d1b961229a4ff537dc">RED_IDX</a> = 0
+, <b>GREEN_IDX</b> = 2
+, <b>BLUE_IDX</b> = 4
+ }</td></tr>
+<tr class="separator:ga3d5d7fea2fc6c6679e4ce1ce88570064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p >Frameworkelss library for programmable RGB LEDs. </p>
@@ -429,7 +434,7 @@ Enumerations</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00091">91</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00098">98</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -447,11 +452,31 @@ Enumerations</h2></td></tr>
 
 <p>Type definition for <a class="el" href="class_l_e_d.html">LED</a> index. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00092">92</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00099">99</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga3d5d7fea2fc6c6679e4ce1ce88570064" name="ga3d5d7fea2fc6c6679e4ce1ce88570064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d5d7fea2fc6c6679e4ce1ce88570064">&#9670;&#160;</a></span>ProgLED_chIdx_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064">ProgLED_chIdx_t</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga3d5d7fea2fc6c6679e4ce1ce88570064ad78cdbfce67da8d1b961229a4ff537dc" name="gga3d5d7fea2fc6c6679e4ce1ce88570064ad78cdbfce67da8d1b961229a4ff537dc"></a>RED_IDX&#160;</td><td class="fielddoc"><p >Color channels bit positions. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00084">84</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
 <a id="ga254cd8110ab085da480893fad19f13f9" name="ga254cd8110ab085da480893fad19f13f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga254cd8110ab085da480893fad19f13f9">&#9670;&#160;</a></span>ProgLED_format_t</h2>
 
@@ -471,7 +496,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00073">73</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00074">74</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -494,7 +519,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00078">78</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00079">79</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -503,7 +528,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 3 2022 20:20:10 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Thu Nov 3 2022 23:36:24 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>

@@ -123,6 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a249057569237c26a906a90a3c8481db8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a249057569237c26a906a90a3c8481db8">brightness</a> (uint8_t value)</td></tr>
 <tr class="memdesc:a249057569237c26a906a90a3c8481db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new <a class="el" href="class_l_e_d.html">LED</a>'s brightness value.  <a href="class_l_e_d.html#a249057569237c26a906a90a3c8481db8">More...</a><br /></td></tr>
 <tr class="separator:a249057569237c26a906a90a3c8481db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabd6a2b4498ff54deb0ef481e2e55704"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#aabd6a2b4498ff54deb0ef481e2e55704">setChannelBitmap</a> (uint8_t bitmap)</td></tr>
+<tr class="memdesc:aabd6a2b4498ff54deb0ef481e2e55704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="class_l_e_d.html">LED</a> color format.  <a href="class_l_e_d.html#aabd6a2b4498ff54deb0ef481e2e55704">More...</a><br /></td></tr>
+<tr class="separator:aabd6a2b4498ff54deb0ef481e2e55704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:aaaa14b5fb222c4c62400bc62f7106e68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68">rgb</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t <a class="el" href="class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b">on</a>=1)</td></tr>
 <tr class="memdesc:aaaa14b5fb222c4c62400bc62f7106e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing single <a class="el" href="class_l_e_d.html">LED</a> chip.  <a href="class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68">More...</a><br /></td></tr>
@@ -135,9 +138,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a05046338ca2341065e0bdfab68eba911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a05046338ca2341065e0bdfab68eba911">adjustColor</a> (void)</td></tr>
 <tr class="memdesc:a05046338ca2341065e0bdfab68eba911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates new RGB values using brightness.  <a href="class_l_e_d.html#a05046338ca2341065e0bdfab68eba911">More...</a><br /></td></tr>
 <tr class="separator:a05046338ca2341065e0bdfab68eba911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71725c5dd16390ba5f30759b7fb0226d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a71725c5dd16390ba5f30759b7fb0226d">getChannelIdx</a> (uint8_t <a class="el" href="class_l_e_d.html#a6c5ba2feb426589106f62f846ba881ac">color</a>)</td></tr>
-<tr class="memdesc:a71725c5dd16390ba5f30759b7fb0226d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets channel index for desired color.  <a href="class_l_e_d.html#a71725c5dd16390ba5f30759b7fb0226d">More...</a><br /></td></tr>
-<tr class="separator:a71725c5dd16390ba5f30759b7fb0226d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b53e34dc9c24723d93ab2f2703f8ee"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a44b53e34dc9c24723d93ab2f2703f8ee">getChannelIdx</a> (<a class="el" href="group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064">ProgLED_chIdx_t</a> idx)</td></tr>
+<tr class="memdesc:a44b53e34dc9c24723d93ab2f2703f8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets channel index for desired color.  <a href="class_l_e_d.html#a44b53e34dc9c24723d93ab2f2703f8ee">More...</a><br /></td></tr>
+<tr class="separator:a44b53e34dc9c24723d93ab2f2703f8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -150,13 +153,13 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a22bdb6f128e122e795e06348979bc399"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a22bdb6f128e122e795e06348979bc399">outputColor</a> [3] = { 0x00, 0x00, 0x00 }</td></tr>
 <tr class="memdesc:a22bdb6f128e122e795e06348979bc399"><td class="mdescLeft">&#160;</td><td class="mdescRight">24-bit color data calculated using brightness value.  <a href="class_l_e_d.html#a22bdb6f128e122e795e06348979bc399">More...</a><br /></td></tr>
 <tr class="separator:a22bdb6f128e122e795e06348979bc399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af788bb76a920af2e6e71e5688d6276f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#af788bb76a920af2e6e71e5688d6276f6">format</a> = <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a></td></tr>
-<tr class="memdesc:af788bb76a920af2e6e71e5688d6276f6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html">LED</a> color format.  <a href="class_l_e_d.html#af788bb76a920af2e6e71e5688d6276f6">More...</a><br /></td></tr>
-<tr class="separator:af788bb76a920af2e6e71e5688d6276f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a233651d145284bc3445afb065f0f4722"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_l_e_d.html#a233651d145284bc3445afb065f0f4722">chBitmap</a> = 0</td></tr>
+<tr class="memdesc:a233651d145284bc3445afb065f0f4722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color channel bitmap variable.  <a href="class_l_e_d.html#a233651d145284bc3445afb065f0f4722">More...</a><br /></td></tr>
+<tr class="separator:a233651d145284bc3445afb065f0f4722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00272">272</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00279">279</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a05046338ca2341065e0bdfab68eba911" name="a05046338ca2341065e0bdfab68eba911"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05046338ca2341065e0bdfab68eba911">&#9670;&#160;</a></span>adjustColor()</h2>
@@ -185,7 +188,7 @@ Private Attributes</h2></td></tr>
 <p>Calculates new RGB values using brightness. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00439">439</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00432">432</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -238,7 +241,7 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>No return value.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd><code>value</code> over 100 will be stored as 100. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00382">382</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00370">370</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -265,8 +268,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a71725c5dd16390ba5f30759b7fb0226d" name="a71725c5dd16390ba5f30759b7fb0226d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71725c5dd16390ba5f30759b7fb0226d">&#9670;&#160;</a></span>getChannelIdx()</h2>
+<a id="a44b53e34dc9c24723d93ab2f2703f8ee" name="a44b53e34dc9c24723d93ab2f2703f8ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b53e34dc9c24723d93ab2f2703f8ee">&#9670;&#160;</a></span>getChannelIdx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,8 +280,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">uint8_t LED::getChannelIdx </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064">ProgLED_chIdx_t</a>&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -292,20 +295,20 @@ Private Attributes</h2></td></tr>
 <p>Gets channel index for desired color. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">color</td><td>Desired color. </td></tr>
+    <tr><td class="paramname">idx</td><td>Desired color channel. See <a class="el" href="group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064">ProgLED_chIdx_t</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Channel index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00450">450</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00443">443</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_l_e_d_a71725c5dd16390ba5f30759b7fb0226d_icgraph.png" border="0" usemap="#aclass_l_e_d_a71725c5dd16390ba5f30759b7fb0226d_icgraph" alt=""/></div>
-<map name="aclass_l_e_d_a71725c5dd16390ba5f30759b7fb0226d_icgraph" id="aclass_l_e_d_a71725c5dd16390ba5f30759b7fb0226d_icgraph">
+<div class="center"><img src="class_l_e_d_a44b53e34dc9c24723d93ab2f2703f8ee_icgraph.png" border="0" usemap="#aclass_l_e_d_a44b53e34dc9c24723d93ab2f2703f8ee_icgraph" alt=""/></div>
+<map name="aclass_l_e_d_a44b53e34dc9c24723d93ab2f2703f8ee_icgraph" id="aclass_l_e_d_a44b53e34dc9c24723d93ab2f2703f8ee_icgraph">
 <area shape="rect" title="Gets channel index for desired color." alt="" coords="127,5,265,31"/>
 <area shape="rect" href="class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68" title="Class representing single LED chip." alt="" coords="5,5,79,31"/>
 </map>
@@ -346,7 +349,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>8-bit color value from desired index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00412">412</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00400">400</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +382,7 @@ Private Attributes</h2></td></tr>
 <dd>
 <code>1</code> if <a class="el" href="class_l_e_d.html">LED</a> is on. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00417">417</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00405">405</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -410,7 +413,7 @@ Private Attributes</h2></td></tr>
 <p>Turns off <a class="el" href="class_l_e_d.html">LED</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00402">402</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00390">390</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -441,7 +444,7 @@ Private Attributes</h2></td></tr>
 <p>Turns on <a class="el" href="class_l_e_d.html">LED</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00397">397</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00385">385</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -475,7 +478,7 @@ Private Attributes</h2></td></tr>
 <p>Reset <a class="el" href="class_l_e_d.html">LED</a> to default values. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00422">422</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00410">410</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -505,7 +508,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00376">376</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00364">364</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -562,7 +565,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00359">359</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00347">347</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -572,11 +575,48 @@ Private Attributes</h2></td></tr>
 <map name="aclass_l_e_d_aaaa14b5fb222c4c62400bc62f7106e68_cgraph" id="aclass_l_e_d_aaaa14b5fb222c4c62400bc62f7106e68_cgraph">
 <area shape="rect" title="Class representing single LED chip." alt="" coords="5,55,79,80"/>
 <area shape="rect" href="class_l_e_d.html#a05046338ca2341065e0bdfab68eba911" title="Calculates new RGB values using brightness." alt="" coords="136,5,256,31"/>
-<area shape="rect" href="class_l_e_d.html#a71725c5dd16390ba5f30759b7fb0226d" title="Gets channel index for desired color." alt="" coords="127,55,265,80"/>
+<area shape="rect" href="class_l_e_d.html#a44b53e34dc9c24723d93ab2f2703f8ee" title="Gets channel index for desired color." alt="" coords="127,55,265,80"/>
 <area shape="rect" href="class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b" title="Turns on LED." alt="" coords="161,104,231,129"/>
 <area shape="rect" href="class_l_e_d.html#a249057569237c26a906a90a3c8481db8" title="Sets new LED&#39;s brightness value." alt="" coords="313,5,428,31"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="aabd6a2b4498ff54deb0ef481e2e55704" name="aabd6a2b4498ff54deb0ef481e2e55704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabd6a2b4498ff54deb0ef481e2e55704">&#9670;&#160;</a></span>setChannelBitmap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED::setChannelBitmap </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>bitmap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets <a class="el" href="class_l_e_d.html">LED</a> color format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bitmap</td><td><a class="el" href="class_l_e_d.html">LED</a> color format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00426">426</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,11 +647,38 @@ Private Attributes</h2></td></tr>
 <p>Toggles <a class="el" href="class_l_e_d.html">LED</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00407">407</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00395">395</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a233651d145284bc3445afb065f0f4722" name="a233651d145284bc3445afb065f0f4722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a233651d145284bc3445afb065f0f4722">&#9670;&#160;</a></span>chBitmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t LED::chBitmap = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Color channel bitmap variable. </p>
+<p >Variable format is <code>0b00BBGGRR</code> where <code>RR</code> bits represent channel index for red color, <code>GG</code> bits represent channel index for green color and <code>BB</code> bits represent channel index for blue color. Variable is set via <a class="el" href="class_l_e_d.html#aabd6a2b4498ff54deb0ef481e2e55704">setChannelBitmap</a> method and color channel index is fetched via <a class="el" href="class_l_e_d.html#a44b53e34dc9c24723d93ab2f2703f8ee">getChannelIdx</a> method. </p>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00382">382</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
 <a id="a6c5ba2feb426589106f62f846ba881ac" name="a6c5ba2feb426589106f62f846ba881ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c5ba2feb426589106f62f846ba881ac">&#9670;&#160;</a></span>color</h2>
 
@@ -634,7 +701,7 @@ Private Attributes</h2></td></tr>
 
 <p>24-bit color data in RGB format. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00349">349</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00364">364</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -661,33 +728,7 @@ Private Attributes</h2></td></tr>
 <p><a class="el" href="class_l_e_d.html">LED</a> config variable. </p>
 <p >First seven bits are reserved for <a class="el" href="class_l_e_d.html">LED</a> brightness. Last bit(MSB) is reserved for toggling <a class="el" href="class_l_e_d.html">LED</a>. It is possible to turn off or on <a class="el" href="class_l_e_d.html">LED</a> without changing <a class="el" href="class_l_e_d.html">LED</a>'s color. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00357">357</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="af788bb76a920af2e6e71e5688d6276f6" name="af788bb76a920af2e6e71e5688d6276f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af788bb76a920af2e6e71e5688d6276f6">&#9670;&#160;</a></span>format</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> LED::format = <a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_l_e_d.html">LED</a> color format. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00359">359</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00372">372</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -713,7 +754,7 @@ Private Attributes</h2></td></tr>
 
 <p>24-bit color data calculated using brightness value. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00358">358</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00373">373</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
@@ -727,7 +768,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_l_e_d.html">LED</a></li>
-    <li class="footer">Generated on Thu Nov 3 2022 20:20:10 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Thu Nov 3 2022 23:36:24 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>

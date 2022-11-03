@@ -15,6 +15,11 @@ var _prog_l_e_d_8h =
     [ "USE_FPU", "group___prog_l_e_d.html#ga113160f0797f83c8da70553250921ac5", null ],
     [ "extHandler", "group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf", null ],
     [ "ledIdx_t", "group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea", null ],
+    [ "ProgLED_chIdx_t", "group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064", [
+      [ "RED_IDX", "group___prog_l_e_d.html#gga3d5d7fea2fc6c6679e4ce1ce88570064ad78cdbfce67da8d1b961229a4ff537dc", null ],
+      [ "GREEN_IDX", "group___prog_l_e_d.html#gga3d5d7fea2fc6c6679e4ce1ce88570064a93c66ef000a08d31ac67286f559df17f", null ],
+      [ "BLUE_IDX", "group___prog_l_e_d.html#gga3d5d7fea2fc6c6679e4ce1ce88570064aac5ded632a8b7614a727c4c513f495bc", null ]
+    ] ],
     [ "ProgLED_format_t", "group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9", [
       [ "PROG_LED_RGB", "group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9afad859a3d96c2b74e8831072ae4bb439", null ],
       [ "PROG_LED_GRB", "group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c", null ]
