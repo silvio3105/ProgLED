@@ -299,7 +299,7 @@ class LED { /**< @brief Class representing single LED chip. */
 	 * @brief Fetch output color.
 	 * 
 	 * @param idx Color index.
-	 * @return 8-bit color value from desired index. 
+	 * @return 8-bit color value from desired \c idx 
 	 */
 	inline uint8_t getColor(uint8_t idx) const; 
 
