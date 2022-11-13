@@ -165,10 +165,10 @@ uint8_t ProgLED<ledNum>::fetchBit(uint8_t& bit)
 	}
 	
 	// Get bit from output color
-	bit = _sSTD_BBIT(led[ledIdx]->getColor(ledByte), ledBit);
+	bit = SSTD_BBIT(led[ledIdx]->getColor(ledByte), ledBit);
 
 	// Set bit to 0 if LED status is 0(OFF)
-	if (!(_sSTD_BBIT(led[ledIdx]->getConfig(), PROG_LED_STATUS_BIT))) bit = 0;
+	if (!(SSTD_BBIT(led[ledIdx]->getConfig(), PROG_LED_STATUS_BIT))) bit = 0;
 
 	// Move bit selector
 	ledBit++;
@@ -384,17 +384,17 @@ void LED::brightness(uint8_t value)
 
 inline void LED::on(void)
 {
-	_sSTD_BIT_SET(config, PROG_LED_STATUS_BIT);
+	SSTD_BIT_SET(config, PROG_LED_STATUS_BIT);
 }
 
 inline void LED::off(void)
 {
-	_sSTD_BIT_CLEAR(config, PROG_LED_STATUS_BIT);
+	SSTD_BIT_CLEAR(config, PROG_LED_STATUS_BIT);
 }
 
 inline void LED::toggle(void)
 {
-	_sSTD_BIT_TOGGLE(config, PROG_LED_STATUS_BIT);
+	SSTD_BIT_TOGGLE(config, PROG_LED_STATUS_BIT);
 }
 
 inline uint8_t LED::getColor(uint8_t idx) const

@@ -246,10 +246,10 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp_source.html',''); ini
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    </div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">// Get bit from output color</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    bit = _sSTD_BBIT(led[ledIdx]-&gt;getColor(ledByte), ledBit);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    bit = SSTD_BBIT(led[ledIdx]-&gt;getColor(ledByte), ledBit);</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">// Set bit to 0 if LED status is 0(OFF)</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">if</span> (!(_sSTD_BBIT(led[ledIdx]-&gt;getConfig(), <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>))) bit = 0;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">if</span> (!(SSTD_BBIT(led[ledIdx]-&gt;getConfig(), <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>))) bit = 0;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="comment">// Move bit selector</span></div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    ledBit++;</div>
@@ -465,17 +465,17 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp_source.html',''); ini
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno"><a class="line" href="class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b">  385</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b">LED::on</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>{</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    _sSTD_BIT_SET(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    SSTD_BIT_SET(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>}</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno"><a class="line" href="class_l_e_d.html#a3a62c5de23259cd092165585c45bac22">  390</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d.html#a3a62c5de23259cd092165585c45bac22">LED::off</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>{</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    _sSTD_BIT_CLEAR(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    SSTD_BIT_CLEAR(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>}</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno"><a class="line" href="class_l_e_d.html#a5d6c45cdaaf5264a08929fe10438f1cd">  395</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_l_e_d.html#a5d6c45cdaaf5264a08929fe10438f1cd">LED::toggle</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>{</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    _sSTD_BIT_TOGGLE(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>    SSTD_BIT_TOGGLE(<a class="code hl_variable" href="class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851">config</a>, <a class="code hl_define" href="group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a">PROG_LED_STATUS_BIT</a>);</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>}</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno"><a class="line" href="class_l_e_d.html#a23ac16c0dbf129de6cdacca27fac637a">  400</a></span><span class="keyword">inline</span> uint8_t <a class="code hl_function" href="class_l_e_d.html#a23ac16c0dbf129de6cdacca27fac637a">LED::getColor</a>(uint8_t idx)<span class="keyword"> const</span></div>
@@ -579,7 +579,7 @@ $(document).ready(function(){initNavTree('_prog_l_e_d_8cpp_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_prog_l_e_d_8cpp.html">ProgLED.cpp</a></li>
-    <li class="footer">Generated on Thu Nov 3 2022 23:36:24 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Sun Nov 13 2022 13:41:09 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>
