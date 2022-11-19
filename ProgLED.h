@@ -67,21 +67,52 @@ This License shall be included in all methodal textual files.
 #define COL_RED					0xFF, 0x00, 0x00 /**< @brief Snippet for red color. */
 #define COL_GREEN				0x00, 0xFF, 0x00 /**< @brief Snippet for green color. */
 #define COL_BLUE				0x00, 0x00, 0xFF /**< @brief Snippet for blue color. */
+#define COL_PINK				0xFF, 0x00, 0xFF /**< @brief Snippet for pink color. */
+#define COL_YELLOW				0xFF, 0xFF, 0x00 /**< @brief Snippet for yellow color. */
+#define COL_CYAN				0x00, 0xFF, 0xFF /**< @brief Snippet for cyan color. */
+#define COL_LIGHTCYAN			0xE0, 0xFF, 0xFF /**< @brief Snippet for light cyan color.  */
+#define COL_DARKCYAN			0x00, 0x8B, 0x8B /**< @brief Snippet for dark cyan color. */
+#define COL_TURQUOISE			0x40, 0xE0, 0xD0 /**< @brief Snippet for turquoise color. */
+#define COL_ORANGE				0xFF, 0x8C, 0x00 /**< @brief Snippet for orange color. */
+#define COL_AMBER				0xFF, 0xBF, 0x00 /**< @brief Snippet for amber color. */
+#define COL_BROWN				0x8B, 0x45, 0x13 /**< @brief Snippet for brown color. */
+#define COL_CHERRY				0xD2, 0x04, 0x2D /**< @brief Snippet for cherry color. */
+#define COL_DARKRED				0x8B, 0x00, 0x00 /**< @brief Snippet for dark red color. */
+#define COL_LIGHTRED			0xF8, 0x83, 0x79 /**< @brief Snippet for light red color. */
+#define COL_LIME				0x9E, 0xFD, 0x38 /**< @brief Snippet for lime color. */
+#define COL_LIGHTGREEN			0x00, 0xFF, 0x99 /**< @brief Snippet for light green color. */
+#define COL_DARKGREEN			0x01, 0x32, 0x20 /**< @brief Snippet for dark green color. */
+#define COL_ANDROID				0xA4, 0xC6, 0x39 /**< @brief Snippet for android green color. */
+#define COL_NEONGREEN			0x39, 0xFF, 0x14 /**< @brief Snippet for neon green color. */
+#define COL_PURPLE				0x5D, 0x3F, 0xD3 /**< @brief Snippet for purple color. */
+#define COL_LIGHTVIOLET			0xCF, 0x9F, 0xFF /**< @brief Snippet for light violet color. */
 
 
 // ----- ENUMATORS
-// SOON: Edti method LED::rgb if new color format is added
-typedef enum ProgLED_format_t: uint8_t { /**< @brief Enum for 24-bit color format. */
+// SOON: Edit method LED::rgb if new color format is added
+/**
+ * @brief Enum for 24-bit color format.
+ * 
+ */
+typedef enum ProgLED_format_t: uint8_t {
 	PROG_LED_RGB = 0b00100100,  /**< RGB 24-bit color format. */
 	PROG_LED_GRB = 0b00100001 /**< GRB 24-bit color format. */
 };
 
-typedef enum ProgLED_status_t: uint8_t { /**< @brief Enum for LED line status. */
+/**
+ * @brief Enum for LED line status.
+ * 
+ */
+typedef enum ProgLED_status_t: uint8_t {
 	LINE_IDLE, /**< LED line is in idle state. */
 	LINE_CLOCKING /**< LED line is in clocking state. */
 };
 
-typedef enum ProgLED_chIdx_t : uint8_t { /**< Color channels bit positions. */
+/**
+ * @brief Color channels bit positions.
+ * 
+ */
+typedef enum ProgLED_chIdx_t : uint8_t {
 	RED_IDX = 0,
 	GREEN_IDX = 2,
 	BLUE_IDX = 4
@@ -101,7 +132,11 @@ typedef uint16_t ledIdx_t; /**< @brief Type definition for LED index. */
 
 // ----- CLASSES
 template <ledIdx_t ledNum>
-class ProgLED { /**< @brief Class representing single LED line. */
+/**
+ * @brief Class representing single LED line.
+ * 
+ */
+class ProgLED {
 	// PUBLIC STUFF
 	public:
 	// CONSTUCTORS AND DECONSTRUCTORS DECLARATIONS

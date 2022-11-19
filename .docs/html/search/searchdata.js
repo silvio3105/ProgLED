@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "clos",
   5: "el",
   6: "p",
-  7: "lpr",
+  7: "lp",
   8: "p",
   9: "p",
   10: "r"
