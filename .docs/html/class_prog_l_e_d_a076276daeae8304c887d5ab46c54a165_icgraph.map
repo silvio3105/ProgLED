@@ -1,0 +1,4 @@
+<map id="ProgLED::fetchBit" name="ProgLED::fetchBit">
+<area shape="rect" id="node1" title="Fetches bit from LED color." alt="" coords="175,5,301,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#ac4482deaaefd57ee5feaefc9b985720a" title="Calls external handler to start clocking out colors from led memory in format." alt="" coords="5,5,127,31"/>
+</map>

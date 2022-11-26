@@ -1,0 +1,4 @@
+<map id="ProgLED::toggle" name="ProgLED::toggle">
+<area shape="rect" id="node1" title="Toggle LEDs status between on and off for whole LED line." alt="" coords="5,5,123,31"/>
+<area shape="rect" id="node2" href="$class_led.html#abbb05b6274fbea2a2fc94eea3cb6dd3d" title="Toggles LED." alt="" coords="171,5,257,31"/>
+</map>

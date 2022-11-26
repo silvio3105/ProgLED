@@ -1,7 +1,16 @@
 
-# RGB LED Driver
+# RGB LED Library
 
-Soon
+This is frameworkless library for controlling programmable RGB LEDs. Library does not depend on framework (eg., Arduino or STM HAL). External handlers for sending(clocking) LED's data have to be provided during object construction.
+
+Library is written in C++ and it supports multiple LED lines. It requires [sSTD](https://github.com/silvio3105/sSTD) library.
+One LED line can control up to 65536 LEDs(**theoretically, not HW tested**). RGB and GRB color formats are supported.
+Library is made for controlling `IN-PI55TATPRPGPB` RGB LED.
+
+Check library documentation and example codes for more information.
+Library documentation is available at `.docs/html/index.html`. Example applications are available at `examples` folder.
+All examples are made with STM HAL framework and tested with `IN-PI55TATPRPGPB` LEDs on custom hardware for 3D Clock project.
+
 
 # License
 
@@ -17,3 +26,7 @@ THE AUTHOR KEEPS ALL RIGHTS TO CHANGE OR REMOVE THE CONTENTS OF THIS PROJECT WIT
 THE AUTHOR IS NOT RESPONSIBLE FOR DAMAGE OF ANY KIND OR LIABILITY CAUSED BY USING THE CONTENTS OF THIS PROJECT.
 
 This License shall be included in all functional textual files.
+
+---
+
+Copyright (c) 2022, silvio3105

@@ -1,0 +1,6 @@
+<map id="Led::adjustColor" name="Led::adjustColor">
+<area shape="rect" id="node1" title="Calculates new RGB values using brightness." alt="" coords="355,5,471,31"/>
+<area shape="rect" id="node2" href="$class_led.html#a8c569f548db931a41db2ec1685e44eaa" title="Sets new LED&#39;s brightness value." alt="" coords="196,5,307,31"/>
+<area shape="rect" id="node4" href="$class_led.html#abadca44a5e9f44ba279a410fc6c3f95c" title="Sets new LED color." alt="" coords="217,55,286,80"/>
+<area shape="rect" id="node3" href="$class_prog_l_e_d.html#a1967184eabc364aa4c61506521277d09" title="Sets brightness for LED line." alt="" coords="5,5,148,31"/>
+</map>

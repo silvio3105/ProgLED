@@ -1,0 +1,3 @@
+<map id="ProgLED::brightness" name="ProgLED::brightness">
+<area shape="rect" id="node1" title="Sets brightness for LED line." alt="" coords="5,29,148,55"/>
+</map>
