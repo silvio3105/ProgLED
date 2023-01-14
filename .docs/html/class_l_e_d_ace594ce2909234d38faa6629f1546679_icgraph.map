@@ -1,0 +1,4 @@
+<map id="LED::adjust" name="LED::adjust">
+<area shape="rect" id="node1" title="Calculate new output RGB values using brightness." alt="" coords="175,5,265,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529" title="Call external handler to start clocking out LED data." alt="" coords="5,5,127,31"/>
+</map>

@@ -1,18 +1,15 @@
 var class_l_e_d =
 [
-    [ "adjustColor", "class_l_e_d.html#a05046338ca2341065e0bdfab68eba911", null ],
-    [ "brightness", "class_l_e_d.html#a249057569237c26a906a90a3c8481db8", null ],
-    [ "getChannelIdx", "class_l_e_d.html#a44b53e34dc9c24723d93ab2f2703f8ee", null ],
-    [ "getColor", "class_l_e_d.html#a23ac16c0dbf129de6cdacca27fac637a", null ],
-    [ "getConfig", "class_l_e_d.html#a4d50abac57f2cecb02ea276d6ff2636c", null ],
-    [ "off", "class_l_e_d.html#a3a62c5de23259cd092165585c45bac22", null ],
-    [ "on", "class_l_e_d.html#a09911dbf39a7de76abc401cfad83964b", null ],
-    [ "reset", "class_l_e_d.html#aa6a8761377bda372aaab6ea608407b81", null ],
-    [ "rgb", "class_l_e_d.html#aaaa14b5fb222c4c62400bc62f7106e68", null ],
-    [ "setChannelBitmap", "class_l_e_d.html#aabd6a2b4498ff54deb0ef481e2e55704", null ],
-    [ "toggle", "class_l_e_d.html#a5d6c45cdaaf5264a08929fe10438f1cd", null ],
-    [ "chBitmap", "class_l_e_d.html#a233651d145284bc3445afb065f0f4722", null ],
-    [ "color", "class_l_e_d.html#a6c5ba2feb426589106f62f846ba881ac", null ],
-    [ "config", "class_l_e_d.html#aebbb87abb6b839a84bcf0d717e75d851", null ],
-    [ "outputColor", "class_l_e_d.html#a22bdb6f128e122e795e06348979bc399", null ]
+    [ "adjust", "class_l_e_d.html#ace594ce2909234d38faa6629f1546679", null ],
+    [ "brightness", "class_l_e_d.html#a31ef4ff774dfd4262df7a0628089eb79", null ],
+    [ "brightness", "class_l_e_d.html#a0117cd406b4cb15b2c9821143a464ef2", null ],
+    [ "getColor", "class_l_e_d.html#a20c2612b853c1f10e9dd55fce709b89f", null ],
+    [ "getConfig", "class_l_e_d.html#a57b7ad8bf8d97f7a25db6e71392a1bc1", null ],
+    [ "off", "class_l_e_d.html#af25eb26518f14287a7fc26dde4762ab7", null ],
+    [ "on", "class_l_e_d.html#af4881829b0e320a56ea004503f063b26", null ],
+    [ "reset", "class_l_e_d.html#ab4e53bb6fb0a8aea2b609bd079da6d88", null ],
+    [ "rgb", "class_l_e_d.html#a8cf4cec4fd0f62eaa0fd23ca805c91f2", null ],
+    [ "rgb", "class_l_e_d.html#ae8d9e81ef33eb58bb8e9212fd25e3b66", null ],
+    [ "rgb", "class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1", null ],
+    [ "toggle", "class_l_e_d.html#abb0ac921b91dbd8161b44966f909a943", null ]
 ];

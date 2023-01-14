@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['line_5fclocking_0',['LINE_CLOCKING',['../group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732aa38be45012aa7aae308afce3fc40ec45',1,'ProgLED.h']]],
-  ['line_5fidle_1',['LINE_IDLE',['../group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732abbd03fd4758dd3a6c19ed8a376d56c5e',1,'ProgLED.h']]]
+  ['amber_0',['AMBER',['../group___prog_l_e_d.html#ggaf48ff449157f71a4cc5c76863493bac5ab2b41fdc9ef47b345b95936b36d730cc',1,'ProgLED.h']]],
+  ['android_5fgreen_1',['ANDROID_GREEN',['../group___prog_l_e_d.html#ggaf48ff449157f71a4cc5c76863493bac5aa0ba36682c8822729cf88f1a5678d8d9',1,'ProgLED.h']]]
 ];

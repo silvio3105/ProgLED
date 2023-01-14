@@ -1,0 +1,4 @@
+<map id="ProgLED::stop" name="ProgLED::stop">
+<area shape="rect" id="node1" title="Call external hanlder to stop clocking out LED data." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079" title="Get LED line status." alt="" coords="160,5,279,31"/>
+</map>

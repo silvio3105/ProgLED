@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ProgLED: ProgLED&lt; ledNum &gt; Class Template Reference</title>
+<title>ProgLED: ProgLED&lt; ledNum, ledFormat &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ProgLED<span id="projectnumber">&#160;v1.0rc1</span>
+   <div id="projectname">ProgLED<span id="projectnumber">&#160;v1.0r1</span>
    </div>
    <div id="projectbrief">Frameworkless driver for programmable RGB LEDs written in C++.</div>
   </td>
@@ -94,278 +94,116 @@ $(document).ready(function(){initNavTree('class_prog_l_e_d.html',''); initResiza
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_prog_l_e_d-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ProgLED&lt; ledNum &gt; Class Template Reference<div class="ingroups"><a class="el" href="group___prog_l_e_d.html">ProgLED</a></div></div></div>
+  <div class="headertitle"><div class="title">ProgLED&lt; ledNum, ledFormat &gt; Class Template Reference<div class="ingroups"><a class="el" href="group___prog_l_e_d.html">ProgLED</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing single <a class="el" href="class_l_e_d.html">LED</a> line.  
+<p>Class representing single <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  
  <a href="class_prog_l_e_d.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for ProgLED&lt; ledNum &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for ProgLED&lt; ledNum, ledFormat &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="class_prog_l_e_d__coll__graph.png" border="0" usemap="#a_prog_l_e_d_3_01led_num_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="a_prog_l_e_d_3_01led_num_01_4_coll__map" id="a_prog_l_e_d_3_01led_num_01_4_coll__map">
-<area shape="rect" title="Class representing single LED line." alt="" coords="5,93,148,119"/>
-<area shape="rect" href="class_l_e_d.html" title=" " alt="" coords="53,5,100,31"/>
+<div class="center"><img src="class_prog_l_e_d__coll__graph.png" border="0" usemap="#a_prog_l_e_d_3_01led_num_00_01led_format_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="a_prog_l_e_d_3_01led_num_00_01led_format_01_4_coll__map" id="a_prog_l_e_d_3_01led_num_00_01led_format_01_4_coll__map">
+<area shape="rect" title="Class representing single LED line." alt="" coords="5,93,213,119"/>
+<area shape="rect" href="class_l_e_d.html" title=" " alt="" coords="45,5,174,31"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e4c4257b793b2c9e93711b5d0eac5d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a8e4c4257b793b2c9e93711b5d0eac5d8">ProgLED</a> (<a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a> start, <a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a> <a class="el" href="class_prog_l_e_d.html#a2fdeffdc75755dbe0fae8c77fec41c75">stop</a>, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat=<a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a>)</td></tr>
-<tr class="memdesc:a8e4c4257b793b2c9e93711b5d0eac5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object constructor for <a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a>.  <a href="class_prog_l_e_d.html#a8e4c4257b793b2c9e93711b5d0eac5d8">More...</a><br /></td></tr>
-<tr class="separator:a8e4c4257b793b2c9e93711b5d0eac5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab32258a25f144b9cf43a2b3fb13a2ffb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ab32258a25f144b9cf43a2b3fb13a2ffb">~ProgLED</a> (void)</td></tr>
-<tr class="memdesc:ab32258a25f144b9cf43a2b3fb13a2ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object deconstructor.  <a href="class_prog_l_e_d.html#ab32258a25f144b9cf43a2b3fb13a2ffb">More...</a><br /></td></tr>
-<tr class="separator:ab32258a25f144b9cf43a2b3fb13a2ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd44063521a1fa8bf8f72406606858eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#acd44063521a1fa8bf8f72406606858eb">init</a> (void)</td></tr>
-<tr class="memdesc:acd44063521a1fa8bf8f72406606858eb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> init method.  <a href="class_prog_l_e_d.html#acd44063521a1fa8bf8f72406606858eb">More...</a><br /></td></tr>
-<tr class="separator:acd44063521a1fa8bf8f72406606858eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88e9d4e2525920e9a9dfd008822c90e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ad88e9d4e2525920e9a9dfd008822c90e">brightness</a> (uint8_t value)</td></tr>
-<tr class="memdesc:ad88e9d4e2525920e9a9dfd008822c90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets new brightness for whole <a class="el" href="class_l_e_d.html">LED</a> line.  <a href="class_prog_l_e_d.html#ad88e9d4e2525920e9a9dfd008822c90e">More...</a><br /></td></tr>
-<tr class="separator:ad88e9d4e2525920e9a9dfd008822c90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8780d1ca703266bf56a548a2b1a8f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#aa8780d1ca703266bf56a548a2b1a8f80">reset</a> (void)</td></tr>
-<tr class="memdesc:aa8780d1ca703266bf56a548a2b1a8f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets <a class="el" href="class_l_e_d.html">LED</a> line to default color and config.  <a href="class_prog_l_e_d.html#aa8780d1ca703266bf56a548a2b1a8f80">More...</a><br /></td></tr>
-<tr class="separator:aa8780d1ca703266bf56a548a2b1a8f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a613d34f7abbaf038ab271e61040ab7f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a613d34f7abbaf038ab271e61040ab7f6">toggle</a> (void)</td></tr>
-<tr class="memdesc:a613d34f7abbaf038ab271e61040ab7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles LEDs status between on and off for whole <a class="el" href="class_l_e_d.html">LED</a> line.  <a href="class_prog_l_e_d.html#a613d34f7abbaf038ab271e61040ab7f6">More...</a><br /></td></tr>
-<tr class="separator:a613d34f7abbaf038ab271e61040ab7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52e48fd65bb9ee7c5054c1f622021943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a52e48fd65bb9ee7c5054c1f622021943">on</a> (void)</td></tr>
-<tr class="memdesc:a52e48fd65bb9ee7c5054c1f622021943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns on <a class="el" href="class_l_e_d.html">LED</a> line.  <a href="class_prog_l_e_d.html#a52e48fd65bb9ee7c5054c1f622021943">More...</a><br /></td></tr>
-<tr class="separator:a52e48fd65bb9ee7c5054c1f622021943"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a91b3de2caa4963bc2631c9369f871f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a9a91b3de2caa4963bc2631c9369f871f">off</a> (void)</td></tr>
-<tr class="memdesc:a9a91b3de2caa4963bc2631c9369f871f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns off <a class="el" href="class_l_e_d.html">LED</a> line.  <a href="class_prog_l_e_d.html#a9a91b3de2caa4963bc2631c9369f871f">More...</a><br /></td></tr>
-<tr class="separator:a9a91b3de2caa4963bc2631c9369f871f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d3b16f54e46043d1fbfe00364a7a542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a5d3b16f54e46043d1fbfe00364a7a542">update</a> (void)</td></tr>
-<tr class="memdesc:a5d3b16f54e46043d1fbfe00364a7a542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls external handler to start clocking out <a class="el" href="class_l_e_d.html">LED</a> data.  <a href="class_prog_l_e_d.html#a5d3b16f54e46043d1fbfe00364a7a542">More...</a><br /></td></tr>
-<tr class="separator:a5d3b16f54e46043d1fbfe00364a7a542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fdeffdc75755dbe0fae8c77fec41c75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a2fdeffdc75755dbe0fae8c77fec41c75">stop</a> (void)</td></tr>
-<tr class="memdesc:a2fdeffdc75755dbe0fae8c77fec41c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls external hanlder to stop clocking out <a class="el" href="class_l_e_d.html">LED</a> data.  <a href="class_prog_l_e_d.html#a2fdeffdc75755dbe0fae8c77fec41c75">More...</a><br /></td></tr>
-<tr class="separator:a2fdeffdc75755dbe0fae8c77fec41c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ca477a42bcde6e4a049634ebb2c550d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a1ca477a42bcde6e4a049634ebb2c550d">fetchBit</a> (uint8_t &amp;bit)</td></tr>
-<tr class="memdesc:a1ca477a42bcde6e4a049634ebb2c550d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches bit from <a class="el" href="class_l_e_d.html">LED</a> color.  <a href="class_prog_l_e_d.html#a1ca477a42bcde6e4a049634ebb2c550d">More...</a><br /></td></tr>
-<tr class="separator:a1ca477a42bcde6e4a049634ebb2c550d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a42594978d843056adcbc8a5882780fed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a42594978d843056adcbc8a5882780fed">rgb</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t <a class="el" href="class_prog_l_e_d.html#a52e48fd65bb9ee7c5054c1f622021943">on</a>=1)</td></tr>
-<tr class="memdesc:a42594978d843056adcbc8a5882780fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets color for whole <a class="el" href="class_l_e_d.html">LED</a> line.  <a href="class_prog_l_e_d.html#a42594978d843056adcbc8a5882780fed">More...</a><br /></td></tr>
-<tr class="separator:a42594978d843056adcbc8a5882780fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad4d3a0854a9275c79647e19d7cce25d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#aad4d3a0854a9275c79647e19d7cce25d">rgb</a> (uint32_t color, uint8_t <a class="el" href="class_prog_l_e_d.html#a52e48fd65bb9ee7c5054c1f622021943">on</a>=1)</td></tr>
-<tr class="separator:aad4d3a0854a9275c79647e19d7cce25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62cb7462d9f13dc3ac53434d0c3f440f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a62cb7462d9f13dc3ac53434d0c3f440f">ProgLED</a> (<a class="el" href="group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343">extHandler</a> startFunc, <a class="el" href="group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343">extHandler</a> stopFunc)</td></tr>
+<tr class="memdesc:a62cb7462d9f13dc3ac53434d0c3f440f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> object constructor.  <a href="class_prog_l_e_d.html#a62cb7462d9f13dc3ac53434d0c3f440f">More...</a><br /></td></tr>
+<tr class="separator:a62cb7462d9f13dc3ac53434d0c3f440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e64503ef25e04417c59e6041ce08ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a64e64503ef25e04417c59e6041ce08ba">~ProgLED</a> (void)</td></tr>
+<tr class="memdesc:a64e64503ef25e04417c59e6041ce08ba"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> object deconstructor.  <a href="class_prog_l_e_d.html#a64e64503ef25e04417c59e6041ce08ba">More...</a><br /></td></tr>
+<tr class="separator:a64e64503ef25e04417c59e6041ce08ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3c67cfa69b5dff17fb56c529614fd04"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ae3c67cfa69b5dff17fb56c529614fd04">init</a> (void)</td></tr>
+<tr class="memdesc:ae3c67cfa69b5dff17fb56c529614fd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#ae3c67cfa69b5dff17fb56c529614fd04">More...</a><br /></td></tr>
+<tr class="separator:ae3c67cfa69b5dff17fb56c529614fd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216fe3035be791e0fe24f0d20bd3d100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100">rgb</a> (uint8_t r, uint8_t g, uint8_t b, int8_t brght=-1, <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> <a class="el" href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d">on</a>=ProgLED_status_t::ON)</td></tr>
+<tr class="memdesc:a216fe3035be791e0fe24f0d20bd3d100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set color for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100">More...</a><br /></td></tr>
+<tr class="separator:a216fe3035be791e0fe24f0d20bd3d100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b804372cf770ee56d72806dadd53744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744">rgb</a> (uint32_t color, int8_t brght=-1, <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> <a class="el" href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d">on</a>=ProgLED_status_t::ON)</td></tr>
+<tr class="memdesc:a0b804372cf770ee56d72806dadd53744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set color for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744">More...</a><br /></td></tr>
+<tr class="separator:a0b804372cf770ee56d72806dadd53744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bf2d81bbc096f6a4e2822ae6e41e70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ad8bf2d81bbc096f6a4e2822ae6e41e70">brightness</a> (uint8_t value)</td></tr>
+<tr class="memdesc:ad8bf2d81bbc096f6a4e2822ae6e41e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set new brightness for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#ad8bf2d81bbc096f6a4e2822ae6e41e70">More...</a><br /></td></tr>
+<tr class="separator:ad8bf2d81bbc096f6a4e2822ae6e41e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73284d360f4a738efe54c0b4b9b0023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ac73284d360f4a738efe54c0b4b9b0023">reset</a> (void)</td></tr>
+<tr class="memdesc:ac73284d360f4a738efe54c0b4b9b0023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line to default color, brightness and status.  <a href="class_prog_l_e_d.html#ac73284d360f4a738efe54c0b4b9b0023">More...</a><br /></td></tr>
+<tr class="separator:ac73284d360f4a738efe54c0b4b9b0023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2e47010552aec19ff55d0a8e3fd379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#adf2e47010552aec19ff55d0a8e3fd379">toggle</a> (void)</td></tr>
+<tr class="memdesc:adf2e47010552aec19ff55d0a8e3fd379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> status between on and off for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#adf2e47010552aec19ff55d0a8e3fd379">More...</a><br /></td></tr>
+<tr class="separator:adf2e47010552aec19ff55d0a8e3fd379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2170da668916310d65c6ed5f5334884d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d">on</a> (void)</td></tr>
+<tr class="memdesc:a2170da668916310d65c6ed5f5334884d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn on all LEDs in <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d">More...</a><br /></td></tr>
+<tr class="separator:a2170da668916310d65c6ed5f5334884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20adb1a275e2f39bb49033898e60c550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a20adb1a275e2f39bb49033898e60c550">off</a> (void)</td></tr>
+<tr class="memdesc:a20adb1a275e2f39bb49033898e60c550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn off all LEDs in <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line.  <a href="class_prog_l_e_d.html#a20adb1a275e2f39bb49033898e60c550">More...</a><br /></td></tr>
+<tr class="separator:a20adb1a275e2f39bb49033898e60c550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67086892a35d13205b79b3794b46529"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529">update</a> (<a class="el" href="group___prog_l_e_d.html#ga01364b8fe3282fc6be4a2bce2a47a0d9">ProgLED_line_t</a> type)</td></tr>
+<tr class="memdesc:af67086892a35d13205b79b3794b46529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call external handler to start clocking out <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data.  <a href="class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529">More...</a><br /></td></tr>
+<tr class="separator:af67086892a35d13205b79b3794b46529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7846de2b10869b63d39f0a1c4242ab18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a7846de2b10869b63d39f0a1c4242ab18">stop</a> (void)</td></tr>
+<tr class="memdesc:a7846de2b10869b63d39f0a1c4242ab18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call external hanlder to stop clocking out <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data.  <a href="class_prog_l_e_d.html#a7846de2b10869b63d39f0a1c4242ab18">More...</a><br /></td></tr>
+<tr class="separator:a7846de2b10869b63d39f0a1c4242ab18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6fdc4968a637409e1b540d2325b95b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a9e6fdc4968a637409e1b540d2325b95b">fetchBit</a> (uint8_t &amp;bit)</td></tr>
+<tr class="memdesc:a9e6fdc4968a637409e1b540d2325b95b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch bit from <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> color output data.  <a href="class_prog_l_e_d.html#a9e6fdc4968a637409e1b540d2325b95b">More...</a><br /></td></tr>
+<tr class="separator:a9e6fdc4968a637409e1b540d2325b95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ea2f3823757963bd2fbfa8749639b1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a40ea2f3823757963bd2fbfa8749639b1">fillBuffer</a> (uint8_t *buff, uint32_t len, uint32_t qty, uint8_t low, uint8_t high)</td></tr>
+<tr class="memdesc:a40ea2f3823757963bd2fbfa8749639b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill buffer with <code>qty</code> number of <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data.  <a href="class_prog_l_e_d.html#a40ea2f3823757963bd2fbfa8749639b1">More...</a><br /></td></tr>
+<tr class="separator:a40ea2f3823757963bd2fbfa8749639b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75522fe75f65bf2c4ac1618f6e85e079"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#ga0f23d54029a3017a998ae4045bb217aa">ProgLED_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079">status</a> (void) const</td></tr>
+<tr class="memdesc:a75522fe75f65bf2c4ac1618f6e85e079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line status.  <a href="class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079">More...</a><br /></td></tr>
+<tr class="separator:a75522fe75f65bf2c4ac1618f6e85e079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ae3b59339c2593bcb5f9d7240e71419c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_e_d.html">LED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ae3b59339c2593bcb5f9d7240e71419c0">led</a> [ledNum]</td></tr>
-<tr class="memdesc:ae3b59339c2593bcb5f9d7240e71419c0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html">LED</a> array.  <a href="class_prog_l_e_d.html#ae3b59339c2593bcb5f9d7240e71419c0">More...</a><br /></td></tr>
-<tr class="separator:ae3b59339c2593bcb5f9d7240e71419c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a89fad9a73e9c5ed2aa1e7b8e44d4d469"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a89fad9a73e9c5ed2aa1e7b8e44d4d469">rgb2HSV</a> (uint8_t(&amp;in)[3], int32_t(&amp;out)[3])</td></tr>
-<tr class="memdesc:a89fad9a73e9c5ed2aa1e7b8e44d4d469"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts RGB color format to HSV color format using fixed point math.  <a href="class_prog_l_e_d.html#a89fad9a73e9c5ed2aa1e7b8e44d4d469">More...</a><br /></td></tr>
-<tr class="separator:a89fad9a73e9c5ed2aa1e7b8e44d4d469"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3eff5aadc7f1d6d615911c1ec08a85d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ac3eff5aadc7f1d6d615911c1ec08a85d">hsv2RGB</a> (int32_t(&amp;in)[3], uint8_t(&amp;out)[3])</td></tr>
-<tr class="memdesc:ac3eff5aadc7f1d6d615911c1ec08a85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts HSV color format to RGB color format using fixed point math.  <a href="class_prog_l_e_d.html#ac3eff5aadc7f1d6d615911c1ec08a85d">More...</a><br /></td></tr>
-<tr class="separator:ac3eff5aadc7f1d6d615911c1ec08a85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a4afc6ca2a7cc2b5e265ff9feb96841a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a4afc6ca2a7cc2b5e265ff9feb96841a1">ledCount</a> = ledNum</td></tr>
-<tr class="memdesc:a4afc6ca2a7cc2b5e265ff9feb96841a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of LEDs to control.  <a href="class_prog_l_e_d.html#a4afc6ca2a7cc2b5e265ff9feb96841a1">More...</a><br /></td></tr>
-<tr class="separator:a4afc6ca2a7cc2b5e265ff9feb96841a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a302435180c1183104a3510ee42df83e3"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a302435180c1183104a3510ee42df83e3">ledIdx</a> = 0</td></tr>
-<tr class="memdesc:a302435180c1183104a3510ee42df83e3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html">LED</a> selector during clocking out.  <a href="class_prog_l_e_d.html#a302435180c1183104a3510ee42df83e3">More...</a><br /></td></tr>
-<tr class="separator:a302435180c1183104a3510ee42df83e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18fd10706d14cc0795bbbc84bcaff613"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a18fd10706d14cc0795bbbc84bcaff613">ledByte</a> = 0</td></tr>
-<tr class="memdesc:a18fd10706d14cc0795bbbc84bcaff613"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html">LED</a> data byte selector at <a class="el" href="class_prog_l_e_d.html#a302435180c1183104a3510ee42df83e3">ledIdx</a> during clocking out.  <a href="class_prog_l_e_d.html#a18fd10706d14cc0795bbbc84bcaff613">More...</a><br /></td></tr>
-<tr class="separator:a18fd10706d14cc0795bbbc84bcaff613"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3813d3d0c1c88c88e95758042ef850c"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ab3813d3d0c1c88c88e95758042ef850c">ledBit</a> = 0</td></tr>
-<tr class="memdesc:ab3813d3d0c1c88c88e95758042ef850c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit selector at <a class="el" href="class_prog_l_e_d.html#a18fd10706d14cc0795bbbc84bcaff613">ledByte</a> during clocking out.  <a href="class_prog_l_e_d.html#ab3813d3d0c1c88c88e95758042ef850c">More...</a><br /></td></tr>
-<tr class="separator:ab3813d3d0c1c88c88e95758042ef850c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4a6dc9c93ee1aa609e8a5a5aee760bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ab4a6dc9c93ee1aa609e8a5a5aee760bb">startHandler</a> = nullptr</td></tr>
-<tr class="memdesc:ab4a6dc9c93ee1aa609e8a5a5aee760bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to external handler called to start clocking out.  <a href="class_prog_l_e_d.html#ab4a6dc9c93ee1aa609e8a5a5aee760bb">More...</a><br /></td></tr>
-<tr class="separator:ab4a6dc9c93ee1aa609e8a5a5aee760bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac650ff20fde4ae1255f414b524d2121c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ac650ff20fde4ae1255f414b524d2121c">stopHandler</a> = nullptr</td></tr>
-<tr class="memdesc:ac650ff20fde4ae1255f414b524d2121c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to external handler called to stop clocking out.  <a href="class_prog_l_e_d.html#ac650ff20fde4ae1255f414b524d2121c">More...</a><br /></td></tr>
-<tr class="separator:ac650ff20fde4ae1255f414b524d2121c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9d1b82a165f09f86a79c810df3bd05b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#ad9d1b82a165f09f86a79c810df3bd05b">lineStatus</a> = <a class="el" href="group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732abbd03fd4758dd3a6c19ed8a376d56c5e">LINE_IDLE</a></td></tr>
-<tr class="memdesc:ad9d1b82a165f09f86a79c810df3bd05b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html">LED</a> line status.  <a href="class_prog_l_e_d.html#ad9d1b82a165f09f86a79c810df3bd05b">More...</a><br /></td></tr>
-<tr class="separator:ad9d1b82a165f09f86a79c810df3bd05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36544dd98c66cacc39259cbca977d123"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_e_d.html">LED</a>&lt; ledFormat &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_prog_l_e_d.html#a36544dd98c66cacc39259cbca977d123">led</a> [ledNum]</td></tr>
+<tr class="memdesc:a36544dd98c66cacc39259cbca977d123"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> array.  <a href="class_prog_l_e_d.html#a36544dd98c66cacc39259cbca977d123">More...</a><br /></td></tr>
+<tr class="separator:a36544dd98c66cacc39259cbca977d123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt;<br />
-class ProgLED&lt; ledNum &gt;</div><p >Class representing single <a class="el" href="class_l_e_d.html">LED</a> line. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt;<br />
+class ProgLED&lt; ledNum, ledFormat &gt;</div><p >Class representing single <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ledNum</td><td>Number of LEDs in <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> </td></tr>
+    <tr><td class="paramname">ledFormat</td><td><a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> color format. See <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00139">139</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00384">384</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8e4c4257b793b2c9e93711b5d0eac5d8" name="a8e4c4257b793b2c9e93711b5d0eac5d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e4c4257b793b2c9e93711b5d0eac5d8">&#9670;&#160;</a></span>ProgLED()</h2>
+<a id="a62cb7462d9f13dc3ac53434d0c3f440f" name="a62cb7462d9f13dc3ac53434d0c3f440f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62cb7462d9f13dc3ac53434d0c3f440f">&#9670;&#160;</a></span>ProgLED()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;<a class="el" href="class_prog_l_e_d.html">::ProgLED</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a>&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a>&#160;</td>
-          <td class="paramname"><em>stop</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a>&#160;</td>
-          <td class="paramname"><em>ledFormat</em> = <code><a class="el" href="group___prog_l_e_d.html#gga254cd8110ab085da480893fad19f13f9a25515446162ea8bb97a66e6cd37c931c">PROG_LED_GRB</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Object constructor for <a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>Pointer to external handler used for starting LEDs update. </td></tr>
-    <tr><td class="paramname">stop</td><td>Pointer to external handler used for stoping LEDs update. </td></tr>
-    <tr><td class="paramname">ledFormat</td><td><a class="el" href="class_l_e_d.html">LED</a> color format. See <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00050">50</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ab32258a25f144b9cf43a2b3fb13a2ffb" name="ab32258a25f144b9cf43a2b3fb13a2ffb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab32258a25f144b9cf43a2b3fb13a2ffb">&#9670;&#160;</a></span>~ProgLED()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::~<a class="el" href="class_prog_l_e_d.html">ProgLED</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Object deconstructor. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00064">64</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad88e9d4e2525920e9a9dfd008822c90e" name="ad88e9d4e2525920e9a9dfd008822c90e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad88e9d4e2525920e9a9dfd008822c90e">&#9670;&#160;</a></span>brightness()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::brightness </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets new brightness for whole <a class="el" href="class_l_e_d.html">LED</a> line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>New brightness value, ranging from <code>0</code> to <code>100</code> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>No return value.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd><code>value</code> over 100 will be stored as 100. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00095">95</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a1ca477a42bcde6e4a049634ebb2c550d" name="a1ca477a42bcde6e4a049634ebb2c550d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ca477a42bcde6e4a049634ebb2c550d">&#9670;&#160;</a></span>fetchBit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::fetchBit </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t &amp;&#160;</td>
-          <td class="paramname"><em>bit</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fetches bit from <a class="el" href="class_l_e_d.html">LED</a> color. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bit</td><td>Reference where next bit will be stored. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___prog_l_e_d.html#gab0c260a34809ec9dff2323d22fddfaba">PROG_LED_CONTINUE</a> if more bits exists. </dd>
-<dd>
-<a class="el" href="group___prog_l_e_d.html#ga84f289ad60fb0ae23d8d435f449f6580">PROG_LED_OK</a> if last bit is fetched. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00158">158</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac3eff5aadc7f1d6d615911c1ec08a85d" name="ac3eff5aadc7f1d6d615911c1ec08a85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3eff5aadc7f1d6d615911c1ec08a85d">&#9670;&#160;</a></span>hsv2RGB()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::hsv2RGB </td>
+          <td class="memname"><a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;<a class="el" href="class_prog_l_e_d.html">::ProgLED</a> </td>
           <td>(</td>
-          <td class="paramtype">int32_t(&amp;)&#160;</td>
-          <td class="paramname"><em>in</em>[3], </td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343">extHandler</a>&#160;</td>
+          <td class="paramname"><em>startFunc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t(&amp;)&#160;</td>
-          <td class="paramname"><em>out</em>[3]&#160;</td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343">extHandler</a>&#160;</td>
+          <td class="paramname"><em>stopFunc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -375,148 +213,203 @@ template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts HSV color format to RGB color format using fixed point math. </p>
+<p><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> object constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in</td><td>Reference to input array in HSV format. </td></tr>
-    <tr><td class="paramname">out</td><td>Reference to RGB output array. </td></tr>
+    <tr><td class="paramname">startFunc</td><td>Pointer to external handler used for starting LEDs update. </td></tr>
+    <tr><td class="paramname">stopFunc</td><td>Pointer to external handler used for stoping LEDs update. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00398">398</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<a id="a64e64503ef25e04417c59e6041ce08ba" name="a64e64503ef25e04417c59e6041ce08ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e64503ef25e04417c59e6041ce08ba">&#9670;&#160;</a></span>~ProgLED()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::~<a class="el" href="class_prog_l_e_d.html">ProgLED</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> object deconstructor. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00413">413</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad8bf2d81bbc096f6a4e2822ae6e41e70" name="ad8bf2d81bbc096f6a4e2822ae6e41e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bf2d81bbc096f6a4e2822ae6e41e70">&#9670;&#160;</a></span>brightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::brightness </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set new brightness for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>New brightness value, ranging from <code>0</code> to <code>100</code> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>No return value.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Method does not work without FPU. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code>value</code> over 100 will be stored as 100. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00232">232</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00482">482</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_ad8bf2d81bbc096f6a4e2822ae6e41e70_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_ad8bf2d81bbc096f6a4e2822ae6e41e70_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_ad8bf2d81bbc096f6a4e2822ae6e41e70_cgraph" id="aclass_prog_l_e_d_ad8bf2d81bbc096f6a4e2822ae6e41e70_cgraph">
+<area shape="rect" title="Set new brightness for whole LED line." alt="" coords="5,5,148,31"/>
+<area shape="rect" href="class_l_e_d.html#a31ef4ff774dfd4262df7a0628089eb79" title="Set new LED brightness value." alt="" coords="196,5,311,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="acd44063521a1fa8bf8f72406606858eb" name="acd44063521a1fa8bf8f72406606858eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd44063521a1fa8bf8f72406606858eb">&#9670;&#160;</a></span>init()</h2>
+<a id="a9e6fdc4968a637409e1b540d2325b95b" name="a9e6fdc4968a637409e1b540d2325b95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e6fdc4968a637409e1b540d2325b95b">&#9670;&#160;</a></span>fetchBit()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::init </td>
+          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::fetchBit </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">uint8_t &amp;&#160;</td>
+          <td class="paramname"><em>bit</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_prog_l_e_d.html" title="Class representing single LED line.">ProgLED</a> init method. </p>
-<p >Checks external handlers pointers. Sets LEDs to default values.</p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___prog_l_e_d.html#ga84f289ad60fb0ae23d8d435f449f6580">PROG_LED_OK</a> if everything is OK. </dd>
+<p>Fetch bit from <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> color output data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bit</td><td>Reference for output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>PROG_LED_CONTINUE</code> if more bits exists. </dd>
 <dd>
-<a class="el" href="group___prog_l_e_d.html#ga43140f8e6f3e65ac4b97265a97590dc7">PROG_LED_NOK</a> if external handlers are <code>nullptr</code>. </dd></dl>
+<code>PROG_LED_OK</code> if last bit is fetched. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00071">71</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00592">592</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a9e6fdc4968a637409e1b540d2325b95b_icgraph.png" border="0" usemap="#aclass_prog_l_e_d_a9e6fdc4968a637409e1b540d2325b95b_icgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a9e6fdc4968a637409e1b540d2325b95b_icgraph" id="aclass_prog_l_e_d_a9e6fdc4968a637409e1b540d2325b95b_icgraph">
+<area shape="rect" title="Fetch bit from LED color output data." alt="" coords="184,31,311,56"/>
+<area shape="rect" href="class_prog_l_e_d.html#a40ea2f3823757963bd2fbfa8749639b1" title="Fill buffer with qty number of LED data." alt="" coords="5,5,136,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529" title="Call external handler to start clocking out LED data." alt="" coords="10,55,131,80"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a9a91b3de2caa4963bc2631c9369f871f" name="a9a91b3de2caa4963bc2631c9369f871f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a91b3de2caa4963bc2631c9369f871f">&#9670;&#160;</a></span>off()</h2>
+<a id="a40ea2f3823757963bd2fbfa8749639b1" name="a40ea2f3823757963bd2fbfa8749639b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ea2f3823757963bd2fbfa8749639b1">&#9670;&#160;</a></span>fillBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::off </td>
+          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::fillBuffer </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Turns off <a class="el" href="class_l_e_d.html">LED</a> line. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00119">119</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a52e48fd65bb9ee7c5054c1f622021943" name="a52e48fd65bb9ee7c5054c1f622021943"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52e48fd65bb9ee7c5054c1f622021943">&#9670;&#160;</a></span>on()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::on </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Turns on <a class="el" href="class_l_e_d.html">LED</a> line. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00113">113</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa8780d1ca703266bf56a548a2b1a8f80" name="aa8780d1ca703266bf56a548a2b1a8f80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8780d1ca703266bf56a548a2b1a8f80">&#9670;&#160;</a></span>reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::reset </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Resets <a class="el" href="class_l_e_d.html">LED</a> line to default color and config. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00101">101</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aad4d3a0854a9275c79647e19d7cce25d" name="aad4d3a0854a9275c79647e19d7cce25d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad4d3a0854a9275c79647e19d7cce25d">&#9670;&#160;</a></span>rgb() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::rgb </td>
-          <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>qty</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>on</em> = <code>1</code>&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -524,22 +417,331 @@ template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00089">89</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p>Fill buffer with <code>qty</code> number of <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>Pointer to buffer. </td></tr>
+    <tr><td class="paramname">len</td><td>Length of <code>buff</code> </td></tr>
+    <tr><td class="paramname">qty</td><td>Number of LEDs to buff. </td></tr>
+    <tr><td class="paramname">low</td><td>Value representing bit <code>0</code> </td></tr>
+    <tr><td class="paramname">high</td><td>Value representing bit <code>1</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>PROG_LED_NOK</code> if buffer is smaller than required by <code>qty</code> parameter. </dd>
+<dd>
+<code>PROG_LED_OK</code> if buffer is filled. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00639">639</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a40ea2f3823757963bd2fbfa8749639b1_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a40ea2f3823757963bd2fbfa8749639b1_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a40ea2f3823757963bd2fbfa8749639b1_cgraph" id="aclass_prog_l_e_d_a40ea2f3823757963bd2fbfa8749639b1_cgraph">
+<area shape="rect" title="Fill buffer with qty number of LED data." alt="" coords="5,5,136,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a9e6fdc4968a637409e1b540d2325b95b" title="Fetch bit from LED color output data." alt="" coords="184,5,311,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a42594978d843056adcbc8a5882780fed" name="a42594978d843056adcbc8a5882780fed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42594978d843056adcbc8a5882780fed">&#9670;&#160;</a></span>rgb() <span class="overload">[2/2]</span></h2>
+<a id="ae3c67cfa69b5dff17fb56c529614fd04" name="ae3c67cfa69b5dff17fb56c529614fd04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3c67cfa69b5dff17fb56c529614fd04">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::rgb </td>
+          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Init <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<p >Checks external handlers pointers. Sets LEDs to default values.</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group___prog_l_e_d.html#ga84f289ad60fb0ae23d8d435f449f6580">PROG_LED_OK</a> if everything is OK. </dd>
+<dd>
+<a class="el" href="group___prog_l_e_d.html#ga43140f8e6f3e65ac4b97265a97590dc7">PROG_LED_NOK</a> if external handlers are <code>nullptr</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00429">429</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_ae3c67cfa69b5dff17fb56c529614fd04_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_ae3c67cfa69b5dff17fb56c529614fd04_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_ae3c67cfa69b5dff17fb56c529614fd04_cgraph" id="aclass_prog_l_e_d_ae3c67cfa69b5dff17fb56c529614fd04_cgraph">
+<area shape="rect" title="Init LED line." alt="" coords="5,5,104,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#ac73284d360f4a738efe54c0b4b9b0023" title="Reset LED line to default color, brightness and status." alt="" coords="152,5,263,31"/>
+<area shape="rect" href="class_l_e_d.html#ab4e53bb6fb0a8aea2b609bd079da6d88" title="Reset LED to default values." alt="" coords="311,5,395,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a20adb1a275e2f39bb49033898e60c550" name="a20adb1a275e2f39bb49033898e60c550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20adb1a275e2f39bb49033898e60c550">&#9670;&#160;</a></span>off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::off </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn off all LEDs in <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00526">526</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a20adb1a275e2f39bb49033898e60c550_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a20adb1a275e2f39bb49033898e60c550_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a20adb1a275e2f39bb49033898e60c550_cgraph" id="aclass_prog_l_e_d_a20adb1a275e2f39bb49033898e60c550_cgraph">
+<area shape="rect" title="Turn off all LEDs in LED line." alt="" coords="5,5,103,31"/>
+<area shape="rect" href="class_l_e_d.html#af25eb26518f14287a7fc26dde4762ab7" title="Turn off LED." alt="" coords="151,5,221,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2170da668916310d65c6ed5f5334884d" name="a2170da668916310d65c6ed5f5334884d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2170da668916310d65c6ed5f5334884d">&#9670;&#160;</a></span>on()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::on </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Turn on all LEDs in <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00515">515</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_cgraph" id="aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_cgraph">
+<area shape="rect" title="Turn on all LEDs in LED line." alt="" coords="5,5,101,31"/>
+<area shape="rect" href="class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="149,5,219,31"/>
+</map>
+</div>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_icgraph.png" border="0" usemap="#aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_icgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_icgraph" id="aclass_prog_l_e_d_a2170da668916310d65c6ed5f5334884d_icgraph">
+<area shape="rect" title="Turn on all LEDs in LED line." alt="" coords="301,5,397,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100" title="Set color for whole LED line." alt="" coords="153,5,253,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744" title="Set color for whole LED line." alt="" coords="5,5,105,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac73284d360f4a738efe54c0b4b9b0023" name="ac73284d360f4a738efe54c0b4b9b0023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac73284d360f4a738efe54c0b4b9b0023">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line to default color, brightness and status. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00493">493</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_cgraph" id="aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_cgraph">
+<area shape="rect" title="Reset LED line to default color, brightness and status." alt="" coords="5,5,116,31"/>
+<area shape="rect" href="class_l_e_d.html#ab4e53bb6fb0a8aea2b609bd079da6d88" title="Reset LED to default values." alt="" coords="164,5,248,31"/>
+</map>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_icgraph.png" border="0" usemap="#aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_icgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_icgraph" id="aclass_prog_l_e_d_ac73284d360f4a738efe54c0b4b9b0023_icgraph">
+<area shape="rect" title="Reset LED line to default color, brightness and status." alt="" coords="152,5,263,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#ae3c67cfa69b5dff17fb56c529614fd04" title="Init LED line." alt="" coords="5,5,104,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b804372cf770ee56d72806dadd53744" name="a0b804372cf770ee56d72806dadd53744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b804372cf770ee56d72806dadd53744">&#9670;&#160;</a></span>rgb() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::rgb </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>brght</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a>&#160;</td>
+          <td class="paramname"><em>on</em> = <code>ProgLED_status_t::ON</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set color for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>New 24-bit color in RGB format. </td></tr>
+    <tr><td class="paramname">brght</td><td>New brightness. Set to <code>-1</code> to keep old brightness. </td></tr>
+    <tr><td class="paramname">on</td><td>New <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> status. See <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00469">469</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a0b804372cf770ee56d72806dadd53744_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a0b804372cf770ee56d72806dadd53744_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a0b804372cf770ee56d72806dadd53744_cgraph" id="aclass_prog_l_e_d_a0b804372cf770ee56d72806dadd53744_cgraph">
+<area shape="rect" title="Set color for whole LED line." alt="" coords="5,29,105,55"/>
+<area shape="rect" href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d" title="Turn on all LEDs in LED line." alt="" coords="301,5,397,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100" title="Set color for whole LED line." alt="" coords="153,55,253,80"/>
+<area shape="rect" href="class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="468,5,537,31"/>
+<area shape="rect" href="class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1" title="Set new LED color." alt="" coords="313,55,386,80"/>
+<area shape="rect" href="class_l_e_d.html#a0117cd406b4cb15b2c9821143a464ef2" title="Get LED brightness." alt="" coords="445,55,560,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a216fe3035be791e0fe24f0d20bd3d100" name="a216fe3035be791e0fe24f0d20bd3d100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a216fe3035be791e0fe24f0d20bd3d100">&#9670;&#160;</a></span>rgb() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::rgb </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -559,8 +761,14 @@ template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>on</em> = <code>1</code>&#160;</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>brght</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a>&#160;</td>
+          <td class="paramname"><em>on</em> = <code>ProgLED_status_t::ON</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -568,371 +776,263 @@ template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Sets color for whole <a class="el" href="class_l_e_d.html">LED</a> line. </p>
+<p>Set color for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">r</td><td>New 8-bit red color value. </td></tr>
     <tr><td class="paramname">g</td><td>New 8-bit green color value. </td></tr>
     <tr><td class="paramname">b</td><td>New 8-bit blue color value. </td></tr>
-    <tr><td class="paramname">color</td><td>New 24-bit color in RGB format. </td></tr>
-    <tr><td class="paramname">on</td><td>New <a class="el" href="class_l_e_d.html">LED</a> status. Set to <code>0</code> if to turn off <a class="el" href="class_l_e_d.html">LED</a>. This parameter is optional. </td></tr>
+    <tr><td class="paramname">brght</td><td>New brightness. Set to <code>-1</code> to keep old brightness. </td></tr>
+    <tr><td class="paramname">on</td><td>New <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> status. See <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00083">83</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00456">456</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_cgraph" id="aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_cgraph">
+<area shape="rect" title="Set color for whole LED line." alt="" coords="5,31,105,56"/>
+<area shape="rect" href="class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d" title="Turn on all LEDs in LED line." alt="" coords="153,5,249,31"/>
+<area shape="rect" href="class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1" title="Set new LED color." alt="" coords="165,55,238,80"/>
+<area shape="rect" href="class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="320,5,389,31"/>
+<area shape="rect" href="class_l_e_d.html#a0117cd406b4cb15b2c9821143a464ef2" title="Get LED brightness." alt="" coords="297,55,412,80"/>
+</map>
+</div>
+<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_icgraph.png" border="0" usemap="#aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_icgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_icgraph" id="aclass_prog_l_e_d_a216fe3035be791e0fe24f0d20bd3d100_icgraph">
+<area shape="rect" title="Set color for whole LED line." alt="" coords="153,5,253,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744" title="Set color for whole LED line." alt="" coords="5,5,105,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a89fad9a73e9c5ed2aa1e7b8e44d4d469" name="a89fad9a73e9c5ed2aa1e7b8e44d4d469"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89fad9a73e9c5ed2aa1e7b8e44d4d469">&#9670;&#160;</a></span>rgb2HSV()</h2>
+<a id="a75522fe75f65bf2c4ac1618f6e85e079" name="a75522fe75f65bf2c4ac1618f6e85e079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75522fe75f65bf2c4ac1618f6e85e079">&#9670;&#160;</a></span>status()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::rgb2HSV </td>
+          <td class="memname"><a class="el" href="group___prog_l_e_d.html#ga0f23d54029a3017a998ae4045bb217aa">ProgLED_state_t</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::status </td>
           <td>(</td>
-          <td class="paramtype">uint8_t(&amp;)&#160;</td>
-          <td class="paramname"><em>in</em>[3], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t(&amp;)&#160;</td>
-          <td class="paramname"><em>out</em>[3]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts RGB color format to HSV color format using fixed point math. </p>
+<p>Get <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line status. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line status. See <a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00678">678</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a75522fe75f65bf2c4ac1618f6e85e079_icgraph.png" border="0" usemap="#aclass_prog_l_e_d_a75522fe75f65bf2c4ac1618f6e85e079_icgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a75522fe75f65bf2c4ac1618f6e85e079_icgraph" id="aclass_prog_l_e_d_a75522fe75f65bf2c4ac1618f6e85e079_icgraph">
+<area shape="rect" title="Get LED line status." alt="" coords="175,31,293,56"/>
+<area shape="rect" href="class_prog_l_e_d.html#a7846de2b10869b63d39f0a1c4242ab18" title="Call external hanlder to stop clocking out LED data." alt="" coords="13,5,119,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529" title="Call external handler to start clocking out LED data." alt="" coords="5,55,127,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7846de2b10869b63d39f0a1c4242ab18" name="a7846de2b10869b63d39f0a1c4242ab18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7846de2b10869b63d39f0a1c4242ab18">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::stop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Call external hanlder to stop clocking out <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00573">573</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_a7846de2b10869b63d39f0a1c4242ab18_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_a7846de2b10869b63d39f0a1c4242ab18_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_a7846de2b10869b63d39f0a1c4242ab18_cgraph" id="aclass_prog_l_e_d_a7846de2b10869b63d39f0a1c4242ab18_cgraph">
+<area shape="rect" title="Call external hanlder to stop clocking out LED data." alt="" coords="5,5,112,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079" title="Get LED line status." alt="" coords="160,5,279,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf2e47010552aec19ff55d0a8e3fd379" name="adf2e47010552aec19ff55d0a8e3fd379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2e47010552aec19ff55d0a8e3fd379">&#9670;&#160;</a></span>toggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::toggle </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Toggle <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> status between on and off for whole <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> line. </p>
+<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00504">504</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_adf2e47010552aec19ff55d0a8e3fd379_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_adf2e47010552aec19ff55d0a8e3fd379_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_adf2e47010552aec19ff55d0a8e3fd379_cgraph" id="aclass_prog_l_e_d_adf2e47010552aec19ff55d0a8e3fd379_cgraph">
+<area shape="rect" title="Toggle LED status between on and off for whole LED line." alt="" coords="5,5,123,31"/>
+<area shape="rect" href="class_l_e_d.html#abb0ac921b91dbd8161b44966f909a943" title="Toggle LED." alt="" coords="171,5,261,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af67086892a35d13205b79b3794b46529" name="af67086892a35d13205b79b3794b46529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67086892a35d13205b79b3794b46529">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___prog_l_e_d.html#ga01364b8fe3282fc6be4a2bce2a47a0d9">ProgLED_line_t</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Call external handler to start clocking out <a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in</td><td>Reference to input array in RGB format. </td></tr>
-    <tr><td class="paramname">out</td><td>Reference to HSV output array. </td></tr>
+    <tr><td class="paramname">type</td><td>Update type. See <a class="el" href="group___prog_l_e_d.html#ga01364b8fe3282fc6be4a2bce2a47a0d9">ProgLED_line_t</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>No return value.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Method does not work without FPU. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00202">202</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a2fdeffdc75755dbe0fae8c77fec41c75" name="a2fdeffdc75755dbe0fae8c77fec41c75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fdeffdc75755dbe0fae8c77fec41c75">&#9670;&#160;</a></span>stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::stop </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls external hanlder to stop clocking out <a class="el" href="class_l_e_d.html">LED</a> data. </p>
 <dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00145">145</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00538">538</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="class_prog_l_e_d_af67086892a35d13205b79b3794b46529_cgraph.png" border="0" usemap="#aclass_prog_l_e_d_af67086892a35d13205b79b3794b46529_cgraph" alt=""/></div>
+<map name="aclass_prog_l_e_d_af67086892a35d13205b79b3794b46529_cgraph" id="aclass_prog_l_e_d_af67086892a35d13205b79b3794b46529_cgraph">
+<area shape="rect" title="Call external handler to start clocking out LED data." alt="" coords="5,55,127,80"/>
+<area shape="rect" href="class_l_e_d.html#ace594ce2909234d38faa6629f1546679" title="Calculate new output RGB values using brightness." alt="" coords="193,5,283,31"/>
+<area shape="rect" href="class_prog_l_e_d.html#a9e6fdc4968a637409e1b540d2325b95b" title="Fetch bit from LED color output data." alt="" coords="175,55,301,80"/>
+<area shape="rect" href="class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079" title="Get LED line status." alt="" coords="179,104,297,129"/>
+</map>
 </div>
-<a id="a613d34f7abbaf038ab271e61040ab7f6" name="a613d34f7abbaf038ab271e61040ab7f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a613d34f7abbaf038ab271e61040ab7f6">&#9670;&#160;</a></span>toggle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::toggle </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Toggles LEDs status between on and off for whole <a class="el" href="class_l_e_d.html">LED</a> line. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00107">107</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5d3b16f54e46043d1fbfe00364a7a542" name="a5d3b16f54e46043d1fbfe00364a7a542"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d3b16f54e46043d1fbfe00364a7a542">&#9670;&#160;</a></span>update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::update </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Calls external handler to start clocking out <a class="el" href="class_l_e_d.html">LED</a> data. </p>
-<dl class="section return"><dt>Returns</dt><dd>No return value. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8cpp_source.html#l00125">125</a> of file <a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae3b59339c2593bcb5f9d7240e71419c0" name="ae3b59339c2593bcb5f9d7240e71419c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3b59339c2593bcb5f9d7240e71419c0">&#9670;&#160;</a></span>led</h2>
+<a id="a36544dd98c66cacc39259cbca977d123" name="a36544dd98c66cacc39259cbca977d123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36544dd98c66cacc39259cbca977d123">&#9670;&#160;</a></span>led</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
+template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum, <a class="el" href="group___prog_l_e_d.html#ga254cd8110ab085da480893fad19f13f9">ProgLED_format_t</a> ledFormat&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_l_e_d.html">LED</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::led[ledNum]</td>
+          <td class="memname"><a class="el" href="class_l_e_d.html">LED</a>&lt;ledFormat&gt; <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum, ledFormat &gt;::led[ledNum]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_l_e_d.html">LED</a> array. </p>
+<p><a class="el" href="class_l_e_d.html" title="Class representing single LED chip.">LED</a> array. </p>
 
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00162">162</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ab3813d3d0c1c88c88e95758042ef850c" name="ab3813d3d0c1c88c88e95758042ef850c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3813d3d0c1c88c88e95758042ef850c">&#9670;&#160;</a></span>ledBit</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::ledBit = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Bit selector at <a class="el" href="class_prog_l_e_d.html#a18fd10706d14cc0795bbbc84bcaff613">ledByte</a> during clocking out. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00260">260</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00388">388</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
 
 </div>
 </div>
-<a id="a18fd10706d14cc0795bbbc84bcaff613" name="a18fd10706d14cc0795bbbc84bcaff613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18fd10706d14cc0795bbbc84bcaff613">&#9670;&#160;</a></span>ledByte</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::ledByte = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_l_e_d.html">LED</a> data byte selector at <a class="el" href="class_prog_l_e_d.html#a302435180c1183104a3510ee42df83e3">ledIdx</a> during clocking out. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00259">259</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="a4afc6ca2a7cc2b5e265ff9feb96841a1" name="a4afc6ca2a7cc2b5e265ff9feb96841a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4afc6ca2a7cc2b5e265ff9feb96841a1">&#9670;&#160;</a></span>ledCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::ledCount = ledNum</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of LEDs to control. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00257">257</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="a302435180c1183104a3510ee42df83e3" name="a302435180c1183104a3510ee42df83e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a302435180c1183104a3510ee42df83e3">&#9670;&#160;</a></span>ledIdx</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::ledIdx = 0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_l_e_d.html">LED</a> selector during clocking out. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00258">258</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ad9d1b82a165f09f86a79c810df3bd05b" name="ad9d1b82a165f09f86a79c810df3bd05b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9d1b82a165f09f86a79c810df3bd05b">&#9670;&#160;</a></span>lineStatus</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___prog_l_e_d.html#ga59b949ff5bfcdbb11d2b58bbc423c732">ProgLED_status_t</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::lineStatus = <a class="el" href="group___prog_l_e_d.html#gga59b949ff5bfcdbb11d2b58bbc423c732abbd03fd4758dd3a6c19ed8a376d56c5e">LINE_IDLE</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="class_l_e_d.html">LED</a> line status. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00263">263</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ab4a6dc9c93ee1aa609e8a5a5aee760bb" name="ab4a6dc9c93ee1aa609e8a5a5aee760bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4a6dc9c93ee1aa609e8a5a5aee760bb">&#9670;&#160;</a></span>startHandler</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::startHandler = nullptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Pointer to external handler called to start clocking out. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00261">261</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<a id="ac650ff20fde4ae1255f414b524d2121c" name="ac650ff20fde4ae1255f414b524d2121c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac650ff20fde4ae1255f414b524d2121c">&#9670;&#160;</a></span>stopHandler</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea">ledIdx_t</a> ledNum&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___prog_l_e_d.html#gaf7ed7841dadea5506552c47935b28adf">extHandler</a> <a class="el" href="class_prog_l_e_d.html">ProgLED</a>&lt; ledNum &gt;::stopHandler = nullptr</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Pointer to external handler called to stop clocking out. </p>
-
-<p class="definition">Definition at line <a class="el" href="_prog_l_e_d_8h_source.html#l00262">262</a> of file <a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_prog_l_e_d_8h_source.html">ProgLED.h</a></li>
-<li><a class="el" href="_prog_l_e_d_8cpp_source.html">ProgLED.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -940,7 +1040,7 @@ template&lt;<a class="el" href="group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_prog_l_e_d.html">ProgLED</a></li>
-    <li class="footer">Generated on Sat Nov 26 2022 21:52:36 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
+    <li class="footer">Generated on Sat Jan 14 2023 23:06:54 for ProgLED by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5 </li>
   </ul>
 </div>
 </body>

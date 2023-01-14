@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adjustcolor_0',['adjustColor',['../class_l_e_d.html#a05046338ca2341065e0bdfab68eba911',1,'LED']]]
+  ['adjust_0',['adjust',['../class_l_e_d.html#ace594ce2909234d38faa6629f1546679',1,'LED']]]
 ];

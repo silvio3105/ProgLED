@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['toggle_0',['toggle',['../class_prog_l_e_d.html#a613d34f7abbaf038ab271e61040ab7f6',1,'ProgLED::toggle()'],['../class_l_e_d.html#a5d6c45cdaaf5264a08929fe10438f1cd',1,'LED::toggle()']]]
+  ['status_0',['status',['../class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079',1,'ProgLED']]],
+  ['stop_1',['stop',['../class_prog_l_e_d.html#a7846de2b10869b63d39f0a1c4242ab18',1,'ProgLED']]]
 ];

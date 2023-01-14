@@ -1,0 +1,5 @@
+<map id="ProgLED::init" name="ProgLED::init">
+<area shape="rect" id="node1" title="Init LED line." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#ac73284d360f4a738efe54c0b4b9b0023" title="Reset LED line to default color, brightness and status." alt="" coords="152,5,263,31"/>
+<area shape="rect" id="node3" href="$class_l_e_d.html#ab4e53bb6fb0a8aea2b609bd079da6d88" title="Reset LED to default values." alt="" coords="311,5,395,31"/>
+</map>
