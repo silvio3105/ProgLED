@@ -1,0 +1,4 @@
+<map id="ProgLED::off" name="ProgLED::off">
+<area shape="rect" id="node1" title="Turn off all LEDs in LED line." alt="" coords="5,5,103,31"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#af25eb26518f14287a7fc26dde4762ab7" title="Turn off LED." alt="" coords="151,5,221,31"/>
+</map>

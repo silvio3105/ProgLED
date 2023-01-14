@@ -1,0 +1,5 @@
+<map id="ProgLED::fetchBit" name="ProgLED::fetchBit">
+<area shape="rect" id="node1" title="Fetch bit from LED color output data." alt="" coords="184,31,311,56"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a40ea2f3823757963bd2fbfa8749639b1" title="Fill buffer with qty number of LED data." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="node3" href="$class_prog_l_e_d.html#af67086892a35d13205b79b3794b46529" title="Call external handler to start clocking out LED data." alt="" coords="10,55,131,80"/>
+</map>

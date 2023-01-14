@@ -1,0 +1,4 @@
+<map id="ProgLED::brightness" name="ProgLED::brightness">
+<area shape="rect" id="node1" title="Set new brightness for whole LED line." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#a31ef4ff774dfd4262df7a0628089eb79" title="Set new LED brightness value." alt="" coords="196,5,311,31"/>
+</map>

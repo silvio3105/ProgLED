@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['update_0',['update',['../class_prog_l_e_d.html#a5d3b16f54e46043d1fbfe00364a7a542',1,'ProgLED']]],
-  ['use_5ffpu_1',['USE_FPU',['../group___prog_l_e_d.html#ga113160f0797f83c8da70553250921ac5',1,'ProgLED.h']]]
+  ['toggle_0',['toggle',['../class_l_e_d.html#abb0ac921b91dbd8161b44966f909a943',1,'LED::toggle()'],['../class_prog_l_e_d.html#adf2e47010552aec19ff55d0a8e3fd379',1,'ProgLED::toggle()']]]
 ];

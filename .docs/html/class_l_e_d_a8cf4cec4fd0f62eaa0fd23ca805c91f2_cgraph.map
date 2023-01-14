@@ -1,0 +1,6 @@
+<map id="LED::rgb" name="LED::rgb">
+<area shape="rect" id="node1" title="Set new LED color." alt="" coords="5,29,79,55"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="271,5,340,31"/>
+<area shape="rect" id="node3" href="$class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1" title="Set new LED color." alt="" coords="127,55,200,80"/>
+<area shape="rect" id="node4" href="$class_l_e_d.html#a0117cd406b4cb15b2c9821143a464ef2" title="Get LED brightness." alt="" coords="248,55,363,80"/>
+</map>

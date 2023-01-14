@@ -1,0 +1,4 @@
+<map id="ProgLED::on" name="ProgLED::on">
+<area shape="rect" id="node1" title="Turn on all LEDs in LED line." alt="" coords="5,5,101,31"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="149,5,219,31"/>
+</map>

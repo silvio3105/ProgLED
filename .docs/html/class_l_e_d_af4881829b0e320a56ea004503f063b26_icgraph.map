@@ -1,0 +1,8 @@
+<map id="LED::on" name="LED::on">
+<area shape="rect" id="node1" title="Turn on LED." alt="" coords="445,31,515,56"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d" title="Turn on all LEDs in LED line." alt="" coords="301,5,397,31"/>
+<area shape="rect" id="node5" href="$class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1" title="Set new LED color." alt="" coords="313,55,386,80"/>
+<area shape="rect" id="node3" href="$class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100" title="Set color for whole LED line." alt="" coords="153,5,253,31"/>
+<area shape="rect" id="node4" href="$class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744" title="Set color for whole LED line." alt="" coords="5,5,105,31"/>
+<area shape="rect" id="node6" href="$class_l_e_d.html#ae8d9e81ef33eb58bb8e9212fd25e3b66" title="Set new LED color." alt="" coords="167,55,240,80"/>
+</map>

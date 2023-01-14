@@ -1,0 +1,8 @@
+<map id="ProgLED::rgb" name="ProgLED::rgb">
+<area shape="rect" id="node1" title="Set color for whole LED line." alt="" coords="5,29,105,55"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d" title="Turn on all LEDs in LED line." alt="" coords="301,5,397,31"/>
+<area shape="rect" id="node4" href="$class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100" title="Set color for whole LED line." alt="" coords="153,55,253,80"/>
+<area shape="rect" id="node3" href="$class_l_e_d.html#af4881829b0e320a56ea004503f063b26" title="Turn on LED." alt="" coords="468,5,537,31"/>
+<area shape="rect" id="node5" href="$class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1" title="Set new LED color." alt="" coords="313,55,386,80"/>
+<area shape="rect" id="node6" href="$class_l_e_d.html#a0117cd406b4cb15b2c9821143a464ef2" title="Get LED brightness." alt="" coords="445,55,560,80"/>
+</map>
