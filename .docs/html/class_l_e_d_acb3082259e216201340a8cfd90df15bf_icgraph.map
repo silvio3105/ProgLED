@@ -1,0 +1,6 @@
+<map id="LED::rgb" name="LED::rgb">
+<area shape="rect" id="node1" title="Set new LED color." alt="" coords="301,31,375,56"/>
+<area shape="rect" id="node2" href="$class_l_e_d.html#a41a36d957e6537265405f50d08087b9f" title="Set new LED color." alt="" coords="167,5,240,31"/>
+<area shape="rect" id="node3" href="$class_prog_l_e_d.html#a7522a631b1f2d9b9561b231dbebe194f" title="Set color for whole LED line." alt="" coords="153,55,253,80"/>
+<area shape="rect" id="node4" href="$class_prog_l_e_d.html#a2760df6f261515043321f731a0242b97" title="Set color for whole LED line." alt="" coords="5,55,105,80"/>
+</map>

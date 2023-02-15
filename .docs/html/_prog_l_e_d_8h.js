@@ -8,7 +8,7 @@ var _prog_l_e_d_8h =
     [ "PROG_LED_STATUS_BIT", "group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a", null ],
     [ "PROG_LED_STATUS_MASK", "group___prog_l_e_d.html#ga9dbf3996ce1d98acf2a600320604f71e", null ],
     [ "ProgLED_LOOP", "group___prog_l_e_d.html#ga6438b0b2809567b730ba4c038decd203", null ],
-    [ "USE_FPU", "_prog_l_e_d_8h.html#a113160f0797f83c8da70553250921ac5", null ],
+    [ "USE_FPU", "group___prog_l_e_d.html#ga113160f0797f83c8da70553250921ac5", null ],
     [ "extHandler", "group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343", null ],
     [ "ledIdx_t", "group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea", null ],
     [ "ProgLED_chIdx_t", "group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064", [
