@@ -9,9 +9,9 @@ var group___prog_l_e_d =
       [ "off", "class_l_e_d.html#af25eb26518f14287a7fc26dde4762ab7", null ],
       [ "on", "class_l_e_d.html#af4881829b0e320a56ea004503f063b26", null ],
       [ "reset", "class_l_e_d.html#ab4e53bb6fb0a8aea2b609bd079da6d88", null ],
-      [ "rgb", "class_l_e_d.html#a8cf4cec4fd0f62eaa0fd23ca805c91f2", null ],
-      [ "rgb", "class_l_e_d.html#ae8d9e81ef33eb58bb8e9212fd25e3b66", null ],
-      [ "rgb", "class_l_e_d.html#a342c34b656c8e4f9002345d48ad540f1", null ],
+      [ "rgb", "class_l_e_d.html#a07048f1023304e67306ee377bd38f106", null ],
+      [ "rgb", "class_l_e_d.html#a41a36d957e6537265405f50d08087b9f", null ],
+      [ "rgb", "class_l_e_d.html#acb3082259e216201340a8cfd90df15bf", null ],
       [ "toggle", "class_l_e_d.html#abb0ac921b91dbd8161b44966f909a943", null ]
     ] ],
     [ "ProgLED< ledNum, ledFormat >", "class_prog_l_e_d.html", [
@@ -24,8 +24,9 @@ var group___prog_l_e_d =
       [ "off", "class_prog_l_e_d.html#a20adb1a275e2f39bb49033898e60c550", null ],
       [ "on", "class_prog_l_e_d.html#a2170da668916310d65c6ed5f5334884d", null ],
       [ "reset", "class_prog_l_e_d.html#ac73284d360f4a738efe54c0b4b9b0023", null ],
-      [ "rgb", "class_prog_l_e_d.html#a0b804372cf770ee56d72806dadd53744", null ],
-      [ "rgb", "class_prog_l_e_d.html#a216fe3035be791e0fe24f0d20bd3d100", null ],
+      [ "rgb", "class_prog_l_e_d.html#abf6ee71a77b7819a12ae8d79f61e331b", null ],
+      [ "rgb", "class_prog_l_e_d.html#a2760df6f261515043321f731a0242b97", null ],
+      [ "rgb", "class_prog_l_e_d.html#a7522a631b1f2d9b9561b231dbebe194f", null ],
       [ "status", "class_prog_l_e_d.html#a75522fe75f65bf2c4ac1618f6e85e079", null ],
       [ "stop", "class_prog_l_e_d.html#a7846de2b10869b63d39f0a1c4242ab18", null ],
       [ "toggle", "class_prog_l_e_d.html#adf2e47010552aec19ff55d0a8e3fd379", null ],
@@ -40,6 +41,7 @@ var group___prog_l_e_d =
     [ "PROG_LED_STATUS_BIT", "group___prog_l_e_d.html#gaf2b72e72340edf0079d8cdbe6380d87a", null ],
     [ "PROG_LED_STATUS_MASK", "group___prog_l_e_d.html#ga9dbf3996ce1d98acf2a600320604f71e", null ],
     [ "ProgLED_LOOP", "group___prog_l_e_d.html#ga6438b0b2809567b730ba4c038decd203", null ],
+    [ "USE_FPU", "group___prog_l_e_d.html#ga113160f0797f83c8da70553250921ac5", null ],
     [ "extHandler", "group___prog_l_e_d.html#gaaa7c855af9095887878dc6b458d33343", null ],
     [ "ledIdx_t", "group___prog_l_e_d.html#ga811cc06bc0e3e55a4c154c596c0306ea", null ],
     [ "ProgLED_chIdx_t", "group___prog_l_e_d.html#ga3d5d7fea2fc6c6679e4ce1ce88570064", [

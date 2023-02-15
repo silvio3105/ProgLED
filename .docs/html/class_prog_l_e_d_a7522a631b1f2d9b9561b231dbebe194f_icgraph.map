@@ -1,0 +1,4 @@
+<map id="ProgLED::rgb" name="ProgLED::rgb">
+<area shape="rect" id="node1" title="Set color for whole LED line." alt="" coords="153,5,253,31"/>
+<area shape="rect" id="node2" href="$class_prog_l_e_d.html#a2760df6f261515043321f731a0242b97" title="Set color for whole LED line." alt="" coords="5,5,105,31"/>
+</map>

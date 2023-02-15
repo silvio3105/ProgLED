@@ -28,6 +28,12 @@ This License shall be included in all methodal textual files.
 #ifndef _PROGLED_H_
 #define _PROGLED_H_
 
+/** \addtogroup ProgLED
+ * 
+ * Frameworkelss library for programmable RGB LEDs. 
+ * @{
+*/
+
 // ----- CONFIGURATIONS
 /**
  * @brief Use FPU for color format conversions.
@@ -43,12 +49,6 @@ This License shall be included in all methodal textual files.
 #if USE_FPU == 1
 #include			<math.h>
 #endif // USE_FPU
-
-/** \addtogroup ProgLED
- * 
- * Frameworkelss library for programmable RGB LEDs. 
- * @{
-*/
 
 // ----- DEFINES
 // RETURN CODES
@@ -174,51 +174,38 @@ class LED {
 	 * @param r New 8-bit red color value.
 	 * @param g New 8-bit green color value.
 	 * @param b New 8-bit blue color value.
-	 * @param brght New brightness. Set to \c -1 to keep old brightness.
-	 * @param on New LED status. See @ref LED_status_t
 	 * @return No return value.
 	 */
-	void rgb(uint8_t r, uint8_t g, uint8_t b, int8_t brght = -1, ProgLED_status_t on = ProgLED_status_t::ON)
+	void rgb(uint8_t r, uint8_t g, uint8_t b)
 	{
 		// Write new RGB color values
 		color[getChannelIdx(IDX_RED)] = r;
 		color[getChannelIdx(IDX_GREEN)] = g;
 		color[getChannelIdx(IDX_BLUE)] = b;
-
-		// Write new status bit keeping old brightness bits
-		SSTD_BIT_CLEAR(config, PROG_LED_STATUS_BIT);
-		config |= (on << PROG_LED_STATUS_BIT);
-
-		// Set new brightness
-		if (brght > -1) brightness((uint8_t)brght);		
 	}
 
 	/**
 	 * @brief Set new LED color.
 	 * 
 	 * @param col New 24-bit color in RGB format.
-	 * @param brght New brightness. Set to \c -1 to keep old brightness.
-	 * @param on New LED status. See @ref LED_status_t
 	 * @return No return value.
 	 */	
-	void rgb(uint32_t col, int8_t brght = -1, ProgLED_status_t on = ProgLED_status_t::ON)
+	void rgb(uint32_t col)
 	{
 		// Extract RGB bytes from 32-bit color value and pass params to main RGB method
-		rgb((col & 0x00FF0000) >> 16, (col & 0x0000FF00) >> 8, col & 0x000000FF, brght, on);		
+		rgb((col & 0x00FF0000) >> 16, (col & 0x0000FF00) >> 8, col & 0x000000FF);		
 	}
 
 	/**
 	 * @brief Set new LED color.
 	 * 
 	 * @param col New 24-bit color in RGB format. See \ref ProgLED_rgb_t
-	 * @param brght New brightness. Set to \c -1 to keep old brightness.
-	 * @param on New LED status. See @ref LED_status_t
 	 * @return No return value.
 	 */	
-	void rgb(ProgLED_rgb_t col, int8_t brght = -1, ProgLED_status_t on = ProgLED_status_t::ON)
+	void rgb(ProgLED_rgb_t col)
 	{
 		// Extract RGB bytes from 32-bit color value and pass params to main RGB method
-		rgb((col & 0x00FF0000) >> 16, (col & 0x0000FF00) >> 8, col & 0x000000FF, brght, on);		
+		rgb((col & 0x00FF0000) >> 16, (col & 0x0000FF00) >> 8, col & 0x000000FF);		
 	}
 
 	/**
@@ -449,27 +436,34 @@ class ProgLED {
 	 * @param r New 8-bit red color value.
 	 * @param g New 8-bit green color value.
 	 * @param b New 8-bit blue color value.
-	 * @param brght New brightness. Set to \c -1 to keep old brightness.
-	 * @param on New LED status. See \ref ProgLED_status_t
 	 * @return No return value.
 	 */
-	void rgb(uint8_t r, uint8_t g, uint8_t b, int8_t brght = -1, ProgLED_status_t on = ProgLED_status_t::ON)
+	void rgb(uint8_t r, uint8_t g, uint8_t b)
 	{
-		ProgLED_LOOP led[i].rgb(r, g, b, brght, on);
+		ProgLED_LOOP led[i].rgb(r, g, b);
 	}
 
 	/**
 	 * @brief Set color for whole LED line.
 	 * 
 	 * @param color New 24-bit color in RGB format.
-	 * @param brght New brightness. Set to \c -1 to keep old brightness.
-	 * @param on New LED status. See \ref ProgLED_status_t
 	 * @return No return value.
 	 */
-	void rgb(uint32_t color, int8_t brght = -1, ProgLED_status_t on = ProgLED_status_t::ON)
+	void rgb(uint32_t color)
 	{
-		rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF, brght, on);		
+		rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF);		
 	}
+
+	/**
+	 * @brief Set color for whole LED line.
+	 * 
+	 * @param color New 24-bit color in RGB format. See \ref ProgLED_rgb_t
+	 * @return No return value.
+	 */
+	void rgb(ProgLED_rgb_t color)
+	{
+		rgb((color & 0x00FF0000) >> 16, (color & 0x0000FF00) >> 8, color & 0x000000FF);		
+	}	
 
 	/**
 	 * @brief Set new brightness for whole LED line.
